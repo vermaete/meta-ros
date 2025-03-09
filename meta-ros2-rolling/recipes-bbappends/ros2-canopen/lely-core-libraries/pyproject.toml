@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cogen"
+version = "0.1.0"
+
+[tool.setuptools]
+packages = ["cogen"]
+
+[project.scripts]
+cogen = "cogen.cogen:main"

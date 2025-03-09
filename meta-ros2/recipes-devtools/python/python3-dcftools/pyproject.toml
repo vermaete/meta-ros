@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dcf-tools"
+version = "2.3.2"
+
+[tool.setuptools]
+packages = ["dcf", "dcfgen", "dcf2dev"]
+
+[project.scripts]
+dcf2dev = "dcf2dev.cli:main"
+dcfchk = "dcf.cli:main"
+dcfgen = "dcfgen.cli:main"

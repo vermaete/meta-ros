@@ -15,7 +15,7 @@ inherit pkgconfig autotools setuptools3-base
 
 DEPENDS += "python3-setuptools-native python3-wheel-native"
 
-EXTRA_OECONF += " --disable-cython --disable-tests --disable-python2"
+EXTRA_OECONF += " --disable-cython --disable-tests --disable-python"
 
 # include/lely/coapp/device.hpp:1003:3: error: 'virtual void lely::canopen::Device::OnWrite(uint16_t, uint8_t)' was hidden [-Werror=overloaded-virtual=]
 CXXFLAGS += "-Wno-error=overloaded-virtual"
@@ -41,9 +41,6 @@ PACKAGES =+ " \
     liblely-tap2 \
     liblely-util \
     liblely-util2 \
-    python3-dcf-tools \
-    python3-lely-can \
-    python3-lely-io \
 "
 
 FILES:liblely-can1 = " \
@@ -159,42 +156,5 @@ FILES:liblely-util-dev = " \
     ${libdir}/liblely-util.so \
     ${libdir}/pkgconfig/liblely-util.pc \
 "
-
-FILES:python3-dcf-tools = " \
-    ${libdir}/python3*/dist-packages/dcf/*.py \
-    ${libdir}/python3*/dist-packages/dcfgen/data/ \
-    ${libdir}/python3*/dist-packages/dcfgen/*.py \
-    ${libdir}/python3*/dist-packages/dcf_tools-*.egg-info/ \
-    ${bindir}/dcfchk \
-    ${bindir}/dcfgen \
-"
-
-FILES:python3-lely-can-dev = " \
-    ${libdir}/python3*/dist-packages/lely_can/*.pxd \
-"
-
-FILES:python3-lely-can = " \
-    ${libdir}/python3*/dist-packages/lely_can/*.py \
-    ${libdir}/python3*/dist-packages/lely_can/*.so \
-"
-
-FILES:python3-lely-io-dev = " \
-    ${libdir}/python3*/dist-packages/lely_io/*.pxd \
-"
-
-FILES:python3-lely-io = " \
-    ${libdir}/python3*/dist-packages/lely_io/*.py \
-    ${libdir}/python3*/dist-packages/lely_io/*.so \
-"
-
-# QA Issue: lely-core: .../dcf2dev maximum shebang size exceeded, the maximum size is 128.
-#           lely-core: .../dcfchk maximum shebang size exceeded, the maximum size is 128.
-#           lely-core: .../dcfgen maximum shebang size exceeded, the maximum size is 128. [shebang-size]
-do_install:append() {
-    # Modify the Python scripts to use the runtime path to Python 
-    sed -i -e '1s|^#!.*|#!/usr/bin/env python3|' ${D}${bindir}/dcf2dev
-    sed -i -e '1s|^#!.*|#!/usr/bin/env python3|' ${D}${bindir}/dcfchk
-    sed -i -e '1s|^#!.*|#!/usr/bin/env python3|' ${D}${bindir}/dcfgen
-}
 
 BBCLASSEXTEND = "native nativesdk"

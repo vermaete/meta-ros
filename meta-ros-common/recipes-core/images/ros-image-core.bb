@@ -8,4 +8,5 @@ inherit ${ROS_DISTRO_TYPE}_image
 
 IMAGE_INSTALL:append = " \
     ros-core \
+    canopen-tests \
 "

@@ -17,6 +17,8 @@ ROS_BPN = "canopen_tests"
 
 ROS_BUILD_DEPENDS = " \
     lely-core-libraries \
+    lely-core-libraries-native \
+    python3-dcftools-native \
 "
 
 ROS_BUILDTOOL_DEPENDS = " \
