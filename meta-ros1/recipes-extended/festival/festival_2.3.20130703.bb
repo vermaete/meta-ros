@@ -17,13 +17,9 @@ SRC_URI = "http://tts.speech.cs.cmu.edu/awb/${SNAPSHOT}/${BPN}-${SHRT_VER}-curre
     file://remove.siod_fringe_init.patch \
     file://gcc-9.patch \
 "
-SRC_URI[festival.md5sum] = "eddcce27b873048360aaf3ea51c0e9cf"
 SRC_URI[festival.sha256sum] = "8ea3a6f8ea301a37db5dbf4824e8e088adf4197f156a6c42e868af1b72d36488"
-SRC_URI[CMU.md5sum] = "6a2ee4fed7c3ebedf197a3b8524ccb87"
 SRC_URI[CMU.sha256sum] = "c19430919bca45d5368cd4c82af6153fbcc96a487ebd30b78b5f3c08718b7c07"
-SRC_URI[POSLEX.md5sum] = "aa80f9250065b318325f16fdad3a4484"
 SRC_URI[POSLEX.sha256sum] = "e7c6e3642dbd5b0d64942bc015a986fdd6244a79e51ec2e8309e63d569e49ea3"
-SRC_URI[kallpc16k.md5sum] = "3869af78f473b616601cac3fa83cc14e"
 SRC_URI[kallpc16k.sha256sum] = "7a357c34086fbba8b813f9750f6b5ba13e2a00478a0a2e78a97981cb76395578"
 
 S = "${WORKDIR}/${BPN}"

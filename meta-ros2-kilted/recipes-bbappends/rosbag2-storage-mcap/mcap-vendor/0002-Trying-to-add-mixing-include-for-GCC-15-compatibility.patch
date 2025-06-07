@@ -1,0 +1,29 @@
+From 0ba3882ba3a18473ec7aeff2b9c43f894c9baa36 Mon Sep 17 00:00:00 2001
+From: David Anthony <djanthony@gmail.com>
+Date: Sat, 10 May 2025 17:38:10 -0500
+Subject: [PATCH] Trying to add mixing include for GCC 15 compatibility
+
+Signed-off-by: David Anthony <djanthony@gmail.com>
+
+Upstream-Status: Backport [https://github.com/ros2/rosbag2/commit/e718ae79a43b3143be73083264184ccbbc2c4144]
+---
+ mcap_vendor/patches/gcc15.patch | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+ create mode 100644 mcap_vendor/patches/gcc15.patch
+
+diff --git a/mcap_vendor/patches/gcc15.patch b/mcap_vendor/patches/gcc15.patch
+new file mode 100644
+index 000000000..3a6137cbc
+--- /dev/null
++++ b/mcap_vendor/patches/gcc15.patch
+@@ -0,0 +1,10 @@
++--- /tmp/types.hpp	2025-05-10 17:36:18.117912264 -0500
+++++ build/mcap_vendor/_deps/mcap-src/cpp/mcap/include/mcap/types.hpp	2025-05-10 17:35:39.688314498 -0500
++@@ -3,6 +3,7 @@
++ #include "errors.hpp"
++ #include "visibility.hpp"
++ #include <cstddef>
+++#include <cstdint>
++ #include <functional>
++ #include <limits>
++ #include <memory>
