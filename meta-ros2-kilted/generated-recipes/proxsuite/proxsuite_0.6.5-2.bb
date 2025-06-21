@@ -16,34 +16,34 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=6d936230566da
 ROS_CN = "proxsuite"
 ROS_BPN = "proxsuite"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-python3-scipy} \
     doxygen \
     git \
     libeigen \
     python3-numpy \
-    python3-scipy \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-python3-scipy} \
     libeigen \
     python3-numpy \
-    python3-scipy \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-python3-scipy} \
     libeigen \
     python3-numpy \
-    python3-scipy \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-matio} \
 "
 
@@ -58,7 +58,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/proxsuite"
 SRC_URI = "git://github.com/ros2-gbp/proxsuite-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1ded99b9224c49091f654baf87cb46c1d3099ba5"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

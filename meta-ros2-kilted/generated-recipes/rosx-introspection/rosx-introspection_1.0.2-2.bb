@@ -16,38 +16,38 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=58e54c03ca7f821
 ROS_CN = "rosx_introspection"
 ROS_BPN = "rosx_introspection"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-rapidjson-dev} \
     ament-index-cpp \
     fastcdr \
-    rapidjson \
     rclcpp \
     rosbag2-cpp \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-rapidjson-dev} \
     ament-index-cpp \
     fastcdr \
-    rapidjson \
     rclcpp \
     rosbag2-cpp \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-rapidjson-dev} \
     ament-index-cpp \
     fastcdr \
-    rapidjson \
     rclcpp \
     rosbag2-cpp \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     geometry-msgs \
     sensor-msgs \
 "
@@ -63,7 +63,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/rosx_introspection"
 SRC_URI = "git://github.com/ros2-gbp/rosx_introspection-release;${ROS_BRANCH};protocol=https"
 SRCREV = "da93be6eba62c34f037aebb8e72e0dfea20331fd"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

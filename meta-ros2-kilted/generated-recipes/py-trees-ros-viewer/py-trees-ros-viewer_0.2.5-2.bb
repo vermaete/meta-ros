@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=14;endline=14;md5=d566ef916e9de
 ROS_CN = "py_trees_ros_viewer"
 ROS_BPN = "py_trees_ros_viewer"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     ${PYTHON_PN}-pyqt5 \
     python3-setuptools \
     qttools \
@@ -28,7 +28,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     ${PYTHON_PN}-pyqt5 \
     py-trees-js \
     py-trees-ros-interfaces \
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/py_trees_ros_viewer"
 SRC_URI = "git://github.com/ros2-gbp/py_trees_ros_viewer-release;${ROS_BRANCH};protocol=https"
 SRCREV = "8ff3a28ae488a9a02fc352dce6071d81d0c023a4"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

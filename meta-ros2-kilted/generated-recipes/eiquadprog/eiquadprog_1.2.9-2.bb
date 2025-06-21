@@ -18,7 +18,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=b691248d2f70cda
 ROS_CN = "eiquadprog"
 ROS_BPN = "eiquadprog"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     boost \
     doxygen \
     git \
@@ -26,11 +26,11 @@ ROS_BUILD_DEPENDS = " \
     libeigen \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     boost \
     graphviz \
     libeigen \
@@ -38,7 +38,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     ament-cmake \
     boost \
     graphviz \
@@ -59,7 +59,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/eiquadprog"
 SRC_URI = "git://github.com/ros2-gbp/eiquadprog-release;${ROS_BRANCH};protocol=https"
 SRCREV = "f29a4786fa1664a5c341601d6e0312a63ad1dc47"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

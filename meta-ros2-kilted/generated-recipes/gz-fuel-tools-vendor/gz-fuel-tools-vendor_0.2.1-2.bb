@@ -17,8 +17,9 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=20;endline=20;md5=12c26a18c7f49
 ROS_CN = "gz_fuel_tools_vendor"
 ROS_BPN = "gz_fuel_tools_vendor"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-libcurl-dev} \
+    ${ROS_UNRESOLVED_DEP-libzip-dev} \
     gflags \
     gz-cmake-vendor \
     gz-common-vendor \
@@ -29,17 +30,16 @@ ROS_BUILD_DEPENDS = " \
     jsoncpp \
     libtinyxml2 \
     libyaml \
-    libzip \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-core-native \
     ament-cmake-test-native \
     ament-cmake-vendor-package-native \
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     gz-cmake-vendor \
     gz-common-vendor \
     gz-math-vendor \
@@ -50,8 +50,9 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-libcurl-dev} \
+    ${ROS_UNRESOLVED_DEP-libzip-dev} \
     gflags \
     gz-cmake-vendor \
     gz-common-vendor \
@@ -62,11 +63,10 @@ ROS_EXEC_DEPENDS = " \
     jsoncpp \
     libtinyxml2 \
     libyaml \
-    libzip \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-cmake-copyright \
     ament-cmake-lint-cmake \
     ament-cmake-xmllint \
@@ -83,7 +83,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/gz_fuel_tools_vendor"
 SRC_URI = "git://github.com/ros2-gbp/gz_fuel_tools_vendor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "6c752cae6406074dc115368781dce4df6dd576e3"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

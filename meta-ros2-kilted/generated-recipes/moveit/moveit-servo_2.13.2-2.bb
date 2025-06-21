@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=4633480cdd27d
 ROS_CN = "moveit"
 ROS_BPN = "moveit_servo"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     control-msgs \
     generate-parameter-library \
     geometry-msgs \
@@ -34,11 +34,11 @@ ROS_BUILD_DEPENDS = " \
     trajectory-msgs \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     control-msgs \
     generate-parameter-library \
     geometry-msgs \
@@ -58,12 +58,12 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-gripper-controllers} \
     control-msgs \
     controller-manager \
     generate-parameter-library \
     geometry-msgs \
-    gripper-controllers \
     joint-state-broadcaster \
     joint-trajectory-controller \
     joy \
@@ -87,7 +87,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-cmake-gtest \
     moveit-resources-panda-moveit-config \
     ros-testing \
@@ -104,7 +104,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/moveit_servo"
 SRC_URI = "git://github.com/ros2-gbp/moveit2-release;${ROS_BRANCH};protocol=https"
 SRCREV = "de640fa084c821db8a2766bf2187f1fe9b2311d4"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

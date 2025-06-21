@@ -17,7 +17,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=20;endline=20;md5=12c26a18c7f49
 ROS_CN = "gz_transport_vendor"
 ROS_BPN = "gz_transport_vendor"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     gz-cmake-vendor \
     gz-math-vendor \
     gz-msgs-vendor \
@@ -34,14 +34,14 @@ ROS_BUILD_DEPENDS = " \
     zeromq \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-core-native \
     ament-cmake-test-native \
     ament-cmake-vendor-package-native \
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     gz-cmake-vendor \
     gz-math-vendor \
     gz-msgs-vendor \
@@ -51,7 +51,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     gz-cmake-vendor \
     gz-math-vendor \
     gz-msgs-vendor \
@@ -69,7 +69,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-cmake-copyright \
     ament-cmake-lint-cmake \
     ament-cmake-xmllint \
@@ -86,7 +86,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/gz_transport_vendor"
 SRC_URI = "git://github.com/ros2-gbp/gz_transport_vendor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1969b548f1584eb09ca5fa2a8af1b0f21eeedb35"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

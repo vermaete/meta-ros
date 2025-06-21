@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=14;endline=14;md5=d566ef916e9de
 ROS_CN = "py_trees_ros_tutorials"
 ROS_BPN = "py_trees_ros_tutorials"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     ${PYTHON_PN}-pyqt5 \
     python3-setuptools \
     qttools \
@@ -28,7 +28,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     action-msgs \
     geometry-msgs \
     launch \
@@ -49,7 +49,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     action-msgs \
     py-trees \
     py-trees-ros \
@@ -68,7 +68,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/py_trees_ros_tutorials"
 SRC_URI = "git://github.com/ros2-gbp/py_trees_ros_tutorials-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1f5f7de0b42c5f897e370481af762980d0ea3fa8"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

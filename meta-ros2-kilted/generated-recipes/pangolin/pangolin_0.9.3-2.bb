@@ -16,49 +16,49 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=58e54c03ca7f821
 ROS_CN = "pangolin"
 ROS_BPN = "pangolin"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libepoxy-dev} \
+    ${ROS_UNRESOLVED_DEP-libxkbcommon-dev} \
     ${ROS_UNRESOLVED_DEP-python3-wheel} \
     glew \
     libeigen \
-    libepoxy \
     libjpeg-turbo \
     libpng \
-    libxkbcommon \
     mesa \
     python3 \
     wayland \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libepoxy-dev} \
+    ${ROS_UNRESOLVED_DEP-libxkbcommon-dev} \
     glew \
-    libepoxy \
     libjpeg-turbo \
     libpng \
-    libxkbcommon \
     mesa \
     python3 \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libepoxy-dev} \
+    ${ROS_UNRESOLVED_DEP-libxkbcommon-dev} \
     glew \
-    libepoxy \
     libjpeg-turbo \
     libpng \
-    libxkbcommon \
     mesa \
     python3 \
     wayland \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
-    catch2 \
+ROS_TEST_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-catch2} \
 "
 
 DEPENDS = "${ROS_BUILD_DEPENDS} ${ROS_BUILDTOOL_DEPENDS}"
@@ -72,7 +72,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/pangolin"
 SRC_URI = "git://github.com/ros2-gbp/Pangolin-release;${ROS_BRANCH};protocol=https"
 SRCREV = "9160803b472abc6b2657ec571aa609607c87fa57"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

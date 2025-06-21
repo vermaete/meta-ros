@@ -18,7 +18,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=20;endline=20;md5=fe8b75cf0aba6
 ROS_CN = "visp"
 ROS_BPN = "visp"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     bzip2 \
     doxygen \
     jpeg \
@@ -31,7 +31,7 @@ ROS_BUILD_DEPENDS = " \
     v4l-utils \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
@@ -39,7 +39,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     jpeg \
     lapack \
     libeigen \
@@ -64,7 +64,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/visp"
 SRC_URI = "git://github.com/ros2-gbp/visp-release;${ROS_BRANCH};protocol=https"
 SRCREV = "78cd8706075c57d4933b5c286ed4f9a2858e6313"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

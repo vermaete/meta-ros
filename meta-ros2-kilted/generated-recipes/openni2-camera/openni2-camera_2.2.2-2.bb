@@ -16,27 +16,27 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc
 ROS_CN = "openni2_camera"
 ROS_BPN = "openni2_camera"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libopenni2-dev} \
     builtin-interfaces \
     camera-info-manager \
     image-transport \
-    openni2 \
     pkgconfig \
     rclcpp \
     rclcpp-components \
     sensor-msgs \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
     rosidl-default-generators-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libopenni2-dev} \
     builtin-interfaces \
     camera-info-manager \
     image-transport \
-    openni2 \
     rclcpp \
     rclcpp-components \
     sensor-msgs \
@@ -44,12 +44,12 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libopenni2-dev} \
     builtin-interfaces \
     camera-info-manager \
     depth-image-proc \
     image-transport \
-    openni2 \
     rclcpp \
     rclcpp-components \
     rosidl-default-runtime \
@@ -70,7 +70,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/openni2_camera"
 SRC_URI = "git://github.com/ros2-gbp/openni2_camera-release;${ROS_BRANCH};protocol=https"
 SRCREV = "6ffbdbe1019448f88b47cb6647f39c2f9f65b476"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=15;endline=15;md5=01c2bc31767cc
 ROS_CN = "flexbe_behavior_engine"
 ROS_BPN = "flexbe_onboard"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     flexbe-core \
     flexbe-msgs \
     flexbe-states \
@@ -26,7 +26,7 @@ ROS_BUILD_DEPENDS = " \
 
 ROS_BUILDTOOL_DEPENDS = ""
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     flexbe-core \
     flexbe-msgs \
     flexbe-states \
@@ -36,7 +36,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     flexbe-core \
     flexbe-msgs \
     flexbe-states \
@@ -45,7 +45,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-copyright \
     ament-flake8 \
     ament-pep257 \
@@ -64,7 +64,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/flexbe_onboard"
 SRC_URI = "git://github.com/ros2-gbp/flexbe_behavior_engine-release;${ROS_BRANCH};protocol=https"
 SRCREV = "0ff65033bec1ce5fb688c0778c3b9c202fc1b545"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

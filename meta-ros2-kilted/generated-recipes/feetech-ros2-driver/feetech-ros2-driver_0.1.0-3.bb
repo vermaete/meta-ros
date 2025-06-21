@@ -15,29 +15,29 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc
 ROS_CN = "feetech_ros2_driver"
 ROS_BPN = "feetech_ros2_driver"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-libserial-dev} \
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     fmt \
     hardware-interface \
     pkgconfig \
     pluginlib \
-    range-v3 \
     rclcpp \
     spdlog \
     tl-expected \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-libserial-dev} \
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     fmt \
     hardware-interface \
     pkgconfig \
     pluginlib \
-    range-v3 \
     rclcpp \
     spdlog \
     tl-expected \
@@ -45,13 +45,13 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-libserial-dev} \
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     fmt \
     hardware-interface \
     pkgconfig \
     pluginlib \
-    range-v3 \
     rclcpp \
     spdlog \
     tl-expected \
@@ -71,7 +71,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/feetech_ros2_driver"
 SRC_URI = "git://github.com/ros2-gbp/feetech_ros2_driver-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1a9601c4716c80a446627bcccb523b744a5d82e5"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

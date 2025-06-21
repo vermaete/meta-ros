@@ -18,25 +18,25 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=184dd1523b9a1
 ROS_CN = "libcamera"
 ROS_BPN = "libcamera"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-python3-ply} \
     gcc-runtime \
     libyaml \
     openssl \
     python3 \
     python3-jinja2 \
-    python3-ply \
     python3-pybind11 \
     python3-pyyaml \
     udev \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-meson-native} \
     git-native \
     pkgconfig-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     gcc-runtime \
     libyaml \
     openssl \
@@ -46,7 +46,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     gcc-runtime \
     libyaml \
     openssl \
@@ -68,7 +68,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/libcamera"
 SRC_URI = "git://github.com/ros2-gbp/libcamera-release;${ROS_BRANCH};protocol=https"
 SRCREV = "c732993ed0295c2aea2bb4b70a8e2f051b2caa2e"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "meson"
 

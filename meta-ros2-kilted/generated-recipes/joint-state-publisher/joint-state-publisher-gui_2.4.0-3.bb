@@ -24,7 +24,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     joint-state-publisher \
     python-qt-binding \
     rclpy \
@@ -44,7 +44,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/joint_state_publisher_gui"
 SRC_URI = "git://github.com/ros2-gbp/joint_state_publisher-release;${ROS_BRANCH};protocol=https"
 SRCREV = "21bf42d0b6c67a22cd346a33e5f089e0f2590278"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

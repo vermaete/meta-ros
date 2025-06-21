@@ -16,7 +16,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=4633480cdd27d
 ROS_CN = "moveit"
 ROS_BPN = "moveit_ros_perception"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libomp-dev} \
     cv-bridge \
     freeglut \
     glew \
@@ -30,7 +31,6 @@ ROS_BUILD_DEPENDS = " \
     moveit-ros-occupancy-map-monitor \
     moveit-ros-planning \
     object-recognition-msgs \
-    openmp \
     pluginlib \
     rclcpp \
     sensor-msgs \
@@ -41,11 +41,12 @@ ROS_BUILD_DEPENDS = " \
     urdf \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libomp-dev} \
     cv-bridge \
     freeglut \
     glew \
@@ -58,7 +59,6 @@ ROS_EXPORT_DEPENDS = " \
     moveit-ros-occupancy-map-monitor \
     moveit-ros-planning \
     object-recognition-msgs \
-    openmp \
     pluginlib \
     rclcpp \
     sensor-msgs \
@@ -71,7 +71,8 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-libomp-dev} \
     cv-bridge \
     freeglut \
     glew \
@@ -84,7 +85,6 @@ ROS_EXEC_DEPENDS = " \
     moveit-ros-occupancy-map-monitor \
     moveit-ros-planning \
     object-recognition-msgs \
-    openmp \
     pluginlib \
     rclcpp \
     sensor-msgs \
@@ -109,7 +109,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/moveit_ros_perception"
 SRC_URI = "git://github.com/ros2-gbp/moveit2-release;${ROS_BRANCH};protocol=https"
 SRCREV = "cfa7395b530260c174725281873aeb91ad938682"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

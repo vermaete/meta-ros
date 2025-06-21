@@ -17,7 +17,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=ff39ea40528331b
 ROS_CN = "nmea_hardware_interface"
 ROS_BPN = "nmea_hardware_interface"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     boost \
     controller-interface \
     geographic-msgs \
@@ -33,11 +33,11 @@ ROS_BUILD_DEPENDS = " \
     ros2-control \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     boost \
     controller-interface \
     geographic-msgs \
@@ -55,7 +55,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     boost \
     controller-interface \
     geographic-msgs \
@@ -73,7 +73,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-lint-auto \
     ouxt-lint-common \
 "
@@ -89,7 +89,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/nmea_hardware_interface"
 SRC_URI = "git://github.com/ros2-gbp/nmea_hardware_interface-release;${ROS_BRANCH};protocol=https"
 SRCREV = "cdc0d4f861a60c3fbd8bfb66eef7ff24654a419b"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

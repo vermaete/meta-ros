@@ -24,7 +24,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     python-qt-binding \
     qt-dotgraph \
     rclpy \
@@ -36,7 +36,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     python3-mock \
     python3-pytest \
 "
@@ -52,7 +52,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/rqt_tf_tree"
 SRC_URI = "git://github.com/ros2-gbp/rqt_tf_tree-release;${ROS_BRANCH};protocol=https"
 SRCREV = "c47d2273617c3c59a861f1ad0ad94e97b2855f26"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

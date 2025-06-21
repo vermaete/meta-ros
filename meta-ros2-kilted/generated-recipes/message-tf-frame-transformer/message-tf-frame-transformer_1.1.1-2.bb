@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=58e54c03ca7f8
 ROS_CN = "message_tf_frame_transformer"
 ROS_BPN = "message_tf_frame_transformer"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     geometry-msgs \
     rclcpp \
     ros-environment \
@@ -27,11 +27,11 @@ ROS_BUILD_DEPENDS = " \
     tf2-sensor-msgs \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     geometry-msgs \
     rclcpp \
     ros-environment \
@@ -44,7 +44,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     geometry-msgs \
     rclcpp \
     ros-environment \
@@ -69,7 +69,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/message_tf_frame_transformer"
 SRC_URI = "git://github.com/ros2-gbp/message_tf_frame_transformer-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1ed6d025f3670fefec010c6952a96ebc5defeb92"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

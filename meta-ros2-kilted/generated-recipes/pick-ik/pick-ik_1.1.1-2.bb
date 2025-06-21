@@ -16,12 +16,12 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=4633480cdd27d79
 ROS_CN = "pick_ik"
 ROS_BPN = "pick_ik"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     fmt \
     generate-parameter-library \
     moveit-core \
     pluginlib \
-    range-v3 \
     rclcpp \
     rsl \
     tf2-geometry-msgs \
@@ -29,16 +29,16 @@ ROS_BUILD_DEPENDS = " \
     tl-expected \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-ros-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     fmt \
     generate-parameter-library \
     moveit-core \
     pluginlib \
-    range-v3 \
     rclcpp \
     rsl \
     tf2-geometry-msgs \
@@ -48,12 +48,12 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     fmt \
     generate-parameter-library \
     moveit-core \
     pluginlib \
-    range-v3 \
     rclcpp \
     rsl \
     tf2-geometry-msgs \
@@ -62,7 +62,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     moveit-resources-panda-moveit-config \
 "
 
@@ -77,7 +77,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/pick_ik"
 SRC_URI = "git://github.com/ros2-gbp/pick_ik-release;${ROS_BRANCH};protocol=https"
 SRCREV = "a3c3ec04543ffd26bba73a012765507ac2ffffb7"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

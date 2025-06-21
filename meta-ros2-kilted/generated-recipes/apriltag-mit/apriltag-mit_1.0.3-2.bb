@@ -18,29 +18,29 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=e181b18ed953304
 ROS_CN = "apriltag_mit"
 ROS_BPN = "apriltag_mit"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-clang-tidy} \
     boost \
-    clang \
     libeigen \
     opencv \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-clang-tidy} \
     boost \
-    clang \
     libeigen \
     opencv \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-clang-tidy} \
     boost \
-    clang \
     libeigen \
     opencv \
 "
@@ -59,7 +59,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/apriltag_mit"
 SRC_URI = "git://github.com/ros2-gbp/apriltag_mit-release;${ROS_BRANCH};protocol=https"
 SRCREV = "9c99e909115c88afff04137de581dcffff2e46e5"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

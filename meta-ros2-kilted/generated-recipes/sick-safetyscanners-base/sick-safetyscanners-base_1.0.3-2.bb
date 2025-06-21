@@ -16,21 +16,21 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=48a602c865794
 ROS_CN = "sick_safetyscanners_base"
 ROS_BPN = "sick_safetyscanners_base"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     boost \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     boost \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     boost \
 "
 
@@ -48,7 +48,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/sick_safetyscanners_base"
 SRC_URI = "git://github.com/ros2-gbp/sick_safetyscanners_base-release;${ROS_BRANCH};protocol=https"
 SRCREV = "912f1f6adb08484ac053ed1645e5e8355cbcb150"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

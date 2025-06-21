@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=16;endline=16;md5=d566ef916e9de
 ROS_CN = "mrpt_path_planning"
 ROS_BPN = "mrpt_path_planning"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     mrpt-libgui \
     mrpt-libmaps \
     mrpt-libnav \
@@ -24,11 +24,11 @@ ROS_BUILD_DEPENDS = " \
     mvsim \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     mrpt-libgui \
     mrpt-libmaps \
     mrpt-libnav \
@@ -38,7 +38,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     mrpt-libgui \
     mrpt-libmaps \
     mrpt-libnav \
@@ -60,7 +60,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/mrpt_path_planning"
 SRC_URI = "git://github.com/ros2-gbp/mrpt_path_planning-release;${ROS_BRANCH};protocol=https"
 SRCREV = "6ad10c8abcd7684bda29968e75565d3417427551"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

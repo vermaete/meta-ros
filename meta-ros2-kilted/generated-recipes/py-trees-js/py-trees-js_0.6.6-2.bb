@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=13;endline=13;md5=d566ef916e9de
 ROS_CN = "py_trees_js"
 ROS_BPN = "py_trees_js"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     ${PYTHON_PN}-pyqt5 \
     python3-setuptools \
     qttools \
@@ -28,7 +28,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     ${PYTHON_PN}-pyqt5 \
     python3-pyqt5 \
 "
@@ -47,7 +47,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/py_trees_js"
 SRC_URI = "git://github.com/ros2-gbp/py_trees_js-release;${ROS_BRANCH};protocol=https"
 SRCREV = "b5eb3d524e2cb026fe0177c70ee3e365a08d84c8"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

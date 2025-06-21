@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=58e54c03ca7f821
 ROS_CN = "kompass"
 ROS_BPN = "kompass"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     automatika-ros-sugar \
     kompass-interfaces \
     python3-pykdl \
@@ -23,7 +23,7 @@ ROS_BUILD_DEPENDS = " \
 
 ROS_BUILDTOOL_DEPENDS = ""
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     automatika-ros-sugar \
     kompass-interfaces \
     python3-pykdl \
@@ -31,7 +31,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     automatika-ros-sugar \
     kompass-interfaces \
     python3-pykdl \
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/kompass"
 SRC_URI = "git://github.com/ros2-gbp/kompass-release;${ROS_BRANCH};protocol=https"
 SRCREV = "42dc4687363c53f6f18bb48be8a237a948ce6224"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

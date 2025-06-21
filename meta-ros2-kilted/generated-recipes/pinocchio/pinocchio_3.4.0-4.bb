@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=6d936230566da
 ROS_CN = "pinocchio"
 ROS_BPN = "pinocchio"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     boost \
     doxygen \
     eigenpy \
@@ -28,12 +28,12 @@ ROS_BUILD_DEPENDS = " \
     urdfdom \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
-    clang-native \
+ROS_BUILDTOOL_DEPENDS = "\
+    clang-native-native \
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     boost \
     eigenpy \
     hpp-fcl \
@@ -46,7 +46,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     boost \
     eigenpy \
     hpp-fcl \
@@ -71,7 +71,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/pinocchio"
 SRC_URI = "git://github.com/ros2-gbp/pinocchio-release;${ROS_BRANCH};protocol=https"
 SRCREV = "01ce3fcf94985454f0a6876bf2223db04a2299dc"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

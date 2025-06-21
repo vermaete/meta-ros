@@ -17,7 +17,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=13;endline=13;md5=12c26a18c7f49
 ROS_CN = "autoware_lanelet2_extension"
 ROS_BPN = "autoware_lanelet2_extension"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     autoware-map-msgs \
     autoware-planning-msgs \
     geographiclib \
@@ -30,19 +31,19 @@ ROS_BUILD_DEPENDS = " \
     lanelet2-traffic-rules \
     lanelet2-validation \
     pugixml \
-    range-v3 \
     rclcpp \
     tf2 \
     tf2-geometry-msgs \
     visualization-msgs \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-auto-native \
     autoware-cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     autoware-map-msgs \
     autoware-planning-msgs \
     geographiclib \
@@ -55,7 +56,6 @@ ROS_EXPORT_DEPENDS = " \
     lanelet2-traffic-rules \
     lanelet2-validation \
     pugixml \
-    range-v3 \
     rclcpp \
     tf2 \
     tf2-geometry-msgs \
@@ -64,7 +64,8 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-range-v3} \
     autoware-map-msgs \
     autoware-planning-msgs \
     geographiclib \
@@ -77,7 +78,6 @@ ROS_EXEC_DEPENDS = " \
     lanelet2-traffic-rules \
     lanelet2-validation \
     pugixml \
-    range-v3 \
     rclcpp \
     tf2 \
     tf2-geometry-msgs \
@@ -85,7 +85,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-cmake-ros \
 "
 
@@ -100,7 +100,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/autoware_lanelet2_extension"
 SRC_URI = "git://github.com/ros2-gbp/autoware_lanelet2_extension-release;${ROS_BRANCH};protocol=https"
 SRCREV = "667205009e65be95af85f3a26abb21a00b554541"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

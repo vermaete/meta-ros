@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d566ef916e9de
 ROS_CN = "coal"
 ROS_BPN = "coal"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-liboctomap-dev} \
     assimp \
     boost \
@@ -28,11 +28,11 @@ ROS_BUILD_DEPENDS = " \
     python3-numpy \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-liboctomap-dev} \
     assimp \
     boost \
@@ -44,7 +44,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     ${ROS_UNRESOLVED_DEP-liboctomap-dev} \
     assimp \
     boost \
@@ -68,7 +68,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/coal"
 SRC_URI = "git://github.com/ros2-gbp/coal-release;${ROS_BRANCH};protocol=https"
 SRCREV = "f69f98cfcb87b1e893c30b139403ab68aed6c13f"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

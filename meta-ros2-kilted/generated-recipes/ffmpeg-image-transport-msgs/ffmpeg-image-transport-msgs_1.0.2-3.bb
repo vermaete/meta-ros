@@ -15,28 +15,28 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=7;endline=7;md5=4083d50af96f9bd
 ROS_CN = "ffmpeg_image_transport_msgs"
 ROS_BPN = "ffmpeg_image_transport_msgs"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     rosidl-default-generators \
     std-msgs \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     std-msgs \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     rosidl-default-runtime \
     std-msgs \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-lint-auto \
     ament-lint-common \
 "
@@ -52,7 +52,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/ffmpeg_image_transport_msgs"
 SRC_URI = "git://github.com/ros2-gbp/ffmpeg_image_transport_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "112d24f0c88fb67da8fd69b131600ed49e45abc1"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

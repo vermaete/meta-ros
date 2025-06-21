@@ -16,36 +16,36 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=d566ef916e9de
 ROS_CN = "eigenpy"
 ROS_BPN = "eigenpy"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-python3-scipy} \
     boost \
     doxygen \
     git \
     libeigen \
     python3 \
     python3-numpy \
-    python3-scipy \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-python3-scipy} \
     boost \
     libeigen \
     python3 \
     python3-numpy \
-    python3-scipy \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
+    ${ROS_UNRESOLVED_DEP-python3-scipy} \
     boost \
     libeigen \
     python3 \
     python3-numpy \
-    python3-scipy \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
@@ -62,7 +62,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/eigenpy"
 SRC_URI = "git://github.com/ros2-gbp/eigenpy-release;${ROS_BRANCH};protocol=https"
 SRCREV = "ab22fe65da8d054712c507b5e1f9ff9f5e851a2e"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 
