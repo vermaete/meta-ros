@@ -1,0 +1,27 @@
+SUMMARY = "Command-line tool for generating documentation for ROS 2 packages."
+HOMEPAGE = "https://github.com/ros-infrastructure/rosdoc2"
+LICENSE = "Apache-2.0"
+LIC_FILES_CHKSUM = "file://PKG-INFO;beginline=10;endline=10;md5=d36ab912b8b544b7412f2d84c52072f1"
+
+SRC_URI[sha256sum] = "fbb2ba4d0d867590955963363bf24b969c6ed18c24d730845b38884736b8ccf7"
+
+inherit pypi python_setuptools_build_meta
+inherit ros_distro_${ROS_DISTRO}
+
+PYPI_PACKAGE = "rosdoc2"
+
+RDEPENDS:${PN} = "\
+    doxygen \
+    graphviz \
+    osrf-pycommon \
+    python3-beautifulsoup4 \
+    python3-breathe \
+    python3-exhale \
+    python3-jinja2 \
+    python3-myst-parser \
+    python3-pyyaml \
+    python3-sphinx \
+    python3-sphinx-rtd-theme \
+    "
+
+BBCLASSEXTEND = "native"

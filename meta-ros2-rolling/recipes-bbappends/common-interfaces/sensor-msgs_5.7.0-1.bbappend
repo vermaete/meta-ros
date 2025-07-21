@@ -17,3 +17,18 @@ ROS_BUILD_DEPENDS += " \
     rosidl-typesupport-cpp \
     service-msgs \
 "
+
+#doc
+ROS_BUILD_DEPENDS += " \
+    python3-rosdoc2-native \
+    rsync-native \
+"
+
+do_compile:append() {
+    rosdoc2 build --package-path ${S}
+}
+
+do_install:append() {
+    install -d ${D}${docdir}
+    rsync -a ${B}/docs_output/${ROS_BPN} ${D}${docdir} --exclude xml --exclude .doctrees
+}
