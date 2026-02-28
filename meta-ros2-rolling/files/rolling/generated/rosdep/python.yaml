@@ -397,7 +397,7 @@ pydocstyle:
   freebsd: [devel/py-pydocstyle]
   gentoo: [dev-python/pydocstyle]
   nixos: [python3Packages.pydocstyle]
-  openembedded: ['${PYTHON_PN}-pydocstyle@meta-ros-common']
+  openembedded: [python3-pydocstyle@meta-ros-common]
   osx:
     pip:
       packages: [pydocstyle]
@@ -5490,6 +5490,12 @@ python3-colorcet:
     focal:
       pip:
         packages: [colorcet]
+python3-colorlog:
+  debian: [python3-colorlog]
+  fedora: [python3-colorlog]
+  opensuse: [python3-colorlog]
+  rhel: [python3-colorlog]
+  ubuntu: [python3-colorlog]
 python3-conan-pip:
   debian:
     pip:
