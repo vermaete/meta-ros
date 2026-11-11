@@ -10,7 +10,7 @@ AUTHOR = "Lorenzo Ferrini <lorenzo.ferrini@pal-robotics.com>"
 ROS_AUTHOR = "Lorenzo Ferrini <lorenzo.ferrini@pal-robotics.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
@@ -18,7 +18,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493f
 ROS_CN = "hri_rviz"
 ROS_BPN = "hri_rviz"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     cv-bridge \
     hri \
     hri-msgs \
@@ -30,11 +30,11 @@ ROS_BUILD_DEPENDS = " \
     sensor-msgs \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-auto-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     cv-bridge \
     hri \
     hri-msgs \
@@ -48,7 +48,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     cv-bridge \
     hri \
     hri-msgs \
@@ -61,7 +61,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-lint-auto \
     ament-lint-common \
 "
@@ -73,11 +73,10 @@ DEPENDS += "${ROS_EXPORT_DEPENDS} ${ROS_BUILDTOOL_EXPORT_DEPENDS}"
 
 RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 
-# matches with: https://github.com/ros4hri/hri_rviz-release/archive/release/humble/hri_rviz/2.1.0-1.tar.gz
+# matches with: https://github.com/ros2-gbp/hri_rviz-release/archive/release/humble/hri_rviz/2.1.0-1.tar.gz
 ROS_BRANCH ?= "branch=release/humble/hri_rviz"
-SRC_URI = "git://github.com/ros4hri/hri_rviz-release;${ROS_BRANCH};protocol=https"
+SRC_URI = "git://github.com/ros2-gbp/hri_rviz-release;${ROS_BRANCH};protocol=https"
 SRCREV = "78c7a2f336335a109748772f33254e21261e4bd9"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

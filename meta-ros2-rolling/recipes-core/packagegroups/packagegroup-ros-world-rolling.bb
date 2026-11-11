@@ -518,6 +518,27 @@ ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_META_QT5 = " \
     webots-ros2-universal-robot \
 "
 
+RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'qt6', '${ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_META_QT6}', '', d)}"
+ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_META_QT6 = " \
+    desktop-full \
+    dolly-ignition \
+    gz-launch-vendor \
+    gz-gui-vendor \
+    gz-ros2-control \
+    gz-sim-vendor \
+    leo-gz-bringup \
+    leo-gz-plugins \
+    leo-simulator \
+    nav2-minimal-tb3-sim \
+    nav2-minimal-tb4-sim \
+    open-manipulator \
+    open-manipulator-bringup \
+    ros-gz \
+    ros-gz-sim \
+    ros-gz-sim-demos \
+    simulation \
+"
+
 # OE won't let us build ffmpeg unless LICENSE_FLAGS_ACCEPTED contains "commercial" or "commercial_ffmpeg" or "ffmpeg".
 RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'ffmpeg', '${ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_FFMPEG}', '', d)}"
 ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_FFMPEG = " \
@@ -598,6 +619,12 @@ ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_GAZEBO = " \
     velodyne-simulator \
     velodyne-gazebo-plugins \
 "
+
+RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'pyside2', '${ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_PYSIDE2}', '', d)}"
+ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_PYSIDE2 = " \
+    rqt-dotgraph \
+"
+
 
 ROS_SUPERFLORE_GENERATED_ARCH_SPECIFIC_RC_GENICAM_API:x86 = ""
 ROS_SUPERFLORE_GENERATED_ARCH_SPECIFIC_RC_GENICAM_API:x86-64 = ""
@@ -782,6 +809,7 @@ RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'webots-p
 ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_WEBOTS_PYTHON_MODULES = " \
     webots-ros2 \
     webots-ros2-abb \
+    webots-ros2-crazyflie \
     webots-ros2-control \
     webots-ros2-core \
     webots-ros2-demos \
@@ -789,6 +817,7 @@ ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_WEBOTS_PYTHON_MODULES = " \
     webots-ros2-driver \
     webots-ros2-epuck \
     webots-ros2-examples \
+    webots-ros2-husarion\
     webots-ros2-importer \
     webots-ros2-mavic \
     webots-ros2-tesla \
@@ -836,8 +865,11 @@ ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_LIBOPEN3D = " \
 
 RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'scipy', '${ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_SCIPY}', '', d)}"
 ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_SCIPY = " \
+    kinematics-interface-pinocchio \
+    pinocchio \
     proxsuite \
     slider-publisher \
+    tsid \
 "
 
 RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'hunter', '${ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_HUNTER}', '', d)}"
@@ -906,6 +938,31 @@ ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_G2O = " \
     rtabmap-viz \
 "
 
+RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'nanobind', '${ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_NANOBIND}', '', d)}"
+ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_NANOBIND = " \
+    nanoeigenpy \
+"
+
+RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'zenoh', '${ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_ZENOH}', '', d)}"
+ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_ZENOH = " \
+    launch-testing-ros \
+    rmw-zenoh-cpp \
+    rmw-test-fixture-implementation \
+    zenoh \
+    zenoh-c \
+    zenoh-cpp \
+    zenoh-pico \
+"
+
+RDEPENDS:${PN}:remove = "${@bb.utils.contains('ROS_WORLD_SKIP_GROUPS', 'gripper', '${ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_GRIPPER}', '', d)}"
+ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES_DEPENDING_ON_GRIPPER = " \
+    gripper-controllers \
+    moveit-servo \
+    ur \
+    ur-moveit-config \
+    ur-simulation-gz \
+"
+
 RDEPENDS:${PN}:remove = "vitis-common"
 
 # sophus does not directly provide any runtime components
@@ -925,9 +982,6 @@ RDEPENDS:${PN}:remove = "as2-platform-dji-osdk"
 
 # novatel-oem7-driver needs libCommon.a from an SDK
 RDEPENDS:${PN}:remove = "novatel-oem7-driver"
-
-# usb-cam needs updating to the latest ffmpeg APIs
-RDEPENDS:${PN}:remove = "usb-cam"
 
 # spinnaker-camera-driver requires the spinnaker SDK
 RDEPENDS:${PN}:remove = "spinnaker-camera-driver"
@@ -965,3 +1019,16 @@ RDEPENDS:${PN}:remove = "log-view"
 
 # Depends on python3-pyside2
 RDEPENDS:${PN}:remove = "rqt-dotgraph"
+
+# Depends on actionlib-msgs, which was removed from the ROS index
+RDEPENDS:${PN}:remove = "cob-actions"
+RDEPENDS:${PN}:remove = "actionlib-msgs"
+
+# Depends on mola-imu-preintegration, which was removed from the ROS index
+RDEPENDS:${PN}:remove = "mola-state-estimation"
+RDEPENDS:${PN}:remove = "mola-state-estimation-simple"
+RDEPENDS:${PN}:remove = "mola-state-estimation-smoother"
+RDEPENDS:${PN}:remove = "mola-lidar-odometry"
+
+# Depends on muparser, which is only available in meta-qt5-extra
+RDEPENDS:${PN}:remove = "parameter-expression"

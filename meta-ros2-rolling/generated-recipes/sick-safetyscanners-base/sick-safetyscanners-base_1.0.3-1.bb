@@ -10,7 +10,7 @@ AUTHOR = "Lennart Puck <puck@fzi.de>"
 ROS_AUTHOR = "Lennart Puck"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "ALv2"
+LICENSE = "LicenseRef-ALv2"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=48a602c865794401f5c0c56e309d9596"
 
 ROS_CN = "sick_safetyscanners_base"
@@ -48,7 +48,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/sick_safetyscanners_base"
 SRC_URI = "git://github.com/ros2-gbp/sick_safetyscanners_base-release;${ROS_BRANCH};protocol=https"
 SRCREV = "6a6f6ce0aa9ba42f12369fa934bb606b6f1136b2"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

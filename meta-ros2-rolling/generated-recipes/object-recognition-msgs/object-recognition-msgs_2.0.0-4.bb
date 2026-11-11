@@ -10,7 +10,7 @@ AUTHOR = "Vincent Rabaud <vincent.rabaud@gmail.com>"
 ROS_AUTHOR = "Vincent Rabaud <vincent.rabaud@gmail.com>"
 HOMEPAGE = "http://www.ros.org/wiki/object_recognition"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=7;endline=7;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "object_recognition_msgs"
@@ -57,7 +57,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/object_recognition_msgs"
 SRC_URI = "git://github.com/ros2-gbp/object_recognition_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "7485fba77d1b2a6cf783f0a288eb029a64b1d1a4"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

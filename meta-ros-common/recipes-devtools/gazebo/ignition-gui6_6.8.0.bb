@@ -4,17 +4,18 @@ LICENSE = "Apache-2.0"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2a461be67a1edf991251f85f3aadd1d0"
 
-SRC_URI = "git://github.com/gazebosim/gz-gui.git;protocol=https;branch=ign-gui6"
+SRC_URI = "git://github.com/gazebosim/gz-gui.git;protocol=https;branch=ign-gui6 \
+           file://fix-compatibility-with-protobuf-v30.patch \
+           file://add-missing-absl-library.patch"
 
 SRCREV = "982aafca1b96dbc6d12ea5de4d8df27c288be532"
 
-S = "${WORKDIR}/git"
 
 inherit cmake
 
 # CMake Error at src/plugins/CMakeLists.txt:26 (QT5_WRAP_CPP):
 #   Unknown CMake command "QT5_WRAP_CPP".
-inherit ${@bb.utils.contains_any('ROS_WORLD_SKIP_GROUPS', ['qt5', 'pyqt5'], '', 'cmake_qt5', d)}
+inherit ${@bb.utils.contains('BBFILE_COLLECTIONS', 'qt5-layer', 'cmake_qt5', '', d)}
 
 DEPENDS = " \
     ignition-cmake2 \

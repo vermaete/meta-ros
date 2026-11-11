@@ -10,7 +10,7 @@ AUTHOR = "Josh Whitley <whitleysoftwareservices@gmail.com>"
 ROS_AUTHOR = "Jack O'Quin"
 HOMEPAGE = "http://www.ros.org/wiki/velodyne"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "velodyne"
@@ -47,7 +47,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/velodyne"
 SRC_URI = "git://github.com/ros2-gbp/velodyne-release;${ROS_BRANCH};protocol=https"
 SRCREV = "21a44ac6d9c087c9094b10413abc508222baab0e"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

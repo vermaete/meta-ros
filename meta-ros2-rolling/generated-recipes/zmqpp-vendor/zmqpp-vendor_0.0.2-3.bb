@@ -11,7 +11,7 @@ HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Apache License 2.0 & Mozilla Public License 2.0"
-LICENSE = "Apache-2.0 & Mozilla-Public-License-2.0"
+LICENSE = "Apache-2.0 AND LicenseRef-Mozilla-Public-License-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
 
 ROS_CN = "zmqpp_vendor"
@@ -53,7 +53,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/zmqpp_vendor"
 SRC_URI = "git://github.com/ros2-gbp/zmqpp_vendor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "8dcd48cf56f1e1d5b526d4c21d6bcfda5a66c4b5"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

@@ -16,7 +16,7 @@ DEPENDS = " \
     openblas \
 "
 
-S = "${WORKDIR}/git/CHOLMOD"
+S = "${UNPACKDIR}/${BB_GIT_DEFAULT_DESTSUFFIX}/CHOLMOD"
 
 inherit cmake pkgconfig
 

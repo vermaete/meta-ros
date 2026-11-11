@@ -10,7 +10,7 @@ AUTHOR = "Ed Venator <evenator@gmail.com>"
 ROS_AUTHOR = "Eric Perko <eric@ericperko.com>"
 HOMEPAGE = "http://ros.org/wiki/nmea_navsat_driver"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=13;endline=13;md5=01c2bc31767ccb3a68e12f02612b2a97"
 
 ROS_CN = "nmea_navsat_driver"
@@ -50,7 +50,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/nmea_navsat_driver"
 SRC_URI = "git://github.com/ros2-gbp/nmea_navsat_driver-release;${ROS_BRANCH};protocol=https"
 SRCREV = "2dadf09b62ddc47adf7c9e60794c05308bf996d9"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

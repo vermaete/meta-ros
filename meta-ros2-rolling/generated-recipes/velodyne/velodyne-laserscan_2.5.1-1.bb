@@ -10,7 +10,7 @@ AUTHOR = "Josh Whitley <whitleysoftwareservices@gmail.com>"
 ROS_AUTHOR = "Micho Radovnikovich"
 HOMEPAGE = "https://github.com/ros-drivers/velodyne"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "velodyne"
@@ -57,7 +57,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/velodyne_laserscan"
 SRC_URI = "git://github.com/ros2-gbp/velodyne-release;${ROS_BRANCH};protocol=https"
 SRCREV = "d34c93bf4ab040a2decc9b2a5a02d55cd0ab8119"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

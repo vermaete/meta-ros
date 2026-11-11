@@ -10,7 +10,7 @@ AUTHOR = "Justin Carpentier <justin.carpentier@inria.fr>"
 ROS_AUTHOR = "Antoine Bambade <antoine.bambade@inria.fr>"
 HOMEPAGE = "https://simple-robotics.github.io/proxsuite"
 SECTION = "devel"
-LICENSE = "BSD-2"
+LICENSE = "LicenseRef-BSD-2"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=6d936230566da2b5b6f908ac66e333a8"
 
 ROS_CN = "proxsuite"
@@ -61,7 +61,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/proxsuite"
 SRC_URI = "git://github.com/ros2-gbp/proxsuite-release;${ROS_BRANCH};protocol=https"
 SRCREV = "66e547dc78521793ba4ec7d0efb48fe3a00bf0a4"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

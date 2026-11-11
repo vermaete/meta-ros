@@ -1,4 +1,4 @@
-LICENSE = "GPL-3.0-only & LGPL-2.1-only & LGPL-3.0-only & Unknown"
+LICENSE = "GPL-3.0-only AND LGPL-2.1-only AND LGPL-3.0-only AND IJG AND BSD-3-Clause AND Zlib"
 LIC_FILES_CHKSUM = "file://GPL.txt;md5=d32239bcb673463ab874e80d47fae504 \
                     file://LGPL.txt;md5=e6a600fd5e1d9cbde2d983680233ad02 \
                     file://Platform/Android/jni/External/libusb-1.0.8/COPYING;md5=fbc093901857fcd118f065f900982c24 \
@@ -42,7 +42,6 @@ SRC_URI = "git://salsa.debian.org/multimedia-team/openni.git;protocol=https;bran
 PV = "1.5.4.0+git${SRCPV}"
 SRCREV = "4701cc457627ecf9441db1cde24e0939103b8052"
 
-S = "${WORKDIR}/git"
 B = "${S}"
 
 inherit python3native

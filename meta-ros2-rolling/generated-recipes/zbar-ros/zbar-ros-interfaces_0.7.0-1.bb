@@ -9,7 +9,7 @@ DESCRIPTION = "Package containing interfaces for zbar_ros to use to publish resu
 AUTHOR = "ijnek <kenjibrameld@gmail.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "zbar_ros"
@@ -52,7 +52,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/zbar_ros_interfaces"
 SRC_URI = "git://github.com/ros2-gbp/zbar_ros-release;${ROS_BRANCH};protocol=https"
 SRCREV = "b6f3834f9fc0e2b762ddeb051f4dbdc8ddadaa96"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

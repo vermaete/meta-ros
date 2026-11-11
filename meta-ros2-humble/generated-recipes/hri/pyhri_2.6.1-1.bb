@@ -9,7 +9,7 @@ DESCRIPTION = "A python wrapper around hri package"
 AUTHOR = "Luka Juricic <luka.juricic@pal-robotics.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
@@ -17,7 +17,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493f
 ROS_CN = "hri"
 ROS_BPN = "pyhri"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     builtin-interfaces \
     geometry-msgs \
     hri \
@@ -27,12 +27,12 @@ ROS_BUILD_DEPENDS = " \
     rclpy \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-auto-native \
     ament-cmake-python-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     builtin-interfaces \
     geometry-msgs \
     hri \
@@ -43,7 +43,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     builtin-interfaces \
     geometry-msgs \
     hri \
@@ -53,7 +53,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-cmake-pytest \
     ament-lint-auto \
     ament-lint-common \
@@ -74,11 +74,10 @@ DEPENDS += "${ROS_EXPORT_DEPENDS} ${ROS_BUILDTOOL_EXPORT_DEPENDS}"
 
 RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 
-# matches with: https://github.com/ros4hri/libhri-release/archive/release/humble/pyhri/2.6.1-1.tar.gz
+# matches with: https://github.com/ros2-gbp/libhri-release/archive/release/humble/pyhri/2.6.1-1.tar.gz
 ROS_BRANCH ?= "branch=release/humble/pyhri"
-SRC_URI = "git://github.com/ros4hri/libhri-release;${ROS_BRANCH};protocol=https"
+SRC_URI = "git://github.com/ros2-gbp/libhri-release;${ROS_BRANCH};protocol=https"
 SRCREV = "2705e8f705e87f7eb5240e63fad5b6f3d47111cb"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

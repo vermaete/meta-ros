@@ -10,7 +10,7 @@ AUTHOR = "Arne Hitzmann <arne.hitzmann@gmail.com>"
 ROS_AUTHOR = "Austin Hendrix"
 HOMEPAGE = "http://wiki.ros.org/rqt_robot_monitor"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=26;endline=26;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "rqt_robot_monitor"
@@ -52,7 +52,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rqt_robot_monitor"
 SRC_URI = "git://github.com/ros2-gbp/rqt_robot_monitor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "db0cd6f3ab0f5e11e51cfdaff829566704a4d410"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

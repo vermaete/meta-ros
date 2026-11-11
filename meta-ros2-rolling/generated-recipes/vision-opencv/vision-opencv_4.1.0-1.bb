@@ -12,7 +12,7 @@ HOMEPAGE = "http://www.ros.org/wiki/vision_opencv"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Apache License 2.0 & BSD"
-LICENSE = "Apache-2.0 & BSD"
+LICENSE = "Apache-2.0 AND LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
 
 ROS_CN = "vision_opencv"
@@ -47,7 +47,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/vision_opencv"
 SRC_URI = "git://github.com/ros2-gbp/vision_opencv-release;${ROS_BRANCH};protocol=https"
 SRCREV = "644863a3ee32533e12bc5ce511a5cdb41ae27620"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

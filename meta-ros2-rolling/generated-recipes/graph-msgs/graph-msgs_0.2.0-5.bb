@@ -10,7 +10,7 @@ AUTHOR = "Dave Coleman <davetcoleman@gmail.com>"
 ROS_AUTHOR = "Dave Coleman <davetcoleman@gmail.com>"
 HOMEPAGE = "https://github.com/davetcoleman/graph_msgs"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "graph_msgs"
@@ -56,7 +56,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/graph_msgs"
 SRC_URI = "git://github.com/ros2-gbp/graph_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "f4120aae7ca5141b367d82bb42066f4b7e2bc321"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

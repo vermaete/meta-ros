@@ -12,7 +12,7 @@ HOMEPAGE = "https://github.com/stbrumme/hash-library"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Apache License 2.0 & Zlib License"
-LICENSE = "Apache-2.0 & Zlib-License"
+LICENSE = "Apache-2.0 AND LicenseRef-Zlib-License"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=f9b08e944e4cd1aa722fbb316eb4b3e2"
 
 ROS_CN = "hash_library_vendor"
@@ -48,7 +48,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/hash_library_vendor"
 SRC_URI = "git://github.com/ros2-gbp/hash_library_vendor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "3281376fc244edcfe6ce5f9d845e0ab30923d3ba"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

@@ -10,7 +10,7 @@ AUTHOR = "Jafar Uruc <jafar.uruc@gmail.com>"
 ROS_AUTHOR = "Jafar Uruc <jafar.uruc@gmail.com>"
 HOMEPAGE = "https://github.com/JafarAbdi/jacro"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "jacro"
@@ -27,15 +27,15 @@ ROS_EXPORT_DEPENDS = ""
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
 ROS_EXEC_DEPENDS = " \
-    ${ROS_UNRESOLVED_DEP-python3-rich} \
     ament-index-python \
     python3-jinja2 \
+    python3-rich \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
 ROS_TEST_DEPENDS = " \
-    ${ROS_UNRESOLVED_DEP-python3-pre-commit} \
     ament-cmake-pytest \
+    python3-pre-commit \
     std-msgs \
 "
 
@@ -50,7 +50,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/jacro"
 SRC_URI = "git://github.com/ros2-gbp/jacro-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1fbbdf79bcc757a2ae210536c9ddbe567ed168da"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

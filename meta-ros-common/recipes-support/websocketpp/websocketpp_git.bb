@@ -27,13 +27,14 @@ RDEPENDS:${PN}-dev = ""
 # branch develop
 SRCREV = "b9aeec6eaf3d5610503439b4fae3581d9aff08e8"
 
-S = "${WORKDIR}/git"
 
 inherit cmake
 
 PACKAGES =+ "${PN}-examples"
 
 FILES:${PN}-examples = "${docdir}"
+
+EXTRA_OECMAKE = "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 
 do_install:append() {
 	install -d ${D}${docdir}/${BPN}

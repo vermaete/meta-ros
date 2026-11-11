@@ -10,7 +10,7 @@ AUTHOR = "Fabian Immel <fabian.immel@kit.edu>"
 ROS_AUTHOR = "Fabian Poggenhans <fabian.poggenhans@kit.edu>"
 HOMEPAGE = "https://github.com/fzi-forschungszentrum-informatik/lanelet2.git"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "lanelet2"
@@ -72,7 +72,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/lanelet2_examples"
 SRC_URI = "git://github.com/ros2-gbp/lanelet2-release;${ROS_BRANCH};protocol=https"
 SRCREV = "3046775d4ef1580e110ffe268ac51e8ccf6b358b"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

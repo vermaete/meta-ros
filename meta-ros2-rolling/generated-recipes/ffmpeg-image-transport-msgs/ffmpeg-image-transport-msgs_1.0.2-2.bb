@@ -9,7 +9,7 @@ DESCRIPTION = "messages for ffmpeg image transport plugin"
 AUTHOR = "Bernd Pfrommer <bernd.pfrommer@gmail.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "Apache-2"
+LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=7;endline=7;md5=4083d50af96f9bddbe68e0de85b0a7db"
 
 ROS_CN = "ffmpeg_image_transport_msgs"
@@ -52,7 +52,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/ffmpeg_image_transport_msgs"
 SRC_URI = "git://github.com/ros2-gbp/ffmpeg_image_transport_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "b085e3765bada63bf8b77222d6587dd5632b7537"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

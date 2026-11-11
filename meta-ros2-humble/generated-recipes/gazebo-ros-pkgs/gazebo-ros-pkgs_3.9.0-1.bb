@@ -10,7 +10,7 @@ AUTHOR = "Jose Luis Rivero <jrivero@osrfoundation.org>"
 ROS_AUTHOR = "John Hsu"
 HOMEPAGE = "http://classic.gazebosim.org/tutorials?cat=connect_ros"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "BSD,LGPL,Apache 2.0"
 LICENSE = "BSD-&-LGPL-&-Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=8caad55b0e7a31e039fbcff07dba789e"
@@ -20,7 +20,7 @@ ROS_BPN = "gazebo_ros_pkgs"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
@@ -28,7 +28,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     gazebo-msgs \
     gazebo-plugins \
     gazebo-ros \
@@ -49,7 +49,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/gazebo_ros_pkgs"
 SRC_URI = "git://github.com/ros2-gbp/gazebo_ros_pkgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "9fb7ae556416e841320c2f59ff05f13889e880cf"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

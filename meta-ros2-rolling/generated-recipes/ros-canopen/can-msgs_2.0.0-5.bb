@@ -10,7 +10,7 @@ AUTHOR = "Mathias Lüdtke <mathias.luedtke@ipa.fraunhofer.de>"
 ROS_AUTHOR = "Ivor Wanders <ivor@iwanders.net>"
 HOMEPAGE = "http://wiki.ros.org/can_msgs"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "ros_canopen"
@@ -53,7 +53,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/can_msgs"
 SRC_URI = "git://github.com/ros2-gbp/ros_canopen-release;${ROS_BRANCH};protocol=https"
 SRCREV = "16b0f665d531eec81533d177c14ce210dc105adb"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

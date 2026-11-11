@@ -10,7 +10,7 @@ AUTHOR = "AutonomouStuff Software Team <software@autonomoustuff.com>"
 ROS_AUTHOR = "Allied Vision Technologies"
 HOMEPAGE = "https://github.com/astuff/avt_vimba_camera"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=6;endline=6;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "avt_vimba_camera"
@@ -74,7 +74,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/avt_vimba_camera"
 SRC_URI = "git://github.com/ros2-gbp/avt_vimba_camera-release;${ROS_BRANCH};protocol=https"
 SRCREV = "7e56860bfcd8f29a48630b2d050f3451b0617a3b"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

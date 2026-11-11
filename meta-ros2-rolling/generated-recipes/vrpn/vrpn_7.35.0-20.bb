@@ -10,7 +10,7 @@ AUTHOR = "Alvin Sun <alvinsunyixiao@gmail.com>"
 ROS_AUTHOR = "Russell M. Taylor"
 HOMEPAGE = "https://github.com/vrpn/vrpn/wiki"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "vrpn"
@@ -44,7 +44,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/vrpn"
 SRC_URI = "git://github.com/ros2-gbp/vrpn-release;${ROS_BRANCH};protocol=https"
 SRCREV = "358301cb68d6b50ecb00e64c22c69a6021ba0900"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

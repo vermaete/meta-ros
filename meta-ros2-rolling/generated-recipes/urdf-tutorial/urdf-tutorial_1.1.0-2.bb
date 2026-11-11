@@ -12,7 +12,7 @@ HOMEPAGE = "http://ros.org/wiki/urdf_tutorial"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "BSD 3-clause"
-LICENSE = "BSD-3-clause"
+LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=79773b05553c027a06a89128fefb052f"
 
 ROS_CN = "urdf_tutorial"
@@ -48,7 +48,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/urdf_tutorial"
 SRC_URI = "git://github.com/ros2-gbp/urdf_tutorial-release;${ROS_BRANCH};protocol=https"
 SRCREV = "f50ad9cf19409844dee10830671567cdfff72c98"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

@@ -25,10 +25,10 @@ require conf/ros-distro/include/kilted/ros-distro-preferred-providers.inc
 ROS_SUPERFLORE_GENERATED_BUILDTOOLS += " \
     action-msgs-native \
     ament-acceleration-native \
-    ament-index-cpp-native \
-    ament-lint-native \
     ament-cmake-cpplint-native \
     ament-cmake-uncrustify-native \
+    ament-index-cpp-native \
+    ament-lint-native \
     composition-interfaces-native \
     cyclonedds-native \
     domain-coordinator-native \
@@ -42,14 +42,15 @@ ROS_SUPERFLORE_GENERATED_BUILDTOOLS += " \
     iceoryx-posh-native \
     launch-native \
     launch-ros-native \
-    launch-yaml-native \
-    launch-xml-native \
     launch-testing-ros-native \
+    launch-xml-native \
+    launch-yaml-native \
+    libstatistics-collector-native \
     libyaml-vendor-native \
     lifecycle-msgs-native \
     osrf-pycommon-native \
+    parameter-traits-native \
     pybind11-vendor-native \
-    rcutils-native \
     rcl-action-native \
     rcl-interfaces-native \
     rcl-lifecycle-native \
@@ -57,8 +58,11 @@ ROS_SUPERFLORE_GENERATED_BUILDTOOLS += " \
     rcl-logging-spdlog-native \
     rcl-native \
     rcl-yaml-param-parser-native \
+    rclcpp-lifecycle-native \
+    rclcpp-native \
     rclpy-native \
     rcpputils-native \
+    rcutils-native \
     rmf-building-map-msgs-native \
     rmf-site-map-msgs-native \
     rmw-cyclonedds-cpp-native \
@@ -66,11 +70,11 @@ ROS_SUPERFLORE_GENERATED_BUILDTOOLS += " \
     rmw-fastrtps-cpp-native \
     rmw-fastrtps-dynamic-cpp-native \
     rmw-fastrtps-shared-cpp-native \
-    rmw-test-fixture-native \
-    rmw-test-fixture-implementation-native \
     rmw-implementation-native \
     rmw-native \
     rmw-security-common-native \
+    rmw-test-fixture-implementation-native \
+    rmw-test-fixture-native \
     rmw-zenoh-cpp-native \
     ros2cli-native \
     ros2pkg-native \
@@ -87,11 +91,15 @@ ROS_SUPERFLORE_GENERATED_BUILDTOOLS += " \
     rosidl-typesupport-c-native \
     rosidl-typesupport-cpp-native \
     rosidl-typesupport-fastrtps-c-native \
-    rosidl-runtime-c-native \
-    rosidl-runtime-cpp-native \
+    rosidlcpp-generator-core-native \
+    rosidlcpp-parser-native \
     rpyutils-native \
+    rsl-native \
     spdlog-vendor-native \
+    statistics-msgs-native \
     std-msgs-native \
+    tcb-span-native \
+    tl-expected-native \
     tracetools-native \
     type-description-interfaces-native \
     uncrustify-vendor-native \
@@ -171,8 +179,8 @@ ROS_WORLD_SKIP_GROUPS += "${@bb.utils.contains('BBFILE_COLLECTIONS', 'clang-laye
 # recipes depending on cargo which could be provided by cargo@meta-rust or oe-core[honister] and newer release (where it was imported from meta-rust)
 ROS_WORLD_SKIP_GROUPS += "${@bb.utils.contains('BBFILE_COLLECTIONS', 'rust-layer', '', 'cargo', d)}"
 
-# recipes depending on scipy which could be provided by python3-scipy@meta-scipy
-ROS_WORLD_SKIP_GROUPS += "${@bb.utils.contains('BBFILE_COLLECTIONS', 'meta-scipy', '', 'scipy', d)}"
+# recipes depending on scipy which could be provided by python3-scipy@meta-python-ai
+ROS_WORLD_SKIP_GROUPS += "${@bb.utils.contains('BBFILE_COLLECTIONS', 'meta-python-ai', '', 'scipy', d)}"
 
 # swri recipes depending on marti-*-msgs, currently broken after to https://github.com/ros/rosdistro/commit/e019cc8729e7ff2ba2ed51e63886734936254111
 ROS_WORLD_SKIP_GROUPS += "swri"
@@ -194,6 +202,13 @@ ROS_WORLD_SKIP_GROUPS += "g2o"
 
 # packages that require kortexapi
 ROS_WORLD_SKIP_GROUPS += "kortexapi"
+
+# packages that require pyside2
+ROS_WORLD_SKIP_GROUPS += "pyside2"
+
+ROS_WORLD_SKIP_GROUPS += "nanobind"
+
+ROS_WORLD_SKIP_GROUPS += "gripper"
 
 # Must use a _pn- override in this file to override the ROS_BUILD_TYPE of a generated recipe,
 # because we need to set this variable before the "inherit" line in the recipe is parsed,
@@ -303,6 +318,8 @@ ROS_UNRESOLVED_DEP-libbluetooth-dev = "bluez5"
 ROS_UNRESOLVED_DEP-libdbus-dev = "dbus"
 
 ROS_UNRESOLVED_DEP-python3-distro = "python3-distro"
+
+ROS_UNRESOLVED_DEP-python3-filelock = "python3-filelock"
 
 ROS_UNRESOLVED_DEP-python3-img2pdf = "python3-img2pdf"
 
@@ -455,3 +472,49 @@ ROS_UNRESOLVED_DEP-gazebo-msgs = "gazebo-msgs"
 ROS_UNRESOLVED_DEP-python3-icecream = "python3-icecream"
 ROS_UNRESOLVED_DEP-python3-waitress = "python3-waitress"
 ROS_UNRESOLVED_DEP-python3-paho-mqtt = "python3-paho-mqtt"
+ROS_UNRESOLVED_DEP-network-manager = "networkmanager"
+ROS_UNRESOLVED_DEP-python3-antlr4 = "python3-antlr4-runtime"
+ROS_UNRESOLVED_DEP-python3-expiringdict = "python3-expiringdict"
+ROS_UNRESOLVED_DEP-python3-fastapi = "python3-fastapi"
+ROS_UNRESOLVED_DEP-python3-gi-cairo = "python3-pygobject"
+ROS_UNRESOLVED_DEP-python3-msgpack-numpy = "python3-msgpack-numpy"
+ROS_UNRESOLVED_DEP-python3-networkx = "python3-networkx"
+ROS_UNRESOLVED_DEP-python3-tqdm = "python3-tqdm"
+ROS_UNRESOLVED_DEP-python3-transforms3d = "python3-transforms3d"
+ROS_UNRESOLVED_DEP-python3-uvicorn = "python3-uvicorn"
+ROS_UNRESOLVED_DEP-python-is-python3 = "python3"
+ROS_UNRESOLVED_DEP-stress = "stress"
+ROS_UNRESOLVED_DEP-xclip = "xclip"
+
+ROS_UNRESOLVED_DEP-libicu-dev = "icu"
+ROS_UNRESOLVED_DEP-libblosc-dev = "blosc"
+
+ROS_UNRESOLVED_DEP-libopenvdb-dev = "openvdb"
+
+ROS_UNRESOLVED_DEP-nanobind = "python3-nanobind"
+ROS_UNRESOLVED_DEP-nanobind-dev = "python3-nanobind"
+ROS_UNRESOLVED_DEP-libgirepository = "gobject-introspection"
+ROS_UNRESOLVED_DEP-libgirepository-dev = "gobject-introspection"
+
+ROS_UNRESOLVED_DEP-gripper-controllers = "gripper-controllers"
+ROS_UNRESOLVED_DEP-python3-attrs = "python3-attrs"
+ROS_UNRESOLVED_DEP-python3-setproctitle = "python3-setproctitle"
+ROS_UNRESOLVED_DEP-python3-toml = "python3-toml"
+ROS_UNRESOLVED_DEP-python3-wheel = "python3-wheel"
+ROS_UNRESOLVED_DEP-python3-types-pyyaml = "python3-types-pyyaml"
+ROS_UNRESOLVED_DEP-coinor-libcgl-dev = "coinor-cgl"
+ROS_UNRESOLVED_DEP-coinor-libcbc-dev = "coinor-cbc"
+ROS_UNRESOLVED_DEP-coinor-libclp-dev = "coinor-clp"
+ROS_UNRESOLVED_DEP-coinor-libcoinutils-dev = "coinutils"
+ROS_UNRESOLVED_DEP-libnanoflann = "nanoflann"
+ROS_UNRESOLVED_DEP-libnanoflann-dev = "nanoflann"
+ROS_UNRESOLVED_DEP-python3-platformdirs = "python3-platformdirs"
+ROS_UNRESOLVED_DEP-python3-httpx = "python3-httpx"
+
+ROS_UNRESOLVED_DEP-libopencv-videoio = "opencv"
+ROS_UNRESOLVED_DEP-libopencv-imgproc = "opencv"
+ROS_UNRESOLVED_DEP-libopencv-core = "opencv"
+ROS_UNRESOLVED_DEP-libopencv-highgui = "opencv"
+ROS_UNRESOLVED_DEP-libopencv-imgcodecs = "opencv"
+
+ROS_UNRESOLVED_DEP-libexpected-dev = "tl-expected"

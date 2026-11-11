@@ -10,7 +10,7 @@ AUTHOR = "Southwest Research Institute <swri-robotics@swri.org>"
 ROS_AUTHOR = "P.J. Reed"
 HOMEPAGE = "https://github.com/swri-robotics/marti_messages"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "marti_messages"
@@ -56,7 +56,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/marti_visualization_msgs"
 SRC_URI = "git://github.com/ros2-gbp/marti_messages-release;${ROS_BRANCH};protocol=https"
 SRCREV = "306f1d7c798f4bbb2d3c8bbdf5a2e9bce4d638a3"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

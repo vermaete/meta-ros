@@ -9,7 +9,7 @@ DESCRIPTION = "Python library for loading parameters in launch files"
 AUTHOR = "Jafar Abdi <jafar@picknik.ai>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "launch_param_builder"
@@ -47,7 +47,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/launch_param_builder"
 SRC_URI = "git://github.com/ros2-gbp/launch_param_builder-release;${ROS_BRANCH};protocol=https"
 SRCREV = "b9145c2de22b34398e95e98611218b7da38f4b3b"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

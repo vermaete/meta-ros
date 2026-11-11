@@ -10,7 +10,7 @@ AUTHOR = "Michael Jeronimo <michael.jeronimo@openrobotics.org>"
 ROS_AUTHOR = "Steven! Ragnarök <steven@openrobotics.org>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=f2c2560c422b1f619ff2ce48845782f5"
@@ -18,12 +18,12 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=f2c2560c422b1
 ROS_CN = "ros_workspace"
 ROS_BPN = "ros_workspace"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     ament-cmake-core \
     ament-package \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
@@ -47,7 +47,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/ros_workspace"
 SRC_URI = "git://github.com/ros2-gbp/ros_workspace-release;${ROS_BRANCH};protocol=https"
 SRCREV = "8ef37c6283e14e2c837764098abc9a2ff76cd4f4"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

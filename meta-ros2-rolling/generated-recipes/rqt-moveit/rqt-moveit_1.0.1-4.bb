@@ -10,7 +10,7 @@ AUTHOR = "Isaac I.Y. Saito <iisaito@kinugarage.com>"
 ROS_AUTHOR = "Isaac Saito"
 HOMEPAGE = "http://wiki.ros.org/rqt_moveit"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=29;endline=29;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "rqt_moveit"
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rqt_moveit"
 SRC_URI = "git://github.com/ros2-gbp/rqt_moveit-release;${ROS_BRANCH};protocol=https"
 SRCREV = "77d26a0f8c1dbfb5f7e482933936a95ff0173b5d"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

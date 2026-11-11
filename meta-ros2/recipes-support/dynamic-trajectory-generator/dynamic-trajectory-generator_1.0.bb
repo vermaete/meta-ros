@@ -1,4 +1,4 @@
-LICENSE = "Apache-2.0 & MIT & Unknown"
+LICENSE = "Apache-2.0 AND MIT"
 LIC_FILES_CHKSUM = "file://subpackages/matplotlib_cpp/LICENSE;md5=86ba017c9754ed4e29135f9bb71c5e1b \
                     file://subpackages/matplotlib_cpp/LICENSE.matplotlib;md5=50a89c4f7c0aa1cff255a99880f40273"
 
@@ -10,7 +10,6 @@ SRC_URI = " \
 PV = "1.0+git${SRCPV}"
 SRCREV = "3bddf06c4a9fc1b32f5abe4406aa70d2c636e026"
 
-S = "${WORKDIR}/git"
 
 inherit cmake
 

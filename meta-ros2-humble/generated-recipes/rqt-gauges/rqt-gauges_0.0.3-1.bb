@@ -9,7 +9,7 @@ DESCRIPTION = "Visualization plugin for several sensors."
 AUTHOR = "Eloy Bricneo <eloy.briceno@ekumenlabs.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "BSD Clause 3"
 LICENSE = "BSD-Clause-3"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=e2197b8633fd51a47f897d9d6f820c24"
@@ -25,7 +25,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     ament-index-python \
     qt-gui \
     qt-gui-py-common \
@@ -35,7 +35,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-flake8 \
     ament-xmllint \
 "
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/rqt_gauges"
 SRC_URI = "git://github.com/ros2-gbp/rqt_gauges-release;${ROS_BRANCH};protocol=https"
 SRCREV = "4f4c29b2a7353f8d50df650d7c5425cde8b8cf7f"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

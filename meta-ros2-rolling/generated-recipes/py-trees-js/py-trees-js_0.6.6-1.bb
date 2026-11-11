@@ -10,14 +10,14 @@ AUTHOR = "Daniel Stonier <d.stonier@gmail.com>"
 ROS_AUTHOR = "Daniel Stonier"
 HOMEPAGE = "https://github.com/splintered-reality/py_trees_js"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=13;endline=13;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "py_trees_js"
 ROS_BPN = "py_trees_js"
 
 ROS_BUILD_DEPENDS = " \
-    ${PYTHON_PN}-pyqt5 \
+    ${ROS_UNRESOLVED_DEP-pyqt5-dev-tools} \
     python3-setuptools \
     qttools \
 "
@@ -29,7 +29,6 @@ ROS_EXPORT_DEPENDS = ""
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
 ROS_EXEC_DEPENDS = " \
-    ${PYTHON_PN}-pyqt5 \
     python3-pyqt5 \
 "
 
@@ -47,7 +46,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/py_trees_js"
 SRC_URI = "git://github.com/ros2-gbp/py_trees_js-release;${ROS_BRANCH};protocol=https"
 SRCREV = "fce3f376100fff7c48c0e4be196cbd22772cc38c"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

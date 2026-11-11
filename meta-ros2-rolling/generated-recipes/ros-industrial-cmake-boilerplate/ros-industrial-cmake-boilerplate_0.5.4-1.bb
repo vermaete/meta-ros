@@ -12,7 +12,7 @@ HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Apache 2.0 & BSD 3-Clause"
-LICENSE = "Apache-2.0 & BSD-3-Clause"
+LICENSE = "Apache-2.0 AND BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=3dce4ba60d7e51ec64f3c3dc18672dd3"
 
 ROS_CN = "ros_industrial_cmake_boilerplate"
@@ -50,7 +50,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/ros_industrial_cmake_boilerplate"
 SRC_URI = "git://github.com/ros2-gbp/ros_industrial_cmake_boilerplate-release;${ROS_BRANCH};protocol=https"
 SRCREV = "955034a0e53d423d818c9d966f88ea1e002e06d3"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

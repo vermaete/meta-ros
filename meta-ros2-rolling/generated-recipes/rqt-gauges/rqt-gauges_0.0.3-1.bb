@@ -11,7 +11,7 @@ HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "BSD Clause 3"
-LICENSE = "BSD-Clause-3"
+LICENSE = "LicenseRef-BSD-Clause-3"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=e2197b8633fd51a47f897d9d6f820c24"
 
 ROS_CN = "rqt_gauges"
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rqt_gauges"
 SRC_URI = "git://github.com/ros2-gbp/rqt_gauges-release;${ROS_BRANCH};protocol=https"
 SRCREV = "4a0554e45ca3d3a92a83d66e4695ba18363d358a"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

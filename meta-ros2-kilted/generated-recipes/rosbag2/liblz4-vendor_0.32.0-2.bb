@@ -9,30 +9,30 @@ DESCRIPTION = "LZ4 compression vendor package, providing a dependency for LZ4."
 AUTHOR = "Michael Orlov <michael.orlov@apex.ai>"
 HOMEPAGE = "https://github.com/lz4/lz4/"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
-#         "Apache License 2.0 & BSD & GPLv2"
-LICENSE = "Apache-2.0 & BSD & GPL-2.0-only"
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
+#         "Apache License 2.0 AND BSD AND GPLv2"
+LICENSE = "Apache-2.0 AND BSD AND GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=f12ef8c0445c08084ae92cf2dcb7ee92"
 
 ROS_CN = "rosbag2"
 ROS_BPN = "liblz4_vendor"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     lz4 \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
     ament-cmake-vendor-package-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     lz4 \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     lz4 \
 "
 
@@ -50,7 +50,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/liblz4_vendor"
 SRC_URI = "git://github.com/ros2-gbp/rosbag2-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1f3529be4c56c6cb252470c3c4146e6c9bbac54d"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

@@ -12,7 +12,7 @@ HOMEPAGE = "http://www.ros.org/wiki/cv_bridge"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Apache License 2.0 & BSD"
-LICENSE = "Apache-2.0 & BSD"
+LICENSE = "Apache-2.0 AND LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
 
 ROS_CN = "vision_opencv"
@@ -71,7 +71,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/cv_bridge"
 SRC_URI = "git://github.com/ros2-gbp/vision_opencv-release;${ROS_BRANCH};protocol=https"
 SRCREV = "0fa77b760b54eb36e8cf648b442d3a5636aeb0fc"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

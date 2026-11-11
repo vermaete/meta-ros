@@ -10,7 +10,7 @@ AUTHOR = "Wolfgang Merkt <opensource@wolfgangmerkt.com>"
 ROS_AUTHOR = "Armin Hornung <armin@hornung.io>"
 HOMEPAGE = "http://ros.org/wiki/octomap_msgs"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "octomap_msgs"
@@ -54,7 +54,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/octomap_msgs"
 SRC_URI = "git://github.com/ros2-gbp/octomap_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "e4ef4ab8ccdab5606fecb035ef0c8f77325fb3b4"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

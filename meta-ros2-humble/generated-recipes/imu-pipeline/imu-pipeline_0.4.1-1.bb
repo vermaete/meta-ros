@@ -10,7 +10,7 @@ AUTHOR = "Paul Bovbel <pbovbel@clearpathrobotics.com>"
 ROS_AUTHOR = "Chad Rockey <chadrockey@gmail.com>"
 HOMEPAGE = "http://ros.org/wiki/imu_pipeline"
 SECTION = "devel"
-LICENSE = "BSD & GPL"
+LICENSE = "BSD AND GPL"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "imu_pipeline"
@@ -18,7 +18,7 @@ ROS_BPN = "imu_pipeline"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
@@ -26,7 +26,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     imu-processors \
     imu-transformer \
 "
@@ -45,7 +45,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/imu_pipeline"
 SRC_URI = "git://github.com/ros2-gbp/imu_pipeline-release;${ROS_BRANCH};protocol=https"
 SRCREV = "e5450795df72c599f4b351edc13b128df5f4af5f"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

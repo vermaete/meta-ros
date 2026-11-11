@@ -10,7 +10,7 @@ AUTHOR = "Felix Ruess <felix.ruess@roboception.de>"
 ROS_AUTHOR = "Heiko Hirschmueller <heiko.hirschmueller@roboception.de>"
 HOMEPAGE = "https://github.com/roboception/rcdiscover"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=14;endline=14;md5=01c2bc31767ccb3a68e12f02612b2a97"
 
 ROS_CN = "rcdiscover"
@@ -42,7 +42,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rcdiscover"
 SRC_URI = "git://github.com/ros2-gbp/rcdiscover-release;${ROS_BRANCH};protocol=https"
 SRCREV = "b4819be9a016b59e1db3d1fc1b74627285674c08"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

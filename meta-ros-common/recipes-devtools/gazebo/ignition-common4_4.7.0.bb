@@ -8,11 +8,13 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=2a461be67a1edf991251f85f3aadd1d0 \
 SRC_URI = "git://github.com/gazebosim/gz-common.git;protocol=https;branch=ign-common4 \
            file://cleanup-long-deprecated-ifdefs.patch \
            file://missing-cstdint-header.patch \
+           file://added-missing-includes.patch \
+           file://add-missing-cstdint-to-gtest.patch \
+           file://fix-deprecation-warnings.patch \
 "
 
 SRCREV = "60b1fddf05ce020ba7cb79022fdf40be545eb789"
 
-S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig
 
@@ -37,7 +39,7 @@ DEPENDS = " \
 
 do_install:append() {
     # Remove references to the build directory in the Doxygen tagfile
-    sed -i -e "s:${S}::g" ${D}${datadir}/ignition/ignition-common4/ignition-common4.tag.xml
+    sed -i -e "s:${UNPACKDIR}::g" ${D}${datadir}/ignition/ignition-common4/ignition-common4.tag.xml
 }
 
 FILES:${PN} += " \

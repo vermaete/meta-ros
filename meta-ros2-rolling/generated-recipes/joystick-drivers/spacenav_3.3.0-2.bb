@@ -10,7 +10,7 @@ AUTHOR = "Jonathan Bohren <jbo@jhu.edu>"
 ROS_AUTHOR = "Stuart Glaser"
 HOMEPAGE = "http://www.ros.org/wiki/spacenav_node"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=4;endline=4;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "joystick_drivers"
@@ -64,7 +64,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/spacenav"
 SRC_URI = "git://github.com/ros2-gbp/joystick_drivers-release;${ROS_BRANCH};protocol=https"
 SRCREV = "d5e13eaca0ffde926e41a100f3a23638fece1334"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

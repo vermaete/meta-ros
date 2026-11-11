@@ -9,7 +9,7 @@ DESCRIPTION = "Eclipse iceoryx inter-process-communication (IPC) middleware C-La
 AUTHOR = "Eclipse Foundation, Inc. <iceoryx-oss-support@apex.ai>"
 HOMEPAGE = "https://iceoryx.io"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=80318c4afef111a7690eaf237460856b"
@@ -17,12 +17,12 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=80318c4afef111a
 ROS_CN = "iceoryx"
 ROS_BPN = "iceoryx_binding_c"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     iceoryx-hoofs \
     iceoryx-posh \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
@@ -46,7 +46,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/iceoryx_binding_c"
 SRC_URI = "git://github.com/ros2-gbp/iceoryx-release;${ROS_BRANCH};protocol=https"
 SRCREV = "c39dbca40afcaa66bee1ddfda35c21d154fce683"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

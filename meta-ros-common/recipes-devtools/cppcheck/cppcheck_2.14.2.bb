@@ -1,4 +1,4 @@
-LICENSE = "0BSD & BSD-2-Clause & GPL-3.0-only & Zlib"
+LICENSE = "0BSD AND BSD-2-Clause AND GPL-3.0-only AND Zlib"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504 \
                     file://externals/picojson/LICENSE;md5=29d6d693711f69885bbfe08072624f2e \
                     file://externals/simplecpp/LICENSE;md5=df43620d67c1dceec49343b0b17c385d \
@@ -12,7 +12,6 @@ SRC_URI = "git://github.com/danmar/cppcheck.git;protocol=https;branch=2.14.x \
 
 SRCREV = "fc2210afa95a4cea1afba01d5390d13d6d8d75c8"
 
-S = "${WORKDIR}/git"
 
 DEPENDS = "libpcre boost"
 

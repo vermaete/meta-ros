@@ -1,4 +1,5 @@
 # Copyright (c) 2019-2020 LG Electronics, Inc.
+# Copyright (c) 2026 Wind River Systems, Inc.
 
 # FORTRAN support (derived from openembedded-core/meta/conf/local.conf.sample.extended)
 # Enabling FORTRAN

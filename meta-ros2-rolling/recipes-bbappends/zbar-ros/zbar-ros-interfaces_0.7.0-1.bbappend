@@ -1,12 +1,14 @@
 # Copyright (c) 2024 Wind River Systems, Inc.
 
-ROS_BUILDTOOL_DEPENDS += " \
+LICENSE = "BSD-3-Clause"
+
+ROS_BUILDTOOL_DEPENDS += "\
     ament-cmake-ros \
     ament-cmake-gmock \
     ament-cmake-gtest \
     ament-cmake-pytest \
     python3-numpy-native \
-    rosidl-adapter-native \ 
+    rosidl-adapter-native \
     rosidl-generator-c-native \
     rosidl-generator-cpp-native \
     rosidl-generator-py-native \
@@ -17,6 +19,6 @@ ROS_BUILDTOOL_DEPENDS += " \
     rosidl-typesupport-introspection-cpp-native \
 "
 
-ROS_BUILD_DEPENDS += " \
+ROS_BUILD_DEPENDS += "\
     rosidl-core-generators \
 "

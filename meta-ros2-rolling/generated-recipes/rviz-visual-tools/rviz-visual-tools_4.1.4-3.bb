@@ -10,7 +10,7 @@ AUTHOR = "Mike Lautman <mike@picknik.ai>"
 ROS_AUTHOR = "Mike Lautman <mike@picknik.ai>"
 HOMEPAGE = "https://github.com/PickNikRobotics/rviz_visual_tools"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "rviz_visual_tools"
@@ -114,7 +114,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rviz_visual_tools"
 SRC_URI = "git://github.com/ros2-gbp/rviz_visual_tools-release;${ROS_BRANCH};protocol=https"
 SRCREV = "cd3a380ad00334a4c3385476a2e98f9bdd75680b"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

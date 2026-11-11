@@ -10,7 +10,7 @@ AUTHOR = "Chris Lalancette <clalancette@osrfoundation.org>"
 ROS_AUTHOR = "Ioan Sucan <isucan@willowgarage.com>"
 HOMEPAGE = "http://eigen.tuxfamily.org/dox/TopicUnalignedArrayAssert.html"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "eigen_stl_containers"
@@ -46,7 +46,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/eigen_stl_containers"
 SRC_URI = "git://github.com/ros2-gbp/eigen_stl_containers-release;${ROS_BRANCH};protocol=https"
 SRCREV = "cc75c7c712ac409c4c2f2a0ca4078c433f335aca"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

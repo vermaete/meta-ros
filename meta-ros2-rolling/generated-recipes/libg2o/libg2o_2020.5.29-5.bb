@@ -10,7 +10,7 @@ AUTHOR = "Christoph Rösmann <christoph.roesmann@tu-dortmund.de>"
 ROS_AUTHOR = "Rainer Kuemmerle"
 HOMEPAGE = "https://github.com/RainerKuemmerle/g2o"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=18;endline=18;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "libg2o"
@@ -52,7 +52,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/libg2o"
 SRC_URI = "git://github.com/ros2-gbp/libg2o-release;${ROS_BRANCH};protocol=https"
 SRCREV = "c30a14c800c9142b73205fd6c67827fab5295326"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

@@ -10,7 +10,7 @@ AUTHOR = "Alex Moriarty <alex.moriarty@picknik.ai>"
 ROS_AUTHOR = "Cory Crean"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "ros2_robotiq_gripper"
@@ -53,7 +53,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/robotiq_description"
 SRC_URI = "git://github.com/ros2-gbp/ros2_robotiq_gripper-release;${ROS_BRANCH};protocol=https"
 SRCREV = "491ee7d0eb1c3a99e101076d2f06e76d61679f46"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

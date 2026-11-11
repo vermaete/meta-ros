@@ -1,9 +1,10 @@
+SUMMARY = "DART: Dynamic Animation and Robotics Toolkit "
 HOMEPAGE = "https://github.com/dartsim/dart"
-LICENSE = "BSD-2-Clause & BSD-3-Clause & MIT"
+LICENSE = "BSD-2-Clause AND BSD-3-Clause AND MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=f9c9b64e6293fa51cd808f54fa1733d9 \
                     file://data/mjcf/openai/LICENSE.md;md5=b7fcc920c21836f90e2ba40fd8fad0a7"
 
-SRC_URI = "git://github.com/dartsim/dart.git;protocol=https;branch=release-6.14 \
+SRC_URI = "git://github.com/dartsim/dart.git;protocol=https;branch=main \
            file://python3-fixes.patch \
            file://fix-pkgconfig-cflags.patch \
            file://remove-buildpath.patch \
@@ -12,7 +13,6 @@ SRC_URI = "git://github.com/dartsim/dart.git;protocol=https;branch=release-6.14 
 
 SRCREV = "a51e08c210d7892605c6dc0b9ae96fce4446d9fe"
 
-S = "${WORKDIR}/git"
 
 DEPENDS = " \
     assimp \
@@ -44,9 +44,10 @@ inherit ros_opt_prefix
 EXTRA_OECMAKE:prepend = "\
     -DCMAKE_PREFIX_PATH='${STAGING_DIR_HOST}${ros_prefix};${STAGING_DIR_HOST}${prefix}' \
     -DDART_ENABLE_SIMD=OFF \
+    -DDART_TREAT_WARNINGS_AS_ERRORS=OFF \
 "
 
-CXXFLAGS += "-Wno-error=deprecated-copy -Wno-error=reorder"
+CXXFLAGS += "-Wno-error=deprecated-copy -Wno-error=reorder  -Wno-error=cpp"
 
 FILES:${PN} += "${datadir}/dart"
 

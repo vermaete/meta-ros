@@ -9,7 +9,7 @@ DESCRIPTION = "Common msg and srv definitions used by Roboception's ROS2 package
 AUTHOR = "Felix Ruess <felix.ruess@roboception.de>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "rc_common_msgs"
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rc_common_msgs"
 SRC_URI = "git://github.com/ros2-gbp/rc_common_msgs_ros2-release;${ROS_BRANCH};protocol=https"
 SRCREV = "3636d02961ff99069794d160b46b184d2d334627"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

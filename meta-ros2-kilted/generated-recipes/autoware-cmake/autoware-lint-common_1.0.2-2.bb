@@ -9,7 +9,7 @@ DESCRIPTION = "The list of commonly used linters in Autoware"
 AUTHOR = "Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
@@ -19,7 +19,7 @@ ROS_BPN = "autoware_lint_common"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-core-native \
     ament-cmake-export-dependencies-native \
     ament-cmake-test-native \
@@ -27,12 +27,12 @@ ROS_BUILDTOOL_DEPENDS = " \
 
 ROS_EXPORT_DEPENDS = ""
 
-ROS_BUILDTOOL_EXPORT_DEPENDS = " \
+ROS_BUILDTOOL_EXPORT_DEPENDS = "\
     ament-cmake-core-native \
     ament-cmake-test-native \
 "
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     ament-cmake-copyright \
     ament-cmake-cppcheck \
     ament-cmake-lint-cmake \
@@ -53,7 +53,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/kilted/autoware_lint_common"
 SRC_URI = "git://github.com/ros2-gbp/autoware_cmake-release;${ROS_BRANCH};protocol=https"
 SRCREV = "33dcbe6aaff9affea9aae803d0b5b56c0ab6c1ab"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

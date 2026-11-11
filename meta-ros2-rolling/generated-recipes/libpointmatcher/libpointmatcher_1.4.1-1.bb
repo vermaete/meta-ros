@@ -9,7 +9,7 @@ DESCRIPTION = "libpointmatcher is a modular ICP library, useful for robotics and
 AUTHOR = "Francois Pomerleau <f.pomerleau@gmail.com>"
 HOMEPAGE = "https://github.com/norlab-ulaval/libpointmatcher"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=75730354549103aaba72b66caf53717b"
 
 ROS_CN = "libpointmatcher"
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/libpointmatcher"
 SRC_URI = "git://github.com/ros2-gbp/libpointmatcher-release;${ROS_BRANCH};protocol=https"
 SRCREV = "23e3db61b290da2cd55b842f885bcaf52b2c7d5a"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

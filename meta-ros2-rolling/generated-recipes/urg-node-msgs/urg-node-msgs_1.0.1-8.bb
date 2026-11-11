@@ -10,7 +10,7 @@ AUTHOR = "Michael Ferguson <mfergs7@gmail.com>"
 ROS_AUTHOR = "Chad Rockey <chadrockey@gmail.com>"
 HOMEPAGE = "http://ros.org/wiki/urg_node"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "urg_node_msgs"
@@ -56,7 +56,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/urg_node_msgs"
 SRC_URI = "git://github.com/ros2-gbp/urg_node_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "9cd9bea8dd2eba058dfa171b3378be85bff29c4f"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

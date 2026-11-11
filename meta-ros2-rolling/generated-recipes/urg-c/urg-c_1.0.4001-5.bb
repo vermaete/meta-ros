@@ -10,7 +10,7 @@ AUTHOR = "Michael Ferguson <mfergs7@gmail.com>"
 ROS_AUTHOR = "Satofumi Kamimura <satofumi@users.sourceforge.net>"
 HOMEPAGE = "http://sourceforge.net/projects/urgwidget/"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "urg_c"
@@ -42,7 +42,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/urg_c"
 SRC_URI = "git://github.com/ros2-gbp/urg_c-release;${ROS_BRANCH};protocol=https"
 SRCREV = "4c60b98378f46c788415cc07dcea0462834ba9bd"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

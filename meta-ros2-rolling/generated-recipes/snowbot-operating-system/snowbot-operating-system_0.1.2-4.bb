@@ -9,7 +9,7 @@ DESCRIPTION = "The weather outside is frightful"
 AUTHOR = "David V. Lu!! <davidvlu@gmail.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=7;endline=7;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "snowbot_operating_system"
@@ -61,7 +61,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/snowbot_operating_system"
 SRC_URI = "git://github.com/ros2-gbp/snowbot_release;${ROS_BRANCH};protocol=https"
 SRCREV = "cc969e3a6ae8b55e35a55cc08be7045d805c037a"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

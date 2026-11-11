@@ -1,10 +1,8 @@
 # Copyright (c) 2023 Wind River Systems, Inc.
 
-LICENSE = "BSD-2-Clause"
-
 ROS_BUILDTOOL_DEPENDS:remove = "clang-native-native"
 
-ROS_BUILDTOOL_DEPENDS += " \
+ROS_BUILDTOOL_DEPENDS += "\
     clang-native \
     doxygen-native \
     python3-numpy-native \

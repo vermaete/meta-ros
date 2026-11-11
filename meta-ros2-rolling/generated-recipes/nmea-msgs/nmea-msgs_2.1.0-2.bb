@@ -10,7 +10,7 @@ AUTHOR = "Ed Venator <evenator@gmail.com>"
 ROS_AUTHOR = "Andreas Klintberg <ankl@kth.se>"
 HOMEPAGE = "http://ros.org/wiki/nmea_msgs"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "nmea_msgs"
@@ -53,7 +53,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/nmea_msgs"
 SRC_URI = "git://github.com/ros2-gbp/nmea_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "4b29747f76d0da74da508f79b19ab99bc513fbe0"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

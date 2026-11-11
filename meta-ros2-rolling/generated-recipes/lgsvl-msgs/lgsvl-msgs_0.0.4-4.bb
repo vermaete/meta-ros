@@ -10,7 +10,7 @@ AUTHOR = "Hadi Tabatabaee <hadi.tabatabaee@lge.com>"
 ROS_AUTHOR = "David Uhm <david.uhm@lge.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "lgsvl_msgs"
@@ -61,7 +61,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/lgsvl_msgs"
 SRC_URI = "git://github.com/ros2-gbp/lgsvl_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "aaba584950b8524e53fc28df0888cb3aaaf1ff23"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

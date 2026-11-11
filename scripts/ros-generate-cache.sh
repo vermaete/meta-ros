@@ -48,24 +48,28 @@ BRANCH_NAME=$5
 case $ROS_DISTRO in
     "melodic"|"noetic")
         ROS_VERSION="1"
+        echo "INFO: Detected ROS_DISTRO: $ROS_DISTRO"
         ;;
 
-    "dashing"|"eloquent"|"foxy"|"galactic"|"humble"|"iron"|"jazzy"|"kilted"|"rolling")
+    "humble"|"jazzy"|"kilted"|"lyrical"|"rolling")
         ROS_VERSION="2"
+        echo "INFO: Detected ROS_DISTRO: $ROS_DISTRO"
         ;;
 
-    *)  echo "ABORT: Unrecognized ROS_DISTRO: $ROS_DISTRO"
+    *)
+        echo "ABORT: Unsupported ROS_DISTRO: $ROS_DISTRO"
         exit 1
         ;;
 esac
 
 # Keep this block in sync with the one in ros-generate-recipes.sh .
 case $ROS_DISTRO_RELEASE_DATE in
-    pre-release|[2-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9])
-        : OK
+    final|pre-release|[2-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9])
+        echo "INFO: ROS_DISTRO_RELEASE_DATE: '$ROS_DISTRO_RELEASE_DATE'"
         ;;
 
-    *)  echo "ABORT: ROS_DISTRO_RELEASE_DATE not YYYY-MM-DD or 'pre-release': '$ROS_DISTRO_RELEASE_DATE'"
+    *)
+        echo "ABORT: ROS_DISTRO_RELEASE_DATE not YYYY-MM-DD or 'final' or 'pre-release': '$ROS_DISTRO_RELEASE_DATE'"
         exit 1
         ;;
 esac
@@ -108,6 +112,63 @@ fi
 tmpdir=$(mktemp -t -d ros-generate-cache-XXXXXXXX)
 trap "rm -rf $tmpdir" 0
 
+function set_release_version {
+    package=$1
+    oldversion=$2
+    newversion=$3
+
+    python3 <<HEREDOC
+from ruamel.yaml import YAML
+
+yaml = YAML()
+yaml.preserve_quotes = True  # keep existing quotes if any
+
+def set_release_version(data, repo_name, oldversion, newversion):
+    print("set_release_version %s %s %s" % (repo_name, oldversion, newversion))
+    if repo_name in data.get("repositories", {}):
+        release_section = data["repositories"][repo_name].get("release", {})
+        if "version" in release_section:
+            if release_section["version"] == oldversion:
+                release_section["version"] = newversion
+
+# Load the file
+with open("$ROS_DISTRO/distribution.yaml", "r") as f:
+    data = yaml.load(f)
+
+set_release_version(data, '$package', '$oldversion', '$newversion')
+
+# Write back the file
+with open("$ROS_DISTRO/distribution.yaml", "w") as f:
+    yaml.dump(data, f)
+HEREDOC
+}
+
+function filter_package {
+    package=$1
+
+    python3 <<HEREDOC
+from ruamel.yaml import YAML
+
+yaml = YAML()
+yaml.preserve_quotes = True  # keep existing quotes if any
+
+def filter_package(data, repo_name):
+    print("filter_package %s" % repo_name)
+    if repo_name in data.get("repositories", {}):
+        del data["repositories"][repo_name]
+
+# Load the file
+with open("$ROS_DISTRO/distribution.yaml", "r") as f:
+    data = yaml.load(f)
+
+filter_package(data, '$package')
+
+# Write back the file
+with open("$ROS_DISTRO/distribution.yaml", "w") as f:
+    yaml.dump(data, f)
+HEREDOC
+}
+
 # Create a directory tree under $tmpdir with the contents of ros/rosdistro.git at commit $ROS_ROSDISTRO_COMMIT.
 cd $path_to_ros_rosdistro
 git archive $ROS_ROSDISTRO_COMMIT | tar -C $tmpdir -xf -
@@ -116,20 +177,43 @@ cd - > /dev/null
 # Create $tmpdir/$ROS_DISTRO-cache.yaml.gz .
 cd $tmpdir
 
+# Make changes to distribution.yaml
 if [ "$ROS_DISTRO" = "dashing" -o "$ROS_DISTRO" = "eloquent" ] ; then
     sed 's#boschresearch/fmilibrary_vendor-release#ros2-gbp/fmilibrary_vendor-release#g' -i $ROS_DISTRO/distribution.yaml
     sed 's#boschresearch/fmi_adapter_ros2-release#ros2-gbp/fmi_adapter-release#g' -i $ROS_DISTRO/distribution.yaml
     sed 's#fmi_adapter_ros2#fmi_adapter#g' -i $ROS_DISTRO/distribution.yaml
 fi
 
+if [ "$ROS_DISTRO" = "humble" ] ; then
+   filter_package 'affordance_primitives'
+fi
+
+if [ "$ROS_DISTRO" = "kilted" ] ; then
+   set_release_version 'py_binding_tools' '2.0.2-1' '2.1.0-1'
+fi
+
 rosdistro_build_cache --debug --preclean --ignore-local $tmpdir/index-v4.yaml $ROS_DISTRO
+if [ $? -ne 0 ]; then
+    echo "ABORT: rosdistro_build_cache returned a runtime error"
+    exit 1
+fi
+
+if [ ! -f $tmpdir/index-v4.yaml ]; then
+    echo "ABORT: $tmpdir/index-v4.yaml could not be found."
+    exit 1
+fi
+
+if [ ! -f $tmpdir/$ROS_DISTRO-cache.yaml.gz ]; then
+    echo "ABORT: $tmpdir/$ROS_DISTRO-cache.yaml.gz could not be found."
+    exit 1
+fi
 
 cd - > /dev/null
 
 # Keep this block in sync with the one in ros-generate-recipes.sh .
-echo "Running 'rosdep update'"
+echo "INFO: Running 'rosdep update'"
 rosdep update || { echo "ABORT: 'rosdep update' failed"; exit 1; }
-echo "'rosdep update' finished"
+echo "INFO: 'rosdep update' finished"
 
 generated="meta-ros$ROS_VERSION-$ROS_DISTRO/files/$ROS_DISTRO/generated"
 mkdir -p $generated
@@ -148,8 +232,9 @@ for f in $ROSDEP_YAML_BASENAMES; do
 done
 unset f
 
+OLD_BRANCH_NAME=$(git branch --show-current)
 if [ "$BRANCH_NAME" != ":nobranch" ] ; then
-    [ -z "$BRANCH_NAME" ] && BRANCH_NAME="superflore/$ROS_DISTRO/$ROS_DISTRO_RELEASE_DATE"
+    [ -z "$BRANCH_NAME" ] && BRANCH_NAME="superflore/$OLD_BRANCH_NAME/$ROS_DISTRO/$ROS_DISTRO_RELEASE_DATE"
     if git branch | grep -q " $BRANCH_NAME$"; then
         echo "ERROR: branch '$BRANCH_NAME' already exists, will create a new commit in currently checked out branch"
     else
@@ -157,7 +242,9 @@ if [ "$BRANCH_NAME" != ":nobranch" ] ; then
     fi
 fi
 git add $generated/
-if [ $ROS_DISTRO_RELEASE_DATE = "pre-release" ]; then
+if [ $ROS_DISTRO_RELEASE_DATE = "final" ]; then
+    release="final"
+elif [ $ROS_DISTRO_RELEASE_DATE = "pre-release" ]; then
     release="pre-release"
 else
     release="release $ROS_DISTRO_RELEASE_DATE"

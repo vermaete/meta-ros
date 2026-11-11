@@ -10,41 +10,41 @@ AUTHOR = "Kenji Brameld <kenjibrameld@gmail.com>"
 ROS_AUTHOR = "Patrick Mihelich"
 HOMEPAGE = "http://www.ros.org/wiki/image_geometry"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
-#         "Apache License 2.0 & BSD"
-LICENSE = "Apache-2.0 & BSD"
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
+#         "Apache License 2.0 AND BSD"
+LICENSE = "Apache-2.0 AND BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
 
 ROS_CN = "vision_opencv"
 ROS_BPN = "image_geometry"
 
-ROS_BUILD_DEPENDS = " \
-    ${ROS_UNRESOLVED_DEP-python3-deprecated} \
+ROS_BUILD_DEPENDS = "\
     opencv \
+    python3-deprecated \
     sensor-msgs \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-python-native \
     ament-cmake-ros-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
-    ${ROS_UNRESOLVED_DEP-python3-deprecated} \
+ROS_EXPORT_DEPENDS = "\
     opencv \
+    python3-deprecated \
     sensor-msgs \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
-    ${ROS_UNRESOLVED_DEP-python3-deprecated} \
+ROS_EXEC_DEPENDS = "\
     opencv \
+    python3-deprecated \
     sensor-msgs \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-cmake-gtest \
     ament-cmake-pytest \
 "
@@ -60,7 +60,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/jazzy/image_geometry"
 SRC_URI = "git://github.com/ros2-gbp/vision_opencv-release;${ROS_BRANCH};protocol=https"
 SRCREV = "f5ea0ce5972556558784659e5a6c45b27176d2a0"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

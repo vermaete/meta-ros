@@ -1,23 +1,24 @@
 # Copyright (c) 2024 Wind River Systems, Inc.
 
-LICENSE = "Apache-2.0 & Artistic-2.0"
+LICENSE = "Apache-2.0 AND Artistic-2.0"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2a461be67a1edf991251f85f3aadd1d0 \
                     file://src/systems/elevator/vender/afsm/LICENSE;md5=ec4341a201f4b801aba0191a5d2d8f39 \
                     file://src/systems/elevator/vender/metapushkin/LICENSE;md5=ec4341a201f4b801aba0191a5d2d8f39"
 
 SRC_URI = "git://github.com/gazebosim/gz-sim.git;protocol=https;branch=ign-gazebo6 \
-           file://add-include-algorithm.patch"
+           file://add-include-algorithm.patch \
+           file://add-missing-cstdint-to-gtest.patch \
+           file://add-support-for-systems.patch"
 
 SRCREV = "d9b18d85a17400d32494bca4c3589f519aca7e81"
 
-S = "${WORKDIR}/git"
 
 inherit cmake python3native
 
 # CMake Error at src/plugins/CMakeLists.txt:26 (QT5_WRAP_CPP):
 #   Unknown CMake command "QT5_WRAP_CPP".
-inherit ${@bb.utils.contains_any('ROS_WORLD_SKIP_GROUPS', ['qt5', 'pyqt5'], '', 'cmake_qt5', d)}
+inherit ${@bb.utils.contains('BBFILE_COLLECTIONS', 'qt5-layer', 'cmake_qt5', '', d)}
 
 DEPENDS = " \
     ignition-cmake2 \
@@ -44,7 +45,7 @@ EXTRA_OECMAKE += " \
     -DPROTOBUF_PROTOC_EXECUTABLE=${STAGING_BINDIR_NATIVE}/protoc \
 "
 
-PACKAGES =+ "python3-${PN}"
+PACKAGES =+ "python3-${BPN}"
 
 FILES:${PN} += " \
     ${datadir}/ignition/* \
@@ -59,7 +60,5 @@ FILES:${PN} += " \
 FILES:python3-${PN} += " \
     ${libdir}/python \
 "
-
-BBCLASSEXTEND = "native nativesdk"
 
 inherit ros_insane_dev_so

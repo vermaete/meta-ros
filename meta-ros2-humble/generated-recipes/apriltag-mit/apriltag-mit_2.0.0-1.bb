@@ -10,7 +10,7 @@ AUTHOR = "Bernd Pfrommer <bernd.pfrommer@gmail.com>"
 ROS_AUTHOR = "Michael Kaess"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "LGPLv2.1"
 LICENSE = "LGPL-2.1-only"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=e181b18ed9533044a61dea448605dcd5"
@@ -18,18 +18,18 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=e181b18ed953304
 ROS_CN = "apriltag_mit"
 ROS_BPN = "apriltag_mit"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     boost \
     clang \
     libeigen \
     opencv \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     boost \
     clang \
     libeigen \
@@ -38,7 +38,7 @@ ROS_EXPORT_DEPENDS = " \
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     boost \
     clang \
     libeigen \
@@ -59,7 +59,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/apriltag_mit"
 SRC_URI = "git://github.com/ros2-gbp/apriltag_mit-release;${ROS_BRANCH};protocol=https"
 SRCREV = "b5c81a715a12a1f0fa61a4c9b4e86c3fc7ea6eb9"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

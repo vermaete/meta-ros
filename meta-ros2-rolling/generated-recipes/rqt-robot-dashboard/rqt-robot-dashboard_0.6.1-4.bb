@@ -10,7 +10,7 @@ AUTHOR = "Aaron Blasdel <ablasdel@gmail.com>"
 ROS_AUTHOR = "Ze'ev Klapow"
 HOMEPAGE = "http://wiki.ros.org/rqt_robot_dashboard"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "rqt_robot_dashboard"
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rqt_robot_dashboard"
 SRC_URI = "git://github.com/ros2-gbp/rqt_robot_dashboard-release;${ROS_BRANCH};protocol=https"
 SRCREV = "5f494a3d0b594188ba864a2ef165ea22e059566e"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

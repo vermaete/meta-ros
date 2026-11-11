@@ -1,4 +1,4 @@
-LICENSE = "Apache-2.0 & GPL-2.0-only & LGPL-2.1-only & LGPL-3.0-only"
+LICENSE = "Apache-2.0 AND GPL-2.0-only AND LGPL-2.1-only AND LGPL-3.0-only"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=2a461be67a1edf991251f85f3aadd1d0 \
                     file://LICENSE;md5=622f4fcdd9e66304dcb89897348be7b0 \
@@ -12,11 +12,11 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=2a461be67a1edf991251f85f3aadd1d0 \
                     file://media/gui/fonts/BITSTREAM-LICENSE;md5=11308e907cc211412cb9543184b1e623"
 
 SRC_URI = "git://github.com/gazebosim/gazebo-classic.git;protocol=https;branch=gazebo11 \
-           file://pkgconfig-use-ogre19.patch"
+           file://pkgconfig-use-ogre19.patch \
+           file://include-ogre19.patch"
 
 SRCREV = "b22c6e15e52299865b31093b8feebc9ca19e26e8"
 
-S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig
 
@@ -54,7 +54,6 @@ EXTRA_OECMAKE = " \
     -DFREEIMAGE_RUNS=1 \
     -DFREEIMAGE_RUNS__TRYRUN_OUTPUT=0 \
     -DGAZEBOMSGS_OUT_EXECUTABLE=${STAGING_DIR_NATIVE}/usr/bin/gazebomsgs_out \
-    -DGZ_PROTOBUF_USE_CMAKE_CONFIG:BOOL=ON \
     -DPROTOBUF_PROTOC_EXECUTABLE=${STAGING_BINDIR_NATIVE}/protoc \
     -DUSE_HOST_CFLAGS=FALSE \
 "
@@ -63,7 +62,7 @@ EXTRA_OECMAKE = " \
 #   Unknown CMake command "QT5_WRAP_CPP".
 # Call Stack (most recent call first):
 #   src/gui/plugins/modules/CMakeLists.txt:5 (gz_add_gui_library)
-inherit ${@bb.utils.contains_any('ROS_WORLD_SKIP_GROUPS', ['qt5', 'pyqt5'], '', 'cmake_qt5', d)}
+inherit ${@bb.utils.contains('BBFILE_COLLECTIONS', 'qt5-layer', 'cmake_qt5', '', d)}
 
 
 FILES:${PN} += " \

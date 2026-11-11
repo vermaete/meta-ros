@@ -28,10 +28,10 @@ ROS_EXPORT_DEPENDS = ""
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
 ROS_EXEC_DEPENDS = " \
+    ${ROS_UNRESOLVED_DEP-pybind11-json-vendor} \
     ament-cmake-catch2 \
     menge-vendor \
     nlohmann-json-schema-validator-vendor \
-    pybind11-json-vendor \
     rmf-api-msgs \
     rmf-battery \
     rmf-building-map-msgs \
@@ -89,7 +89,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rmf_dev"
 SRC_URI = "git://github.com/ros2-gbp/rmf_variants-release;${ROS_BRANCH};protocol=https"
 SRCREV = "6df76b4024e822ab3669ae7f131f7828255e587a"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

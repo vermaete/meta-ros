@@ -10,7 +10,7 @@ AUTHOR = "Fabian Immel <fabian.immel@kit.edu>"
 ROS_AUTHOR = "Maximilian Naumann <maximilian.naumann@kit.edu>"
 HOMEPAGE = "https://github.com/fzi-forschungszentrum-informatik/lanelet2.git"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "lanelet2"
@@ -59,7 +59,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/lanelet2_matching"
 SRC_URI = "git://github.com/ros2-gbp/lanelet2-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1f596aee68f20a115a33c6d5d64dbd681c814121"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

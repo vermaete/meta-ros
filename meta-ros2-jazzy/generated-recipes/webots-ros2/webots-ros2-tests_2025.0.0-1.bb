@@ -9,7 +9,7 @@ DESCRIPTION = "System tests for `webots_ros2` packages."
 AUTHOR = "Cyberbotics <support@cyberbotics.com>"
 HOMEPAGE = "http://wiki.ros.org/webots_ros2"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
@@ -17,7 +17,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=12c26a18c7f493f
 ROS_CN = "webots_ros2"
 ROS_BPN = "webots_ros2_tests"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     rclpy \
     ros2bag \
     rosbag2-storage-default-plugins \
@@ -33,7 +33,7 @@ ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 ROS_EXEC_DEPENDS = ""
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-copyright \
     geometry-msgs \
     launch \
@@ -65,7 +65,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/jazzy/webots_ros2_tests"
 SRC_URI = "git://github.com/ros2-gbp/webots_ros2-release;${ROS_BRANCH};protocol=https"
 SRCREV = "d68cce3534a1932f42b8434293e2bb2f2db5a0a6"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

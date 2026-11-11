@@ -1,0 +1,18 @@
+Use CMake Targets
+
+Upstream-Status: Pending
+Signed-off-by: Rob Woolley <rob.woolley@windriver.com>
+
+Index: canopen-base-driver-0.3.4-1/CMakeLists.txt
+===================================================================
+--- canopen-base-driver-0.3.4-1.orig/CMakeLists.txt
++++ canopen-base-driver-0.3.4-1/CMakeLists.txt
+@@ -30,7 +30,7 @@ target_include_directories(lely_driver_b
+   ${lely_core_libraries_INCLUDE_DIRS}
+ )
+ target_link_libraries(lely_driver_bridge PUBLIC
+-  ${lely_core_libraries_LIBRARIES}
++  lely_core_libraries::lely_core_libraries
+   canopen_core::node_canopen_driver
+   rclcpp::rclcpp
+ )

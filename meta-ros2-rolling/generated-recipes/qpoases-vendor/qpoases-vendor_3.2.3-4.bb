@@ -11,7 +11,7 @@ HOMEPAGE = "https://projects.coin-or.org/qpOASES"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Apache License 2.0 & LGPL"
-LICENSE = "Apache-2.0 & LGPL"
+LICENSE = "Apache-2.0 AND LicenseRef-LGPL"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d160c31cc0b7b3533fd6cf648b07acc7"
 
 ROS_CN = "qpoases_vendor"
@@ -49,7 +49,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/qpoases_vendor"
 SRC_URI = "git://github.com/ros2-gbp/qpoases_vendor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "6977e38b5ee572d56948a64c432cc76c4bae9d20"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

@@ -1,6 +1,6 @@
 # Copyright (c) 2023-2025 Wind River Systems, Inc.
 
-LICENSE = "MIT & BSL-1.0 & CC-BY-3.0 & LGPL-2.1-or-later"
+LICENSE = "BSL-1.0 AND CC-BY-3.0 AND LGPL-2.1-or-later AND MIT"
 LIC_FILES_CHKSUM = "file://CMake/Templates/DemoLicense.rtf;md5=2711c49576d18cf781ec81aad76f40d6 \
                     file://COPYING;md5=65d1ee510d57bbd05663424f2ff8d660 \
                     file://OgreMain/src/nedmalloc/License.txt;md5=e4224ccaecb14d942c71d31bef20d78c \
@@ -13,12 +13,12 @@ LIC_FILES_CHKSUM = "file://CMake/Templates/DemoLicense.rtf;md5=2711c49576d18cf78
 
 SRC_URI = "git://github.com/OGRECave/ogre-next.git;protocol=https;branch=master \
            file://0001-Fixed-compile-error-2.3.3.patch \
-           file://0002-Use_OGRE_NEXT_prefix_for_libraries.patch"
+           file://0002-Use_OGRE_NEXT_prefix_for_libraries.patch \
+           file://build-error-with-gcc15.patch"
 
 PV = "2.3.3"
 SRCREV = "8d4daeaf46d7d8f85f1833f17daedd7dac05daec"
 
-S = "${WORKDIR}/git"
 
 inherit cmake features_check pkgconfig
 
@@ -36,7 +36,7 @@ DEPENDS = " \
     libxrandr \
     rapidjson \
     renderdoc \
-    mesa \
+    virtual/mesa \
     poco \
     shaderc \
     tbb \
@@ -68,10 +68,10 @@ do_configure:append() {
     #    https://gitlab.freedesktop.org/mesa/mesa/-/commit/cc93f08f1e3e84f09cb2bb587d6de702dc836478
     #
     # These resolves a build error when using GL3Plus:
-    #   git/RenderSystems/GL3Plus/src/windowing/GLX/OgreGLXWindow.cpp:720:9: error: 'PFNGLXSWAPINTERVALMESAPROC' 
+    #   git/RenderSystems/GL3Plus/src/windowing/GLX/OgreGLXWindow.cpp:720:9: error: 'PFNGLXSWAPINTERVALMESAPROC'
     #       was not declared in this scope; did you mean 'PFNGLXSWAPINTERVALEXTPROC'?
     #   git/RenderSystems/GL3Plus/src/windowing/GLX/OgreGLXWindow.cpp:721:9: error: '_glXSwapInterval
-    rm ${S}/RenderSystems/GL3Plus/include/GL/glxext.h
+    rm -f ${S}/RenderSystems/GL3Plus/include/GL/glxext.h
 }
 
 FILES:${PN}-dev += "${libdir}/OGRE-Next/cmake ${libdir}/OGRE-Next/*${SOLIBSDEV}"

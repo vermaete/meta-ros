@@ -10,7 +10,7 @@ AUTHOR = "Vincent Rousseau <vincentrou@gmail.com>"
 ROS_AUTHOR = "Vincent Rousseau <vincentrou@gmail.com>"
 HOMEPAGE = "http://ros.org/wiki/four_wheel_steering_msgs"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "four_wheel_steering_msgs"
@@ -50,7 +50,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/four_wheel_steering_msgs"
 SRC_URI = "git://github.com/ros2-gbp/four_wheel_steering_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "b2c7465734330ae339e4ed02946aedea0c133ada"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

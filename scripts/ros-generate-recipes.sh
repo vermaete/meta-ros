@@ -52,22 +52,83 @@ ROS_DISTRO=$1
 case $ROS_DISTRO in
     "melodic"|"noetic")
         ROS_VERSION="1"
+        echo "INFO: Detected ROS_DISTRO: $ROS_DISTRO"
         ;;
 
-    "dashing"|"eloquent"|"foxy"|"galactic"|"humble"|"iron"|"jazzy"|"kilted"|"rolling")
+    "humble"|"jazzy"|"kilted"|"lyrical"|"rolling")
         ROS_VERSION="2"
+        echo "INFO: Detected ROS_DISTRO: $ROS_DISTRO"
         ;;
 
-    *)  echo "ABORT: Unrecognized ROS_DISTRO: $ROS_DISTRO"
+    *)
+        echo "ABORT: Unsupported ROS_DISTRO: $ROS_DISTRO"
         exit 1
         ;;
 esac
+
+# libatomic: The libatomic package is produced by gcc-runtime@openembedded-core
+#     However, base.bbclass already adds virtual/compilerlibs so every target
+#     recipe already build-depends on gcc-runtime.
+SKIP_KEYS="libatomic"
 
 only_option=""
 if [ $# -gt 1 ]; then
     shift
     only_option="--only $*"
+    echo "INFO: Only generating recipes for $*"
 fi
+
+layerconf=meta-ros$ROS_VERSION-$ROS_DISTRO/conf/layer.conf
+if [ ! -f $layerconf ]; then
+    echo "ABORT: $layerconf doesn't exist"
+    exit 1
+fi
+
+YOCTO_RELEASE=$(grep "^LAYERSERIES_COMPAT_ros$ROS_VERSION-${ROS_DISTRO}-layer" $layerconf | sed 's/[^=]* *= *"\(.*\)"/\1/')
+if [ -z "${YOCTO_RELEASE}" ]; then
+    echo "ABORT: Could not detect Yocto Project release from $layerconf"
+    exit 1
+fi
+
+# Check if it is a known release
+case $YOCTO_RELEASE in
+    # End-of-life
+    "thud"|"warrior"|"zeus"|"dunfell"|"gatesgarth"|"hardknott"|"honister")
+        ;;
+
+    # Recent End-of-life
+    "langdale"|"mickledore"|"nanbield"|"styhead"|"kirkstone")
+        ;;
+
+    # Supported LTS releases
+    "scarthgap"|"wrynose")
+        ;;
+
+    # Supported non-LTS releases
+    "walnascar"|"whinlatter"|"blacksail")
+        ;;
+
+    *)
+        echo "ABORT: Unrecognized YOCTO_RELEASE: $YOCTO_RELEASE"
+        exit 1
+        ;;
+esac
+
+# Check if our current branch forked from master
+#   Default branch format: superflore/<OLD_BRANCH_NAME>/<ROS_DISTRO>/<ROS_DISTRO_RELEASE_DATE>
+GIT_BRANCH=$(git branch --show-current)
+
+case $GIT_BRANCH in
+    # Development branch
+    "superflore/master"*)
+        echo "INFO: Detected Yocto Project development branch (master), not specifying release"
+        USE_YOCTO_RELEASE=0
+        ;;
+    *)
+        echo "INFO: No Yocto Project development branch detected, using release $YOCTO_RELEASE"
+        USE_YOCTO_RELEASE=1
+        ;;
+esac
 
 generated=meta-ros$ROS_VERSION-$ROS_DISTRO/files/$ROS_DISTRO/generated
 if [ ! -f $generated/cache.yaml ]; then
@@ -95,11 +156,12 @@ fi
 
 # Keep this block in sync with the one in ros-generate-cache.sh .
 case $ROS_DISTRO_RELEASE_DATE in
-    pre-release|[2-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9])
-        : OK
+    final|pre-release|[2-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9])
+        echo "INFO: ROS_DISTRO_RELEASE_DATE: '$ROS_DISTRO_RELEASE_DATE'"
         ;;
 
-    *)  echo "ABORT: ROS_DISTRO_RELEASE_DATE not YYYY-MM-DD or 'pre-release': '$ROS_DISTRO_RELEASE_DATE'"
+    *)
+        echo "ABORT: ROS_DISTRO_RELEASE_DATE not YYYY-MM-DD or 'final' or 'pre-release': '$ROS_DISTRO_RELEASE_DATE'"
         exit 1
         ;;
 esac
@@ -137,9 +199,9 @@ unset abort
 # Done checking things.
 
 # Keep this block in sync with the one in ros-generate-cache.sh .
-echo "Running 'rosdep update'"
+echo "INFO: Running 'rosdep update'"
 rosdep update || { echo "ABORT: 'rosdep update' failed"; exit 1; }
-echo "'rosdep update' finished"
+echo "INFO: 'rosdep update' finished"
 
 tmpdir=$(mktemp -t -d ros-generate-recipes-XXXXXXXX)
 trap "rm -rf $tmpdir" 0
@@ -153,8 +215,29 @@ export ROSDISTRO_INDEX_URL="file://$tmpdir/index-v4.yaml"
 export SUPERFLORE_GENERATION_DATETIME="$ROS_ROSDISTRO_COMMIT_DATETIME"
 
 before_commit=$(git rev-list -1 HEAD)
-$SUPERFLORE_GEN_OE_RECIPES --dry-run --no-branch --ros-distro $ROS_DISTRO --output-repository-path . --upstream-branch HEAD \
-                            $only_option
+
+if [ $USE_YOCTO_RELEASE -eq 1 ]; then
+    YOCTO_RELEASE_OPT="--yocto-release $YOCTO_RELEASE"
+else
+    YOCTO_RELEASE_OPT=""
+fi
+
+CMD="$SUPERFLORE_GEN_OE_RECIPES\
+ --dry-run\
+ --no-branch\
+ --ros-distro $ROS_DISTRO\
+ $YOCTO_RELEASE_OPT\
+ --output-repository-path .\
+ --upstream-branch HEAD\
+ --skip-keys $SKIP_KEYS\
+ $only_option"
+
+echo "INFO: Running: $CMD"
+$CMD
+
+if [ $? -ne 0 ]; then
+    echo "ABORT: $SUPERFLORE_GEN_OE_RECIPES failed to run."
+fi
 
 after_commit=$(git rev-list -1 HEAD)
 if [ $after_commit != $before_commit -a -z "$only_option" ]; then

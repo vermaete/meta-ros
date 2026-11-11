@@ -5,13 +5,22 @@ SRC_URI = "git://github.com/coin-or/Ipopt.git;protocol=https;branch=stable/3.14"
 
 SRCREV = "43a63412f73d9ad3ff9074d38b49362fc9d7f8f1"
 
-S = "${WORKDIR}/git"
 
 inherit autotools pkgconfig
 
 DEPENDS = "coinor-buildtools-native lapack"
 
+PACKAGECONFIG ??= "${@bb.utils.contains('BBFILE_COLLECTIONS', 'meta-python-ai', 'openblas', '', d)}"
+
+PACKAGECONFIG[openblas] = "\
+    -with-lapack-lflags="-lopenblas", \
+    , \
+    openblas, \
+    , \
+    \
+"
+
 do_configure:prepend () {
-    mkdir -p ${S}/coinor-m4
-    cp ${STAGING_DIR_NATIVE}/${datadir}/coinor/* ${S}/coinor-m4
+    mkdir -p ${STAGING_DATADIR_NATIVE}/aclocal
+    cp ${STAGING_DIR_NATIVE}/${datadir}/coinor/* ${STAGING_DATADIR_NATIVE}/aclocal
 }

@@ -9,7 +9,7 @@ DESCRIPTION = "ROS messages for Geographic Information Systems."
 AUTHOR = "Jack O'Quin <jack.oquin@gmail.com>"
 HOMEPAGE = "http://wiki.ros.org/geographic_msgs"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "geographic_info"
@@ -63,7 +63,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/geographic_msgs"
 SRC_URI = "git://github.com/ros2-gbp/geographic_info-release;${ROS_BRANCH};protocol=https"
 SRCREV = "1efe3b2b34b48437bc1af05abe67bbbf832c9957"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

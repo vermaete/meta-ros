@@ -10,7 +10,7 @@ AUTHOR = "Stéphane Magnenat <stephane.magnenat@mavt.ethz.ch>"
 ROS_AUTHOR = "Stéphane Magnenat <stephane.magnenat@mavt.ethz.ch>"
 HOMEPAGE = "https://github.com/ethz-asl/libnabo"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=75730354549103aaba72b66caf53717b"
 
 ROS_CN = "libnabo"
@@ -48,7 +48,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/libnabo"
 SRC_URI = "git://github.com/ros2-gbp/libnabo-release;${ROS_BRANCH};protocol=https"
 SRCREV = "9e3e3ae45e0b4cb8d11edd4beabe849a5cdb393b"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

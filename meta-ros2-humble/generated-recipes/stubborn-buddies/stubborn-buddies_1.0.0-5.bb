@@ -9,7 +9,7 @@ DESCRIPTION = "Demo that uses node composition of lifecycle nodes to achieve fai
 AUTHOR = "Marco A. Gutiérrez <marco@openrobotics.org>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
@@ -17,7 +17,7 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493f
 ROS_CN = "stubborn_buddies"
 ROS_BPN = "stubborn_buddies"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     rclcpp \
     rclcpp-components \
     rclcpp-lifecycle \
@@ -26,7 +26,7 @@ ROS_BUILD_DEPENDS = " \
     stubborn-buddies-msgs \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
@@ -34,7 +34,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     rclcpp \
     rclcpp-components \
     rclcpp-lifecycle \
@@ -57,7 +57,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/stubborn_buddies"
 SRC_URI = "git://github.com/ros2-gbp/stubborn_buddies-release;${ROS_BRANCH};protocol=https"
 SRCREV = "3a57d99c24c5c430c9c76a32585eb7817f1fab25"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

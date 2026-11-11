@@ -9,7 +9,7 @@ DESCRIPTION = "Bosch BNO055 IMU driver for ROS2"
 AUTHOR = "flynneva <evanflynn.msu@gmail.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "bno055"
@@ -56,7 +56,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/bno055"
 SRC_URI = "git://github.com/ros2-gbp/bno055-release;${ROS_BRANCH};protocol=https"
 SRCREV = "4e2ddd17b62b2c95d01aae53e8a9f2cdbccbe30c"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

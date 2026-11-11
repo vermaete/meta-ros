@@ -10,7 +10,7 @@ AUTHOR = "Chris Lalancette <clalancette@openrobotics.org>"
 ROS_AUTHOR = "Antonio El Khoury"
 HOMEPAGE = "http://wiki.ros.org/urdfdom_py"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "urdf_parser_py"
@@ -44,7 +44,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/urdfdom_py"
 SRC_URI = "git://github.com/ros2-gbp/urdfdom_py-release;${ROS_BRANCH};protocol=https"
 SRCREV = "63259c8319609c2dcd7e7fff99db12ce70f88a1a"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

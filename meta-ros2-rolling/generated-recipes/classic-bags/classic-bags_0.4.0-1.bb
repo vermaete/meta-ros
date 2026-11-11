@@ -11,7 +11,7 @@ HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "BSD 3-clause"
-LICENSE = "BSD-3-clause"
+LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=79773b05553c027a06a89128fefb052f"
 
 ROS_CN = "classic_bags"
@@ -73,7 +73,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/classic_bags"
 SRC_URI = "git://github.com/ros2-gbp/classic_bags-release;${ROS_BRANCH};protocol=https"
 SRCREV = "e2538f43275fa7e7c37016cad69ba2a72e9dff4e"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

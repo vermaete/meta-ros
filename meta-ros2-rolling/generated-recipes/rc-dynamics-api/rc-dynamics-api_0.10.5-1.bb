@@ -10,7 +10,7 @@ AUTHOR = "Felix Ruess <felix.ruess@roboception.de>"
 ROS_AUTHOR = "Heiko Hirschmueller <heiko.hirschmueller@roboception.de>"
 HOMEPAGE = "http://rc-visard.com"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=23;endline=23;md5=01c2bc31767ccb3a68e12f02612b2a97"
 
 ROS_CN = "rc_dynamics_api"
@@ -50,7 +50,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rc_dynamics_api"
 SRC_URI = "git://github.com/ros2-gbp/rc_dynamics_api-release;${ROS_BRANCH};protocol=https"
 SRCREV = "5a56399da72a6ebe28a7701f1717a0e5308c7003"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

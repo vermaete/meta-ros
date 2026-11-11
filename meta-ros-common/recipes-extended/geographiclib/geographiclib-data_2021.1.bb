@@ -13,8 +13,10 @@
 
 SUMMARY = "Data files for geographiclib."
 SECTION = "devel"
-# TODO: Check license of data files??
-LICENSE = "CLOSED"
+# The data files are published by US federal agencies (NGA for the EGM96 geoid
+# and gravity models, NOAA for the EMM2015 magnetic model), whose works are in
+# the public domain (17 U.S.C. 105).
+LICENSE = "LicenseRef-PD"
 LIC_FILES_CHKSUM = ""
 
 SRC_URI = " \
@@ -23,20 +25,17 @@ SRC_URI = " \
     https://downloads.sourceforge.net/project/geographiclib/magnetic-distrib/emm2015.tar.bz2?use_mirror=autoselect;name=magnetic;downloadfilename=emm2015.tar.bz2 \
 "
 
-SRC_URI[geoids.md5sum] = "6ae1c02c0506a686c9ad33be42cad0ae"
 SRC_URI[geoids.sha256sum] = "c46224f8f723dc915d97179f4e1580a98d6c742fe2b82cd8fef0ecaaad13e614"
-SRC_URI[gravity.md5sum] = "dcc1ab8e3433bd0add901b2f3e5caa76"
 SRC_URI[gravity.sha256sum] = "6fea4c6bd56ff8ac53dbdad8d5dd505c855471d0354c4abc5c5fe048bf8350c1"
-SRC_URI[magnetic.md5sum] = "18065cd3cc7369293d2a43c0c8f45315"
 SRC_URI[magnetic.sha256sum] = "8e71a9704c5f2714bb65581df68e30f0d84d0ad17286d00efb782e7232334c3f"
 
 do_install() {
     install -d -m 0755 ${D}/${datadir}/GeographicLib/geoids
     install -d -m 0755 ${D}/${datadir}/GeographicLib/gravity
     install -d -m 0755 ${D}/${datadir}/GeographicLib/magnetic
-    install -D -m 0644 ${WORKDIR}/geoids/* ${D}/${datadir}/GeographicLib/geoids
-    install -D -m 0644 ${WORKDIR}/gravity/* ${D}/${datadir}/GeographicLib/gravity
-    install -D -m 0644 ${WORKDIR}/magnetic/* ${D}/${datadir}/GeographicLib/magnetic
+    install -D -m 0644 ${UNPACKDIR}/geoids/* ${D}/${datadir}/GeographicLib/geoids
+    install -D -m 0644 ${UNPACKDIR}/gravity/* ${D}/${datadir}/GeographicLib/gravity
+    install -D -m 0644 ${UNPACKDIR}/magnetic/* ${D}/${datadir}/GeographicLib/magnetic
 }
 
 FILES:${PN} = " \

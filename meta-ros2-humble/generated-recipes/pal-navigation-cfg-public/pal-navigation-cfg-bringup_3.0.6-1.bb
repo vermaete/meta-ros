@@ -10,7 +10,7 @@ AUTHOR = "Antonio Brandi <antonio.brandi@pal-robotics.com>"
 ROS_AUTHOR = "Antonio Brandi <antonio.brandi@pal-robotics.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=7;endline=7;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
@@ -20,7 +20,7 @@ ROS_BPN = "pal_navigation_cfg_bringup"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-auto-native \
 "
 
@@ -28,7 +28,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     launch-pal \
     nav2-bringup \
     pal-navigation-cfg-params \
@@ -36,7 +36,7 @@ ROS_EXEC_DEPENDS = " \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-lint-auto \
     ament-lint-common \
 "
@@ -48,11 +48,10 @@ DEPENDS += "${ROS_EXPORT_DEPENDS} ${ROS_BUILDTOOL_EXPORT_DEPENDS}"
 
 RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 
-# matches with: https://github.com/pal-gbp/pal_navigation_cfg_public-release/archive/release/humble/pal_navigation_cfg_bringup/3.0.6-1.tar.gz
+# matches with: https://github.com/ros2-gbp/pal_navigation_cfg_public-release/archive/release/humble/pal_navigation_cfg_bringup/3.0.6-1.tar.gz
 ROS_BRANCH ?= "branch=release/humble/pal_navigation_cfg_bringup"
-SRC_URI = "git://github.com/pal-gbp/pal_navigation_cfg_public-release;${ROS_BRANCH};protocol=https"
+SRC_URI = "git://github.com/ros2-gbp/pal_navigation_cfg_public-release;${ROS_BRANCH};protocol=https"
 SRCREV = "6b3216e2f568f7145ea745ebb73a9a8a2ed3a3e7"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

@@ -10,7 +10,7 @@ AUTHOR = "Aaron Blasdel <ablasdel@gmail.com>"
 ROS_AUTHOR = "Aaron Blasdel"
 HOMEPAGE = "http://wiki.ros.org/rqt_runtime_monitor"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "rqt_runtime_monitor"
@@ -54,7 +54,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rqt_runtime_monitor"
 SRC_URI = "git://github.com/ros2-gbp/rqt_runtime_monitor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "8a3ca23e7d99c28c65dc0400ef34e5833ee4a5cb"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

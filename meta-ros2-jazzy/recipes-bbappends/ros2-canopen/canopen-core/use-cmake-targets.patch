@@ -1,0 +1,53 @@
+Use CMake Targets
+
+Upstream-Status: Pending
+
+Signed-off-by: Rob Woolley <rob.woolley@windriver.com>
+
+Index: canopen-core-0.3.4-1/CMakeLists.txt
+===================================================================
+--- canopen-core-0.3.4-1.orig/CMakeLists.txt
++++ canopen-core-0.3.4-1/CMakeLists.txt
+@@ -43,10 +43,11 @@ target_include_directories(node_canopen_
+ )
+ target_link_libraries(node_canopen_driver PUBLIC
+   ${canopen_interfaces_TARGETS}
+-  ${lely_core_libraries_LIBRARIES}
++  lely_core_libraries::lely_core_libraries
+   rclcpp::rclcpp
+   rclcpp_lifecycle::rclcpp_lifecycle
+   yaml-cpp
++  ${yaml_cpp_vendor_TARGETS}
+ )
+ 
+ add_library(node_canopen_master
+@@ -64,10 +65,11 @@ target_include_directories(node_canopen_
+ )
+ target_link_libraries(node_canopen_master PUBLIC
+   ${canopen_interfaces_TARGETS}
+-  ${lely_core_libraries_LIBRARIES}
++  lely_core_libraries::lely_core_libraries
+   rclcpp::rclcpp
+   rclcpp_lifecycle::rclcpp_lifecycle
+   yaml-cpp
++  ${yaml_cpp_vendor_TARGETS}
+ )
+ 
+ 
+@@ -93,6 +95,7 @@ target_link_libraries(device_container P
+   rclcpp_components::component_manager
+   rclcpp_lifecycle::rclcpp_lifecycle
+   yaml-cpp
++  ${yaml_cpp_vendor_TARGETS}
+ )
+ 
+ add_executable(device_container_node
+@@ -108,6 +111,8 @@ target_link_libraries(device_container_n
+   rclcpp_components::component
+   rclcpp_components::component_manager
+   rclcpp_lifecycle::rclcpp_lifecycle
++  yaml-cpp
++  ${yaml_cpp_vendor_TARGETS}
+ )
+ target_include_directories(device_container_node PUBLIC
+   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"

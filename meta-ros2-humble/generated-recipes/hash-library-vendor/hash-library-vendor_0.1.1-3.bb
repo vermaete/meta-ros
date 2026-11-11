@@ -10,9 +10,9 @@ AUTHOR = "Kenji Miyake <kenji.miyake@tier4.jp>"
 ROS_AUTHOR = "Stephan Brumme"
 HOMEPAGE = "https://github.com/stbrumme/hash-library"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
-#         "Apache License 2.0 & Zlib License"
-LICENSE = "Apache-2.0 & Zlib-License"
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
+#         "Apache License 2.0 AND Zlib License"
+LICENSE = "Apache-2.0 AND Zlib-License"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=f9b08e944e4cd1aa722fbb316eb4b3e2"
 
 ROS_CN = "hash_library_vendor"
@@ -20,7 +20,7 @@ ROS_BPN = "hash_library_vendor"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-auto-native \
     git-native \
 "
@@ -32,7 +32,7 @@ ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 ROS_EXEC_DEPENDS = ""
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-lint-auto \
     ament-lint-common \
 "
@@ -48,7 +48,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/hash_library_vendor"
 SRC_URI = "git://github.com/ros2-gbp/hash_library_vendor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "e31045b72d50216a20845e9bd76f689bff2f00f0"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

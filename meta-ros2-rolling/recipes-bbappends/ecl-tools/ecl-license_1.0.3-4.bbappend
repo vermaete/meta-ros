@@ -11,13 +11,13 @@
 # location.
 
 do_install:append () {
-    if [ "${LICENSE_CREATE_PACKAGE}" == "0" ]; then
+    if [ "${LICENSE_CREATE_PACKAGE}" = "0" ]; then
         rm ${D}/usr/share/licenses -Rf
     else
-        install -m 755 -d ${D}${datadir}/licenses/${PN}        
+        install -m 755 -d ${D}${datadir}/licenses/${PN}
         mv ${D}${datadir}/licenses/*  ${D}${datadir}/licenses/${PN}/
     fi
 }
 
-## overwriting "BSD" to proper SPDX 
+## overwriting "BSD" to proper SPDX
 LICENSE = "BSD-3-Clause"

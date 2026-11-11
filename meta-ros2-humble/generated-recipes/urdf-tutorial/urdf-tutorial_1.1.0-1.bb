@@ -10,7 +10,7 @@ AUTHOR = "David V. Lu!! <davidvlu@gmail.com>"
 ROS_AUTHOR = "David V. Lu!! <davidvlu@gmail.com>"
 HOMEPAGE = "http://ros.org/wiki/urdf_tutorial"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "BSD 3-clause"
 LICENSE = "BSD-3-clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=79773b05553c027a06a89128fefb052f"
@@ -20,7 +20,7 @@ ROS_BPN = "urdf_tutorial"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
@@ -28,12 +28,12 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     urdf-launch \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
-ROS_TEST_DEPENDS = " \
+ROS_TEST_DEPENDS = "\
     ament-lint-auto \
 "
 
@@ -48,7 +48,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/urdf_tutorial"
 SRC_URI = "git://github.com/ros2-gbp/urdf_tutorial-release;${ROS_BRANCH};protocol=https"
 SRCREV = "5494125042f54bf83c5c6c61271236a0cd805dd4"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

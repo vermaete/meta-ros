@@ -9,7 +9,7 @@ DESCRIPTION = "A ROS Driver for V4L USB Cameras"
 AUTHOR = "Evan Flynn <evanflynn.msu@gmail.com>"
 HOMEPAGE = "http://wiki.ros.org/usb_cam"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "usb_cam"
@@ -87,7 +87,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/usb_cam"
 SRC_URI = "git://github.com/ros2-gbp/usb_cam-release;${ROS_BRANCH};protocol=https"
 SRCREV = "79f51e3c7a3a08ee6534de69366d437c7bd41904"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

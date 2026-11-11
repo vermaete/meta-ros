@@ -10,7 +10,7 @@ AUTHOR = "Víctor Mayoral Vilches <victor@accelerationrobotics.com>"
 ROS_AUTHOR = "Víctor Mayoral Vilches <victor@accelerationrobotics.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
@@ -20,13 +20,13 @@ ROS_BPN = "ament_acceleration"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-core-native \
 "
 
 ROS_EXPORT_DEPENDS = ""
 
-ROS_BUILDTOOL_EXPORT_DEPENDS = " \
+ROS_BUILDTOOL_EXPORT_DEPENDS = "\
     ament-cmake-core-native \
 "
 
@@ -46,7 +46,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/ament_acceleration"
 SRC_URI = "git://github.com/ros2-gbp/ament_acceleration-release;${ROS_BRANCH};protocol=https"
 SRCREV = "ee33cfa0a853b339566de5f88e6ba9431db983f1"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

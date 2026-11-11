@@ -10,7 +10,7 @@ AUTHOR = "ijnek <kenjibrameld@gmail.com>"
 ROS_AUTHOR = "Paul Bovbel <paul@bovbel.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "zbar_ros"
@@ -66,7 +66,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/zbar_ros"
 SRC_URI = "git://github.com/ros2-gbp/zbar_ros-release;${ROS_BRANCH};protocol=https"
 SRCREV = "05fd200a692259be91d98d3c95f134ab7a2b8f3d"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

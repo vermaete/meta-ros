@@ -10,7 +10,7 @@ AUTHOR = "Michael Ferguson <mfergs7@gmail.com>"
 ROS_AUTHOR = "Michael Ferguson"
 HOMEPAGE = "http://ros.org/wiki/grasping_msgs"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "grasping_msgs"
@@ -62,7 +62,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/grasping_msgs"
 SRC_URI = "git://github.com/ros2-gbp/grasping_msgs-release;${ROS_BRANCH};protocol=https"
 SRCREV = "d7c3df936482d108abcd8e659408843589bd80d7"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

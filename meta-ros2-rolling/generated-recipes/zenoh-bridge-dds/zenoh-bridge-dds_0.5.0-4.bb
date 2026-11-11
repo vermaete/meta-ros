@@ -9,7 +9,7 @@ DESCRIPTION = "Bridge between ROS2/DDS and Eclipse zenoh (https://zenoh.io). It 
 AUTHOR = "ADLINK zenoh team <zenoh@adlink-labs.tech>"
 HOMEPAGE = "https://github.com/eclipse-zenoh/zenoh-plugin-dds"
 SECTION = "devel"
-LICENSE = "EPL-2.0 & Apache-2.0"
+LICENSE = "Apache-2.0 AND EPL-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=795d413315082484b70ff4d8370975a5"
 
 ROS_CN = "zenoh_bridge_dds"
@@ -44,7 +44,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/zenoh_bridge_dds"
 SRC_URI = "git://github.com/ros2-gbp/zenoh_bridge_dds-release;${ROS_BRANCH};protocol=https"
 SRCREV = "ae9f3eba9d4ad512dc69d75605e4e046d0617b92"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

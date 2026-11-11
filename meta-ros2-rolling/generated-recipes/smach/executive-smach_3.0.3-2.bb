@@ -10,7 +10,7 @@ AUTHOR = "Isaac Saito <iisaac.saito@gmail.com>"
 ROS_AUTHOR = "Jonathan Bohren"
 HOMEPAGE = "http://ros.org/wiki/smach"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "smach"
@@ -46,7 +46,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/executive_smach"
 SRC_URI = "git://github.com/ros2-gbp/executive_smach-release;${ROS_BRANCH};protocol=https"
 SRCREV = "d89d702228daab0e0f1aff6dd3c57b70cb37a998"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

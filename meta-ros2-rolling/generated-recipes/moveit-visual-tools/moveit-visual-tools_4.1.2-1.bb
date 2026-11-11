@@ -10,7 +10,7 @@ AUTHOR = "Dave Coleman <dave@picknik.ai>"
 ROS_AUTHOR = "Dave Coleman <dave@picknik.ai>"
 HOMEPAGE = "https://github.com/ros-planning/moveit_visual_tools"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "moveit_visual_tools"
@@ -84,7 +84,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/moveit_visual_tools"
 SRC_URI = "git://github.com/ros2-gbp/moveit_visual_tools-release;${ROS_BRANCH};protocol=https"
 SRCREV = "53f129f8bb01fc9a645d62d279a0b1ce85c99a8a"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

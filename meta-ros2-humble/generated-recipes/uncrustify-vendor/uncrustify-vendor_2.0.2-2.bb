@@ -10,30 +10,30 @@ AUTHOR = "Audrow Nash <audrow@openrobotics.org>"
 ROS_AUTHOR = "Michel Hidalgo <michel@ekumenlabs.com>"
 HOMEPAGE = "https://github.com/uncrustify/uncrustify"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
-#         "Apache License 2.0 & GNU General Public License v2.0"
-LICENSE = "Apache-2.0 & GPL-2.0-only"
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
+#         "Apache License 2.0 AND GNU General Public License v2.0"
+LICENSE = "Apache-2.0 AND GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=15;endline=15;md5=f12ef8c0445c08084ae92cf2dcb7ee92"
 
 ROS_CN = "uncrustify_vendor"
 ROS_BPN = "uncrustify_vendor"
 
-ROS_BUILD_DEPENDS = " \
+ROS_BUILD_DEPENDS = "\
     uncrustify \
 "
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
     git-native \
 "
 
-ROS_EXPORT_DEPENDS = " \
+ROS_EXPORT_DEPENDS = "\
     uncrustify \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     uncrustify \
 "
 
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/uncrustify_vendor"
 SRC_URI = "git://github.com/ros2-gbp/uncrustify_vendor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "e2bddd9df7abe1099ea9788e5b3811adabe9481e"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

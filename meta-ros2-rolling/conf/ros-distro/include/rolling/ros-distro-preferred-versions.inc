@@ -10,9 +10,36 @@
 # This is necessary as with ROS1 many recipes fail to build
 # as documented in https://github.com/ros/meta-ros/pull/936
 # The head of the tree should be used for rolling
-PREFERRED_VERSION_pcl = "1.14.1+git"
+PREFERRED_VERSION_pcl = "1.14.1"
 
-PREFERRED_VERSION_sdformat = "15.2.0"
+PREFERRED_VERSION_sdformat = "16.0.1"
 
 # required for python3-scipy
-PREFERRED_VERSION_python3-gast = "0.5.0"
+PREFERRED_VERSION_python3-gast = "0.7.0"
+
+# python-pygraphviz needed a version < 13
+PREFERRED_VERSION_graphviz = "12.2.1"
+
+PREFERRED_VERSION_dartsim = "6.16.6"
+
+PREFERRED_VERSION_ogre-next = "3.0.0"
+
+PREFERRED_VERSION_gz-cmake = "5.1.0"
+PREFERRED_VERSION_gz-common = "7.1.1"
+PREFERRED_VERSION_gz-fuel_tools = "11.0.0"
+PREFERRED_VERSION_gz-gui = "10.0.0"
+PREFERRED_VERSION_gz-launch = "9.0.0"
+PREFERRED_VERSION_gz-math = "9.1.0"
+PREFERRED_VERSION_gz-msgs = "12.0.1"
+PREFERRED_VERSION_gz-physics = "9.1.0"
+PREFERRED_VERSION_gz-plugin = "4.0.0"
+PREFERRED_VERSION_gz-rendering = "10.0.1"
+PREFERRED_VERSION_gz-sensors = "10.0.1"
+PREFERRED_VERSION_gz-sim = "10.1.1"
+PREFERRED_VERSION_gz-tools = "2.0.3"
+PREFERRED_VERSION_gz-transport = "15.0.2"
+PREFERRED_VERSION_gz-utils = "4.0.0"
+
+PREFERRED_VERSION_xsimd = "13.0.0"
+PREFERRED_VERSION_xtensor = "0.27.1"
+PREFERRED_VERSION_xtl = "0.8.0"

@@ -9,7 +9,7 @@ DESCRIPTION = "An extension of the Flexible Collision Library."
 AUTHOR = "Joseph Mirabel <jmirabel@laas.fr>"
 HOMEPAGE = "https://github.com/humanoid-path-planner/hpp-fcl"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "hpp-fcl"
@@ -68,7 +68,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/hpp-fcl"
 SRC_URI = "git://github.com/ros2-gbp/hpp_fcl-release;${ROS_BRANCH};protocol=https"
 SRCREV = "29a3e1b7e8b7af4c9aee3acaf0bfb42a7aaf329a"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

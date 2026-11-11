@@ -9,7 +9,7 @@ DESCRIPTION = "Messages for proprietary (non-NMEA) sentences from Novatel GPS re
 AUTHOR = "P. J. Reed <preed@swri.org>"
 HOMEPAGE = "https://github.com/swri-robotics/novatel_gps_driver"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "novatel_gps_driver"
@@ -49,7 +49,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/novatel_gps_msgs"
 SRC_URI = "git://github.com/ros2-gbp/novatel_gps_driver-release;${ROS_BRANCH};protocol=https"
 SRCREV = "004382f37eb43a1979cee51a07114315b8b8caf8"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

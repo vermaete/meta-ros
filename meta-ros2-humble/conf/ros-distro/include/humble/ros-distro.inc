@@ -23,9 +23,13 @@ require conf/ros-distro/include/humble/ros-distro-preferred-providers.inc
 # Since superflore doesn't know when it's generating a recipe that it will be for a build tool, it can't know that what's in
 # ROS_EXEC_DEPEND are also build tools. Manually add them here.
 ROS_SUPERFLORE_GENERATED_BUILDTOOLS += " \
+    action-msgs-native \
     ament-acceleration-native \
     ament-index-cpp-native \
     ament-lint-native \
+    ament-cmake-cpplint-native \
+    ament-cmake-uncrustify-native \
+    composition-interfaces-native \
     cyclonedds-native \
     domain-coordinator-native \
     fastcdr-native \
@@ -35,65 +39,66 @@ ROS_SUPERFLORE_GENERATED_BUILDTOOLS += " \
     iceoryx-binding-c-native \
     iceoryx-hoofs-native \
     iceoryx-posh-native \
-    iceoryx-hoofs-native \
     launch-native \
     launch-ros-native \
-    launch-yaml-native \
-    launch-xml-native \
     launch-testing-ros-native \
+    launch-xml-native \
+    launch-yaml-native \
+    libstatistics-collector-native \
+    libyaml-vendor-native \
     lifecycle-msgs-native \
     osrf-pycommon-native \
-    rcutils-native \
+    parameter-traits-native \
+    pybind11-vendor-native \
+    rcl-action-native \
+    rcl-interfaces-native \
+    rcl-lifecycle-native \
+    rcl-logging-interface-native \
+    rcl-logging-spdlog-native \
+    rcl-native \
+    rcl-yaml-param-parser-native \
+    rclcpp-lifecycle-native \
+    rclcpp-native \
     rclpy-native \
     rcpputils-native \
+    rcutils-native \
+    rmf-building-map-msgs-native \
+    rmf-site-map-msgs-native \
+    rmw-cyclonedds-cpp-native \
     rmw-dds-common-native \
     rmw-fastrtps-cpp-native \
+    rmw-fastrtps-dynamic-cpp-native \
     rmw-fastrtps-shared-cpp-native \
+    rmw-implementation-native \
     rmw-native \
     ros2cli-native \
     ros2pkg-native \
+    rosgraph-msgs-native \
     rosidl-adapter-native \
     rosidl-cli-native \
+    rosidl-core-runtime-native \
     rosidl-default-runtime-native \
-    rosidl-parser-native \
-    rosidl-runtime-c-native \
-    rosidl-runtime-cpp-native \
-    rosidl-typesupport-fastrtps-c-native \
-    rpyutils-native \
-    uncrustify-vendor-native \
+    rosidl-dynamic-typesupport-native \
+    rosidl-generator-type-description-native \
     rosidl-parser-native \
     rosidl-runtime-c-native \
     rosidl-runtime-cpp-native \
     rosidl-typesupport-c-native \
     rosidl-typesupport-cpp-native \
     rosidl-typesupport-fastrtps-c-native \
-    fastcdr-native \
-    fastrtps-native \
-    composition-interfaces-native \
-    pybind11-vendor-native \
-    rcl-yaml-param-parser-native \
-    rcl-action-native \
-    rcl-interfaces-native \
-    rcl-lifecycle-native \
-    rcl-logging-interface-native \
-    rcl-native \
-    rcl-yaml-param-parser-native \
-    rmw-implementation-native \
-    rosgraph-msgs-native \
-    unique-identifier-msgs-native \
-    rmw-fastrtps-shared-cpp-native \
-    action-msgs-native \
-    rcl-logging-spdlog-native \
+    rosidlcpp-generator-core-native \
+    rosidlcpp-parser-native \
+    rpyutils-native \
+    rsl-native \
+    spdlog-vendor-native \
+    statistics-msgs-native \
+    std-msgs-native \
+    tcb-span-native \
+    tl-expected-native \
     tracetools-native \
     type-description-interfaces-native \
-    libyaml-vendor-native \
-    rmw-fastrtps-cpp-native \
-    rmw-cyclonedds-cpp-native \
-    rmw-fastrtps-dynamic-cpp-native \
-    spdlog-vendor-native \
-    rmf-building-map-msgs-native \
-    std-msgs-native \
-    rmf-site-map-msgs-native \
+    uncrustify-vendor-native \
+    unique-identifier-msgs-native \
 "
 
 # this needs google-benchmark-vendor-native but we probably don't need native version
@@ -168,8 +173,8 @@ ROS_WORLD_SKIP_GROUPS += "${@bb.utils.contains('BBFILE_COLLECTIONS', 'clang-laye
 # recipes depending on cargo which could be provided by cargo@meta-rust or oe-core[honister] and newer release (where it was imported from meta-rust)
 ROS_WORLD_SKIP_GROUPS += "${@bb.utils.contains('BBFILE_COLLECTIONS', 'rust-layer', '', 'cargo', d)}"
 
-# recipes depending on scipy which could be provided by python3-scipy@meta-scipy
-ROS_WORLD_SKIP_GROUPS += "${@bb.utils.contains('BBFILE_COLLECTIONS', 'meta-scipy', '', 'scipy', d)}"
+# recipes depending on scipy which could be provided by python3-scipy@meta-python-ai
+ROS_WORLD_SKIP_GROUPS += "${@bb.utils.contains('BBFILE_COLLECTIONS', 'meta-python-ai', '', 'scipy', d)}"
 
 # swri recipes depending on marti-*-msgs, currently broken after to https://github.com/ros/rosdistro/commit/e019cc8729e7ff2ba2ed51e63886734936254111
 ROS_WORLD_SKIP_GROUPS += "swri"
@@ -188,6 +193,13 @@ ROS_WORLD_SKIP_GROUPS += "wireguard"
 
 # packages (like rtabmap) that use g2o
 ROS_WORLD_SKIP_GROUPS += "g2o"
+
+# packages that require pyside2
+ROS_WORLD_SKIP_GROUPS += "pyside2"
+
+ROS_WORLD_SKIP_GROUPS += "nanobind"
+
+ROS_WORLD_SKIP_GROUPS += "unresolved"
 
 # Must use a _pn- override in this file to override the ROS_BUILD_TYPE of a generated recipe,
 # because we need to set this variable before the "inherit" line in the recipe is parsed,
@@ -306,9 +318,10 @@ ROS_UNRESOLVED_DEP-ignition-transport11 = "ignition-transport11"
 
 ROS_UNRESOLVED_DEP-ignition-msgs8 = "ignition-msgs8"
 
-ROS_UNRESOLVED_DEP-ignition-plugin = "ignition-plugin"
+ROS_UNRESOLVED_DEP-ignition-plugin = "ignition-plugin1"
 
 ROS_UNRESOLVED_DEP-ignition-gazebo6 = "ignition-gazebo6"
+ROS_UNRESOLVED_DEP-gz-sim6 = "ignition-gazebo6"
 
 ROS_UNRESOLVED_DEP-ignition-common4 = "ignition-common4"
 
@@ -419,3 +432,44 @@ ROS_UNRESOLVED_DEP-gazebo-msgs = "gazebo-msgs"
 ROS_UNRESOLVED_DEP-python3-icecream = "python3-icecream"
 ROS_UNRESOLVED_DEP-python3-waitress = "python3-waitress"
 ROS_UNRESOLVED_DEP-python3-paho-mqtt = "python3-paho-mqtt"
+ROS_UNRESOLVED_DEP-network-manager = "networkmanager"
+ROS_UNRESOLVED_DEP-python3-antlr4 = "python3-antlr4-runtime"
+ROS_UNRESOLVED_DEP-python3-expiringdict = "python3-expiringdict"
+ROS_UNRESOLVED_DEP-python3-fastapi = "python3-fastapi"
+ROS_UNRESOLVED_DEP-python3-gi-cairo = "python3-pygobject"
+ROS_UNRESOLVED_DEP-python3-msgpack-numpy = "python3-msgpack-numpy"
+ROS_UNRESOLVED_DEP-python3-networkx = "python3-networkx"
+ROS_UNRESOLVED_DEP-python3-tqdm = "python3-tqdm"
+ROS_UNRESOLVED_DEP-python3-transforms3d = "python3-transforms3d"
+ROS_UNRESOLVED_DEP-python3-uvicorn = "python3-uvicorn"
+ROS_UNRESOLVED_DEP-python-is-python3 = "python3"
+ROS_UNRESOLVED_DEP-stress = "stress"
+ROS_UNRESOLVED_DEP-xclip = "xclip"
+
+ROS_UNRESOLVED_DEP-libicu-dev = "icu"
+ROS_UNRESOLVED_DEP-libblosc-dev = "blosc"
+
+ROS_UNRESOLVED_DEP-libopenvdb-dev = "openvdb"
+
+ROS_UNRESOLVED_DEP-nanobind = "python3-nanobind"
+ROS_UNRESOLVED_DEP-nanobind-dev = "python3-nanobind"
+ROS_UNRESOLVED_DEP-libgirepository = "gobject-introspection"
+ROS_UNRESOLVED_DEP-libgirepository-dev = "gobject-introspection"
+
+ROS_UNRESOLVED_DEP-libdlib-dev = "libdlib"
+ROS_UNRESOLVED_DEP-libiio-dev = "libiio"
+ROS_UNRESOLVED_DEP-python3-colorcet = "python3-colorcet"
+ROS_UNRESOLVED_DEP-python3-graphviz = "python3-graphviz"
+ROS_UNRESOLVED_DEP-python3-inflection = "python3-inflection"
+ROS_UNRESOLVED_DEP-python3-pytorch-pip = "python3-pytorch"
+ROS_UNRESOLVED_DEP-python3-seaborn = "python3-seaborn"
+ROS_UNRESOLVED_DEP-python3-tabulate = "python3-tabulate"
+
+ROS_UNRESOLVED_DEP-libopencv-core = "opencv"
+ROS_UNRESOLVED_DEP-libopencv-highgui = "opencv"
+ROS_UNRESOLVED_DEP-libopencv-imgcodecs = "opencv"
+ROS_UNRESOLVED_DEP-libopencv-imgproc = "opencv"
+ROS_UNRESOLVED_DEP-libopencv-videoio = "opencv"
+
+ROS_UNRESOLVED_DEP-libexpected-dev = "tl-expected"
+ROS_UNRESOLVED_DEP-libnanoflann-dev = "nanoflann"

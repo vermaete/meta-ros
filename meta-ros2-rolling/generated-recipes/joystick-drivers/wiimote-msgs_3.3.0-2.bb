@@ -10,7 +10,7 @@ AUTHOR = "Jonathan Bohren <jbo@jhu.edu>"
 ROS_AUTHOR = "Andreas Paepcke"
 HOMEPAGE = "http://www.ros.org/wiki/wiimote"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=13;endline=13;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "joystick_drivers"
@@ -60,7 +60,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/wiimote_msgs"
 SRC_URI = "git://github.com/ros2-gbp/joystick_drivers-release;${ROS_BRANCH};protocol=https"
 SRCREV = "ad48e8fe2bf4366d8f0ce3e6d5b5fba311fed897"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

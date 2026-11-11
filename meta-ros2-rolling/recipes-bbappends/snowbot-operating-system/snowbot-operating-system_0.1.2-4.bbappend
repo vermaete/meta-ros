@@ -4,6 +4,8 @@
 #   Unknown CMake command "qt5_wrap_cpp".
 inherit ${@bb.utils.contains_any('ROS_WORLD_SKIP_GROUPS', ['qt5', 'pyqt5'], '', 'cmake_qt5', d)}
 
-ROS_BUILDTOOL_DEPENDS += " \
+ROS_BUILDTOOL_DEPENDS += "\
     rosidl-default-generators-native \
 "
+
+LICENSE = "BSD-2-Clause"

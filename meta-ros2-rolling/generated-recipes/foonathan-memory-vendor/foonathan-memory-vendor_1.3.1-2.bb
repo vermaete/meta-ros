@@ -11,7 +11,7 @@ HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Apache License 2.0 & zlib License"
-LICENSE = "Apache-2.0 & Zlib"
+LICENSE = "Apache-2.0 AND Zlib"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=401a7342a877608092ef332b6948eb03"
 
 ROS_CN = "foonathan_memory_vendor"
@@ -51,7 +51,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/foonathan_memory_vendor"
 SRC_URI = "git://github.com/ros2-gbp/foonathan_memory_vendor-release;${ROS_BRANCH};protocol=https"
 SRCREV = "2cd4ec778b044b01ae8f85280a82a4fb23982444"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 

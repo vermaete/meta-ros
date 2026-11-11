@@ -9,7 +9,7 @@ DESCRIPTION = "The andino_firmware package"
 AUTHOR = "Franco Cipollone <franco.c@ekumenlabs.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "BSD Clause 3"
 LICENSE = "BSD-Clause-3"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=e2197b8633fd51a47f897d9d6f820c24"
@@ -19,7 +19,7 @@ ROS_BPN = "andino_firmware"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-native \
 "
 
@@ -43,7 +43,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/andino_firmware"
 SRC_URI = "git://github.com/ros2-gbp/andino-release;${ROS_BRANCH};protocol=https"
 SRCREV = "f20924ba620caa4cb185a4c86e98267cfc8c92d5"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

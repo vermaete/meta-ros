@@ -12,15 +12,15 @@ HOMEPAGE = "http://www.ros.org/wiki/image_geometry"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Apache License 2.0 & BSD"
-LICENSE = "Apache-2.0 & BSD"
+LICENSE = "Apache-2.0 AND LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
 
 ROS_CN = "vision_opencv"
 ROS_BPN = "image_geometry"
 
 ROS_BUILD_DEPENDS = " \
-    ${ROS_UNRESOLVED_DEP-python3-deprecated} \
     opencv \
+    python3-deprecated \
     sensor-msgs \
 "
 
@@ -30,16 +30,16 @@ ROS_BUILDTOOL_DEPENDS = " \
 "
 
 ROS_EXPORT_DEPENDS = " \
-    ${ROS_UNRESOLVED_DEP-python3-deprecated} \
     opencv \
+    python3-deprecated \
     sensor-msgs \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
 ROS_EXEC_DEPENDS = " \
-    ${ROS_UNRESOLVED_DEP-python3-deprecated} \
     opencv \
+    python3-deprecated \
     sensor-msgs \
 "
 
@@ -60,7 +60,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/image_geometry"
 SRC_URI = "git://github.com/ros2-gbp/vision_opencv-release;${ROS_BRANCH};protocol=https"
 SRCREV = "703aa0fc8d80c67f488253b2a4e574bbd93757a2"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

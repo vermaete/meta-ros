@@ -10,7 +10,7 @@ AUTHOR = "Ivan Paunovic <ivanpauno@ekumenlabs.com>"
 ROS_AUTHOR = "Dirk Thomas"
 HOMEPAGE = "http://ros.org/wiki/rqt_common_plugins"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "LicenseRef-BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=21;endline=21;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "rqt_common_plugins"
@@ -59,7 +59,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/rolling/rqt_common_plugins"
 SRC_URI = "git://github.com/ros2-gbp/rqt_common_plugins-release;${ROS_BRANCH};protocol=https"
 SRCREV = "441dc2cb50ad084c86136f60179f89284027814f"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

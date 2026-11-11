@@ -1,4 +1,4 @@
-LICENSE = "LGPL-2.1-or-later & BSD-3-Clause & LGPL-3.0-only & MIT & Zlib"
+LICENSE = "BSD-3-Clause AND LGPL-2.1-or-later AND LGPL-3.0-only AND MIT AND Zlib"
 LIC_FILES_CHKSUM = "file://COPYING;md5=1de906ee96808d9776dd72a5f9a79a22 \
                     file://GIMPACT/GIMPACT-LICENSE-BSD.TXT;md5=8b8d3fd534c235edacef40718034070c \
                     file://GIMPACT/GIMPACT-LICENSE-LGPL.TXT;md5=b6606274a9090b4293304cdf242059bb \
@@ -23,10 +23,10 @@ SRC_URI = "git://bitbucket.org/odedevs/ode.git;protocol=https;branch=0.16.x"
 PV = "0.16.5+git"
 SRCREV = "cc5ca0e9417a8cf4000a63a5346c96eba0f5610b"
 
-S = "${WORKDIR}/git"
-
 PACKAGECONFIG ??= "${@bb.utils.filter('DISTRO_FEATURES', 'opengl', d)}"
 PACKAGECONFIG[opengl] = "-DODE_WITH_DEMOS=ON,-DODE_WITH_DEMOS=OFF,virtual/libgl freeglut libx11"
 PACKAGECONFIG[ccd] = "-DODE_WITH_LIBCCD=ON,-DODE_WITH_LIBCCD=OFF,ccd"
+
+EXTRA_OECMAKE = "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 
 inherit cmake

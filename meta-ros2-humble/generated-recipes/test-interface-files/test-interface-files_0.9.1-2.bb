@@ -10,7 +10,7 @@ AUTHOR = "Audrow Nash <audrow@openrobotics.org>"
 ROS_AUTHOR = "Dirk Thomas <dthomas@openrobotics.org>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache License 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=12c26a18c7f493fdc7e8a93b16b7c04f"
@@ -20,7 +20,7 @@ ROS_BPN = "test_interface_files"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     ament-cmake-core-native \
 "
 
@@ -44,7 +44,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/test_interface_files"
 SRC_URI = "git://github.com/ros2-gbp/test_interface_files-release;${ROS_BRANCH};protocol=https"
 SRCREV = "e3d0c4e82b4ae8f07faa3c45d235a70313fb2e38"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_cmake"
 

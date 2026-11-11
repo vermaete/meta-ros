@@ -10,7 +10,7 @@ AUTHOR = "Nick Lamprianidis <info@nlamprian.me>"
 ROS_AUTHOR = "Nick Lamprianidis <info@nlamprian.me>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "GPLv3"
 LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=1e7b3bcc2e271699c77c769685058cbe"
@@ -26,7 +26,7 @@ ROS_EXPORT_DEPENDS = ""
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
-ROS_EXEC_DEPENDS = " \
+ROS_EXEC_DEPENDS = "\
     gazebo-msgs \
     rclpy \
     std-srvs \
@@ -46,7 +46,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/humble/gazebo_video_monitor_utils"
 SRC_URI = "git://github.com/ros2-gbp/gazebo_video_monitors-release;${ROS_BRANCH};protocol=https"
 SRCREV = "f49c6659093fa96e833c19c224461836e3017026"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "ament_python"
 

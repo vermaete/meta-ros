@@ -10,7 +10,7 @@ AUTHOR = "Shane Loretz <sloretz@osrfoundation.org>"
 ROS_AUTHOR = "Shane Loretz <sloretz@openrobotics.org>"
 HOMEPAGE = "https://github.com/ros/sdformat_test_files"
 SECTION = "devel"
-# Original license in package.xml, joined with "&" when multiple license tags were used:
+# Original license in package.xml, joined with "AND" when multiple license tags were used:
 #         "Apache 2.0"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=3dce4ba60d7e51ec64f3c3dc18672dd3"
@@ -20,13 +20,13 @@ ROS_BPN = "sdformat_test_files"
 
 ROS_BUILD_DEPENDS = ""
 
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILDTOOL_DEPENDS = "\
     cmake-native \
 "
 
 ROS_EXPORT_DEPENDS = ""
 
-ROS_BUILDTOOL_EXPORT_DEPENDS = " \
+ROS_BUILDTOOL_EXPORT_DEPENDS = "\
     cmake-native \
 "
 
@@ -46,7 +46,6 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 ROS_BRANCH ?= "branch=release/jazzy/sdformat_test_files"
 SRC_URI = "git://github.com/ros2-gbp/sdformat_urdf-release;${ROS_BRANCH};protocol=https"
 SRCREV = "8c299f750f424fdc4c3f0f040c8f9cf222b0299d"
-S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 
