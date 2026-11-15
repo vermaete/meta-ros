@@ -212,7 +212,7 @@ ROS_BUILD_TYPE:pn-python-orocos-kdl = "catkin"
 
 # Otherwise it will use cmake as specified in
 # https://github.com/mavlink/mavlink-gbp-release/blob/release/melodic/mavlink/2019.11.11-1/package.xml#L29
-# but that doesn't respect the prefix set in meta-ros-common/classes/ros_opt_prefix.bbclass
+# but that doesn't respect the prefix set in meta-ros1/classes/ros_opt_prefix.bbclass
 ROS_BUILD_TYPE:pn-mavlink = "catkin"
 
 # Submitted with https://github.com/ros/rosdistro/pull/29534

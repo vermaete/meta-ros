@@ -22,7 +22,7 @@ black:
 boost:
 - boost@openembedded-core
 bullet:
-- bullet@meta-ros-common
+- bullet@meta-ros2
 bzip2:
 - bzip2@openembedded-core
 cargo:
@@ -50,7 +50,7 @@ coinor-libcoinutils-dev:
 coinor-libipopt-dev:
 - ${ROS_UNRESOLVED_DEP-coinor-libipopt-dev}
 cppcheck:
-- cppcheck@meta-ros-common
+- cppcheck@meta-ros2
 curl:
 - curl@openembedded-core
 cwiid:
@@ -79,9 +79,9 @@ fmt:
 fzf:
 - ${ROS_UNRESOLVED_DEP-fzf}
 geographiclib:
-- geographiclib@meta-ros-common
+- geographiclib@meta-ros2
 geographiclib-tools:
-- geographiclib@meta-ros-common
+- geographiclib@meta-ros2
 geos:
 - geos@meta-oe
 gfortran:
@@ -193,13 +193,13 @@ libcairo2-dev:
 libcap-dev:
 - libcap@openembedded-core
 libccd-dev:
-- libccd@meta-ros-common
+- libccd@meta-ros2
 libceres-dev:
 - ceres-solver@meta-oe
 libclang-dev:
 - clang@openembedded-core
 libconsole-bridge-dev:
-- console-bridge@meta-ros-common
+- console-bridge@meta-ros2
 libcpp-httplib-dev:
 - ${ROS_UNRESOLVED_DEP-libcpp-httplib-dev}
 libcurl-dev:
@@ -221,21 +221,21 @@ libepoxy-dev:
 libexpected-dev:
 - ${ROS_UNRESOLVED_DEP-libexpected-dev}
 libfcl:
-- fcl@meta-ros-common
+- fcl@meta-ros2
 libfcl-dev:
-- fcl@meta-ros-common
+- fcl@meta-ros2
 libfl-dev:
 - ${ROS_UNRESOLVED_DEP-libfl-dev}
 libflann:
-- libflann@meta-ros-common
+- libflann@meta-ros2
 libflann-dev:
-- libflann@meta-ros-common
+- libflann@meta-ros2
 libflatbuffers-dev:
 - ${ROS_UNRESOLVED_DEP-libflatbuffers-dev}
 libfreeimage-dev:
 - ${ROS_UNRESOLVED_DEP-libfreeimage-dev}
 libfreenect-dev:
-- libfreenect@meta-ros-common
+- libfreenect@meta-ros2
 libfreetype-dev:
 - freetype@openembedded-core
 libfreetype6:
@@ -243,7 +243,7 @@ libfreetype6:
 libftdi1-dev:
 - libftdi@meta-oe
 libgdal-dev:
-- gdal@meta-ros-common
+- gdal@meta-ros2
 libgeos++-dev:
 - geos@meta-oe
 libgflags-dev:
@@ -313,11 +313,11 @@ liboctomap-dev:
 libogg:
 - libogg@openembedded-core
 libogre-dev:
-- ogre@meta-ros-common
+- ogre@meta-ros2
 libomp-dev:
 - openmp@openembedded-core
 libopenblas-dev:
-- openblas@meta-ros-common
+- openblas@meta-ros2
 libopencv-core:
 - ${ROS_UNRESOLVED_DEP-libopencv-core}
 libopencv-dev:
@@ -333,7 +333,7 @@ libopencv-imgproc-dev:
 libopencv-videoio:
 - ${ROS_UNRESOLVED_DEP-libopencv-videoio}
 libopenexr-dev:
-- openexr@meta-ros-common
+- openexr@meta-ros2
 libopenni2-dev:
 - openni2@meta-ros2
 libopenscenegraph:
@@ -351,25 +351,25 @@ libpaho-mqttpp-dev:
 libpcap:
 - libpcap@openembedded-core
 libpcl-all-dev:
-- pcl@meta-ros-common
+- pcl@meta-ros2
 libpcl-common:
-- pcl@meta-ros-common
+- pcl@meta-ros2
 libpcl-features:
-- pcl@meta-ros-common
+- pcl@meta-ros2
 libpcl-filters:
-- pcl@meta-ros-common
+- pcl@meta-ros2
 libpcl-io:
-- pcl@meta-ros-common
+- pcl@meta-ros2
 libpcl-segmentation:
-- pcl@meta-ros-common
+- pcl@meta-ros2
 libpcl-surface:
-- pcl@meta-ros-common
+- pcl@meta-ros2
 libpng-dev:
 - libpng@openembedded-core
 libpoco-dev:
 - poco@meta-oe
 libqhull:
-- qhull@meta-ros-common
+- qhull@meta-ros2
 libqt5-concurrent:
 - qtbase@meta-qt5
 libqt5-core:
@@ -541,7 +541,7 @@ ocl-icd-opencl-dev:
 opencl-headers:
 - opencl-headers@meta-oe
 opende:
-- ode@meta-ros-common
+- ode@meta-ros2
 opengl:
 - mesa@openembedded-core
 openssl:
@@ -563,7 +563,7 @@ pugixml-dev:
 pybind11-dev:
 - python3-pybind11@meta-python
 pydocstyle:
-- python3-pydocstyle@meta-ros-common
+- python3-pydocstyle@meta-ros2
 pyflakes3:
 - python3-pyflakes@meta-python
 pyqt5-dev-tools:
@@ -579,13 +579,13 @@ python3-autobahn:
 python3-babeltrace:
 - babeltrace@openembedded-core
 python3-boto3:
-- python3-boto3@meta-ros-common
+- python3-boto3@meta-ros2
 python3-cairo:
 - python3-pycairo@openembedded-core
 python3-catkin-pkg:
-- python3-catkin-pkg@meta-ros-common
+- python3-catkin-pkg@meta-ros2
 python3-catkin-pkg-modules:
-- python3-catkin-pkg@meta-ros-common
+- python3-catkin-pkg@meta-ros2
 python3-cbor2:
 - python3-cbor2@meta-python
 python3-click:
@@ -607,7 +607,7 @@ python3-dev:
 python3-distro:
 - python3-distro@meta-python
 python3-empy:
-- python3-empy@meta-ros-common
+- python3-empy@meta-ros2
 python3-fastapi:
 - python3-fastapi@meta-python
 python3-filelock:
@@ -615,21 +615,21 @@ python3-filelock:
 python3-fiona:
 - python3-fiona@meta-ros2
 python3-flake8:
-- python3-flake8@meta-ros-common
+- python3-flake8@meta-ros2
 python3-flake8-blind-except:
 - ${ROS_UNRESOLVED_DEP-python3-flake8-blind-except}
 python3-flake8-builtins:
-- python3-flake8-builtins@meta-ros-common
+- python3-flake8-builtins@meta-ros2
 python3-flake8-class-newline:
 - ${ROS_UNRESOLVED_DEP-python3-flake8-class-newline}
 python3-flake8-comprehensions:
-- python3-flake8-comprehensions@meta-ros-common
+- python3-flake8-comprehensions@meta-ros2
 python3-flake8-deprecated:
 - ${ROS_UNRESOLVED_DEP-python3-flake8-deprecated}
 python3-flake8-import-order:
-- python3-flake8-import-order@meta-ros-common
+- python3-flake8-import-order@meta-ros2
 python3-flake8-quotes:
-- python3-flake8-quotes@meta-ros-common
+- python3-flake8-quotes@meta-ros2
 python3-flask-socketio:
 - python3-flask-socketio@meta-python
 python3-gi:
@@ -641,7 +641,7 @@ python3-graphviz:
 python3-httpx:
 - python3-httpx@meta-python
 python3-img2pdf:
-- python3-img2pdf@meta-ros-common
+- python3-img2pdf@meta-ros2
 python3-importlib-metadata:
 - python3-importlib-metadata@meta-python
 python3-importlib-resources:
@@ -651,9 +651,9 @@ python3-jinja2:
 python3-jsonschema:
 - python3-jsonschema@openembedded-core
 python3-junitparser:
-- python3-junitparser@meta-ros-common
+- python3-junitparser@meta-ros2
 python3-lark-parser:
-- python3-lark-parser@meta-ros-common
+- python3-lark-parser@meta-ros2
 python3-lxml:
 - python3-lxml@openembedded-core
 python3-marisa:
@@ -661,13 +661,13 @@ python3-marisa:
 python3-matplotlib:
 - python3-matplotlib@meta-python
 python3-mock:
-- python3-mock@meta-ros-common
+- python3-mock@meta-ros2
 python3-msgpack:
 - python3-msgpack@meta-python
 python3-msgpack-numpy:
-- python3-msgpack-numpy@meta-ros-common
+- python3-msgpack-numpy@meta-ros2
 python3-mypy:
-- python3-mypy@meta-ros-common
+- python3-mypy@meta-ros2
 python3-natsort:
 - python3-natsort@meta-python
 python3-ntplib:
@@ -703,9 +703,9 @@ python3-pycodestyle:
 python3-pydantic:
 - python3-pydantic@meta-python
 python3-pydot:
-- python3-pydot@meta-ros-common
+- python3-pydot@meta-ros2
 python3-pygraphviz:
-- python3-pygraphviz@meta-ros-common
+- python3-pygraphviz@meta-ros2
 python3-pykdl:
 - python3-pykdl@meta-ros1-noetic
 python3-pyproj:
@@ -719,9 +719,9 @@ python3-pytest:
 python3-pytest-asyncio:
 - ${ROS_UNRESOLVED_DEP-python3-pytest-asyncio}
 python3-pytest-cov:
-- python3-pytest-cov@meta-ros-common
+- python3-pytest-cov@meta-ros2
 python3-pytest-mock:
-- python3-pytest-mock@meta-ros-common
+- python3-pytest-mock@meta-ros2
 python3-pytest-timeout:
 - python3-pytest-timeout@meta-python
 python3-qt-bindings:
@@ -733,11 +733,11 @@ python3-requests:
 python3-rich:
 - python3-rich@meta-python
 python3-rosdistro-modules:
-- python3-rosdistro@meta-ros-common
+- python3-rosdistro@meta-ros2
 python3-rospkg:
-- python3-rospkg@meta-ros-common
+- python3-rospkg@meta-ros2
 python3-rospkg-modules:
-- python3-rospkg@meta-ros-common
+- python3-rospkg@meta-ros2
 python3-rtree:
 - python3-rtree@meta-ros2
 python3-ruamel.yaml:
@@ -779,7 +779,7 @@ python3-twisted:
 python3-typeguard:
 - python3-typeguard@meta-python
 python3-types-pyyaml:
-- python3-types-pyyaml@meta-ros-common
+- python3-types-pyyaml@meta-ros2
 python3-typing-extensions:
 - python3-typing-extensions@openembedded-core
 python3-ujson:
@@ -791,7 +791,7 @@ python3-uvicorn:
 python3-uvloop:
 - python3-uvloop@meta-ros2
 python3-vcstool:
-- python3-vcstool@meta-ros-common
+- python3-vcstool@meta-ros2
 python3-venv:
 - python3@openembedded-core
 python3-websocket:
@@ -905,8 +905,8 @@ sqlite3:
 subversion:
 - subversion@openembedded-core
 suitesparse:
-- suitesparse-cholmod@meta-ros-common
-- suitesparse-cxsparse@meta-ros-common
+- suitesparse-cholmod@meta-ros2
+- suitesparse-cxsparse@meta-ros2
 swig:
 - swig@openembedded-core
 tango-icon-theme:
@@ -922,7 +922,7 @@ tl_expected:
 udev:
 - udev@openembedded-core
 uncrustify:
-- uncrustify@meta-ros-common
+- uncrustify@meta-ros2
 unzip:
 - unzip@openembedded-core
 uuid:
@@ -936,9 +936,9 @@ wayland-dev:
 wget:
 - wget@openembedded-core
 wx-common:
-- wxwidgets@meta-ros-common
+- wxwidgets@meta-ros2
 wxwidgets:
-- wxwidgets@meta-ros-common
+- wxwidgets@meta-ros2
 xclip:
 - ${ROS_UNRESOLVED_DEP-xclip}
 xvfb:
@@ -946,7 +946,7 @@ xvfb:
 yaml:
 - libyaml@openembedded-core
 yaml-cpp:
-- yaml-cpp@meta-ros-common
+- yaml-cpp@meta-ros2
 zbar:
 - zbar@meta-oe
 zip:
@@ -954,4 +954,4 @@ zip:
 zlib:
 - zlib@openembedded-core
 zziplib:
-- zziplib@meta-ros-common
+- zziplib@meta-ros2

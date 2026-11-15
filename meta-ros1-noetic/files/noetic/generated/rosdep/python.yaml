@@ -338,7 +338,7 @@ paramiko:
   gentoo: [dev-python/paramiko]
   macports: [py27-paramiko]
   nixos: [pythonPackages.paramiko]
-  openembedded: ['${PYTHON_PN}-paramiko@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-paramiko@meta-ros1']
   opensuse: [python-paramiko]
   osx:
     pip:
@@ -377,7 +377,7 @@ pydocstyle:
   freebsd: [devel/py-pydocstyle]
   gentoo: [dev-python/pydocstyle]
   nixos: [python3Packages.pydocstyle]
-  openembedded: ['${PYTHON_PN}-pydocstyle@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-pydocstyle@meta-ros1']
   osx:
     pip:
       packages: [pydocstyle]
@@ -406,7 +406,7 @@ pyflakes3:
   freebsd: [devel/py-pyflakes]
   gentoo: [dev-python/pyflakes]
   nixos: [python3Packages.pyflakes]
-  openembedded: ['${PYTHON_PN}-pyflakes@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-pyflakes@meta-ros1']
   osx:
     pip:
       packages: [pyflakes]
@@ -790,7 +790,7 @@ python-boto3:
   debian: [python-boto3]
   gentoo: [dev-python/boto3]
   nixos: [pythonPackages.boto3]
-  openembedded: ['${PYTHON_PN}-boto3@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-boto3@meta-ros1']
   opensuse: [python-boto3]
   ubuntu:
     '*': [python-boto3]
@@ -872,7 +872,7 @@ python-cantools-pip:
       packages: [cantools]
 python-catkin-lint:
   fedora: [python-catkin_lint]
-  openembedded: ['${PYTHON_PN}-catkin-lint@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-catkin-lint@meta-ros1']
   ubuntu: [python-catkin-lint]
 python-catkin-pkg:
   alpine:
@@ -887,7 +887,7 @@ python-catkin-pkg:
   gentoo: [dev-python/catkin_pkg]
   macports: [python-catkin-pkg]
   nixos: [pythonPackages.catkin-pkg]
-  openembedded: ['${PYTHON_PN}-catkin-pkg@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-catkin-pkg@meta-ros1']
   opensuse: [python-catkin_pkg]
   osx:
     pip:
@@ -912,7 +912,7 @@ python-catkin-pkg-modules:
   gentoo: [dev-python/catkin_pkg]
   macports: [python-catkin-pkg]
   nixos: [pythonPackages.catkin-pkg]
-  openembedded: ['${PYTHON_PN}-catkin-pkg@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-catkin-pkg@meta-ros1']
   opensuse: [python-catkin_pkg]
   osx:
     pip:
@@ -942,7 +942,7 @@ python-catkin-tools:
   arch: [python2-catkin-tools]
   debian: [python-catkin-tools]
   fedora: [python-catkin_tools]
-  openembedded: ['${PYTHON_PN}-catkin-tools@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-catkin-tools@meta-ros1']
   osx:
     pip:
       packages: [catkin_tools]
@@ -1296,7 +1296,7 @@ python-defusedxml:
   freebsd: [py27-defusedxml]
   gentoo: [dev-python/defusedxml]
   nixos: [pythonPackages.defusedxml]
-  openembedded: ['${PYTHON_PN}-defusedxml@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-defusedxml@meta-ros1']
   opensuse: [python2-defusedxml]
   osx:
     pip:
@@ -1410,7 +1410,7 @@ python-empy:
   gentoo: [dev-python/empy]
   macports: [py27-empy]
   nixos: [pythonPackages.empy]
-  openembedded: ['${PYTHON_PN}-empy@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-empy@meta-ros1']
   opensuse: [python2-empy]
   osx:
     pip:
@@ -1546,7 +1546,7 @@ python-flake8:
   fedora: [python-flake8]
   gentoo: [dev-python/flake8]
   nixos: [python3Packages.flake8]
-  openembedded: ['${PYTHON_PN}-flake8@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-flake8@meta-ros1']
   ubuntu:
     bionic: [python-flake8]
 python-flask:
@@ -1766,7 +1766,7 @@ python-gnupg:
   freebsd: [py27-python-gnupg]
   gentoo: [dev-python/python-gnupg]
   nixos: [pythonPackages.python-gnupg]
-  openembedded: ['${PYTHON_PN}-gnupg@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-gnupg@meta-ros1']
   opensuse: [python2-python-gnupg]
   rhel:
     '7': [python2-gnupg]
@@ -2476,7 +2476,7 @@ python-netifaces:
   gentoo: [dev-python/netifaces]
   macports: [p27-netifaces]
   nixos: [pythonPackages.netifaces]
-  openembedded: ['${PYTHON_PN}-netifaces@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-netifaces@meta-ros1']
   opensuse: [python2-netifaces]
   osx:
     pip:
@@ -2698,7 +2698,7 @@ python-paramiko:
   gentoo: [dev-python/paramiko]
   macports: [py27-paramiko]
   nixos: [pythonPackages.paramiko]
-  openembedded: ['${PYTHON_PN}-paramiko@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-paramiko@meta-ros1']
   opensuse: [python2-paramiko]
   osx:
     pip:
@@ -3027,7 +3027,7 @@ python-pydot:
   gentoo: [dev-python/pydot]
   macports: [py27-pydot]
   nixos: [pythonPackages.pydot]
-  openembedded: ['${PYTHON_PN}-pydot@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-pydot@meta-ros1']
   opensuse: [python2-pydot]
   osx:
     pip:
@@ -3212,7 +3212,7 @@ python-pyproj:
   debian: [python-pyproj]
   gentoo: [dev-python/pyproj]
   nixos: [pythonPackages.pyproj]
-  openembedded: ['${PYTHON_PN}-pyproj@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-pyproj@meta-ros1']
   osx:
     pip:
       packages: [pyproj]
@@ -3308,7 +3308,7 @@ python-pytest-cov:
   fedora: [python-pytest-cov]
   gentoo: [dev-python/pytest-cov]
   nixos: [pythonPackages.pytestcov]
-  openembedded: ['${PYTHON_PN}-pytest-cov@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-pytest-cov@meta-ros1']
   ubuntu: [python-pytest-cov]
 python-pytest-dependency-pip:
   debian:
@@ -3553,7 +3553,7 @@ python-rosdep:
       packages: [rosdep]
   gentoo: [dev-util/rosdep]
   nixos: [pythonPackages.rosdep]
-  openembedded: ['${PYTHON_PN}-rosdep@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-rosdep@meta-ros1']
   opensuse: [python-rosdep]
   osx:
     pip:
@@ -3577,7 +3577,7 @@ python-rosdep-modules:
       packages: [rosdep]
   gentoo: [dev-util/rosdep]
   nixos: [pythonPackages.rosdep]
-  openembedded: ['${PYTHON_PN}-rosdep@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-rosdep@meta-ros1']
   opensuse: [python-rosdep]
   osx:
     pip:
@@ -3632,7 +3632,7 @@ python-rospkg:
   gentoo: [dev-python/rospkg]
   macports: [py27-rospkg]
   nixos: [pythonPackages.rospkg]
-  openembedded: ['${PYTHON_PN}-rospkg@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-rospkg@meta-ros1']
   opensuse: [python-rospkg]
   osx:
     pip:
@@ -3982,7 +3982,7 @@ python-sphinx:
   gentoo: [dev-python/sphinx]
   macports: [py27-sphinx]
   nixos: [pythonPackages.sphinx]
-  openembedded: ['${PYTHON_PN}-sphinx@meta-ros-common']
+  openembedded: ['${PYTHON_PN}-sphinx@meta-ros1']
   opensuse: [python-Sphinx]
   osx:
     pip:
@@ -5146,7 +5146,7 @@ python3-boto3:
   fedora: [python3-boto3]
   gentoo: [dev-python/boto3]
   nixos: [python3Packages.boto3]
-  openembedded: [python3-boto3@meta-ros-common]
+  openembedded: [python3-boto3@meta-ros1]
   opensuse: [python3-boto3]
   rhel:
     '*': ['python%{python3_pkgversion}-boto3']
@@ -5259,7 +5259,7 @@ python3-catkin-lint:
     '*': [catkin-lint]
     stretch: null
   fedora: [python3-catkin_lint]
-  openembedded: [python3-catkin-lint@meta-ros-common]
+  openembedded: [python3-catkin-lint@meta-ros1]
   rhel: [python3-catkin_lint]
   ubuntu:
     '*': [catkin-lint]
@@ -5273,7 +5273,7 @@ python3-catkin-pkg:
   fedora: [python3-catkin_pkg]
   gentoo: [dev-python/catkin_pkg]
   nixos: [python3Packages.catkin-pkg]
-  openembedded: [python3-catkin-pkg@meta-ros-common]
+  openembedded: [python3-catkin-pkg@meta-ros1]
   rhel: ['python%{python3_pkgversion}-catkin_pkg']
   ubuntu: [python3-catkin-pkg]
 python3-catkin-pkg-modules:
@@ -5285,7 +5285,7 @@ python3-catkin-pkg-modules:
   fedora: [python3-catkin_pkg]
   gentoo: [dev-python/catkin_pkg]
   nixos: [python3Packages.catkin-pkg]
-  openembedded: [python3-catkin-pkg@meta-ros-common]
+  openembedded: [python3-catkin-pkg@meta-ros1]
   osx:
     pip:
       packages: [catkin-pkg]
@@ -5314,7 +5314,7 @@ python3-catkin-sphinx:
 python3-catkin-tools:
   debian: [python3-catkin-tools]
   fedora: [python3-catkin_tools]
-  openembedded: [python3-catkin-tools@meta-ros-common]
+  openembedded: [python3-catkin-tools@meta-ros1]
   ubuntu: [python3-catkin-tools]
 python3-cbor2:
   arch: [python-cbor2]
@@ -5812,7 +5812,7 @@ python3-empy:
   freebsd: [textproc/py-empy]
   gentoo: [dev-python/empy]
   nixos: [python3Packages.empy]
-  openembedded: [python3-empy@meta-ros-common]
+  openembedded: [python3-empy@meta-ros1]
   opensuse: [python3-empy]
   osx:
     pip:
@@ -6004,7 +6004,7 @@ python3-flake8:
   freebsd: [devel/py-flake8]
   gentoo: [dev-python/flake8]
   nixos: [python3Packages.flake8]
-  openembedded: [python3-flake8@meta-ros-common]
+  openembedded: [python3-flake8@meta-ros1]
   opensuse: [python3-flake8]
   osx:
     pip:
@@ -6060,7 +6060,7 @@ python3-flake8-builtins:
   fedora: [python3-flake8-builtins]
   freebsd: [devel/py-flake8-builtins]
   nixos: []
-  openembedded: [python3-flake8-builtins@meta-ros-common]
+  openembedded: [python3-flake8-builtins@meta-ros1]
   opensuse: [python3-flake8-builtins]
   rhel:
     '*': [python3-flake8-builtins]
@@ -6106,7 +6106,7 @@ python3-flake8-comprehensions:
   fedora: [python3-flake8-comprehensions]
   freebsd: [devel/py-flake8-comprehensions]
   nixos: []
-  openembedded: [python3-flake8-comprehensions@meta-ros-common]
+  openembedded: [python3-flake8-comprehensions@meta-ros1]
   rhel:
     '*': [python3-flake8-comprehensions]
     '8':
@@ -6148,7 +6148,7 @@ python3-flake8-docstrings:
   fedora: [python3-flake8-docstrings]
   freebsd: [devel/py-flake8-docstrings]
   nixos: [python3Packages.flake8-docstrings]
-  openembedded: [python3-flake8-docstrings@meta-ros-common]
+  openembedded: [python3-flake8-docstrings@meta-ros1]
   opensuse: [python3-flake8-docstrings]
   rhel:
     '*': [python3-flake8-docstrings]
@@ -6167,7 +6167,7 @@ python3-flake8-import-order:
   fedora: [python3-flake8-import-order]
   freebsd: [devel/py-flake8-import-order]
   nixos: [python3Packages.flake8-import-order]
-  openembedded: [python3-flake8-import-order@meta-ros-common]
+  openembedded: [python3-flake8-import-order@meta-ros1]
   opensuse: [python3-flake8-import-order]
   rhel:
     '*': [python3-flake8-import-order]
@@ -6204,7 +6204,7 @@ python3-flake8-quotes:
   fedora: [python3-flake8-quotes]
   freebsd: [devel/py-flake8-quotes]
   nixos: []
-  openembedded: [python3-flake8-quotes@meta-ros-common]
+  openembedded: [python3-flake8-quotes@meta-ros1]
   opensuse: [python3-flake8-quotes]
   rhel:
     '*': [python3-flake8-quotes]
@@ -6716,7 +6716,7 @@ python3-ifcfg:
     buster: [python3-ifcfg]
     stretch: [python3-ifcfg]
   fedora: [python3-ifcfg]
-  openembedded: [python3-ifcfg@meta-ros-common]
+  openembedded: [python3-ifcfg@meta-ros1]
   rhel: ['python%{python3_pkgversion}-ifcfg']
   ubuntu:
     bionic: [python3-ifcfg]
@@ -6747,7 +6747,7 @@ python3-img2pdf:
   fedora: [python3-img2pdf]
   gentoo: [media-gfx/img2pdf]
   nixos: [python3Packages.img2pdf]
-  openembedded: [python3-img2pdf@meta-ros-common]
+  openembedded: [python3-img2pdf@meta-ros1]
   opensuse: [python3-img2pdf]
   rhel:
     '*': [python3-img2pdf]
@@ -7054,7 +7054,7 @@ python3-lark-parser:
   freebsd: [devel/py-lark]
   gentoo: [dev-python/lark]
   nixos: [python3Packages.lark]
-  openembedded: [python3-lark-parser@meta-ros-common]
+  openembedded: [python3-lark-parser@meta-ros1]
   rhel: ['python%{python3_pkgversion}-lark-parser']
   ubuntu:
     '*': [python3-lark]
@@ -7383,7 +7383,7 @@ python3-mock:
   fedora: [python3-mock]
   gentoo: [dev-python/mock]
   nixos: [python3Packages.mock]
-  openembedded: [python3-mock@meta-ros-common]
+  openembedded: [python3-mock@meta-ros1]
   opensuse: [python3-mock]
   osx:
     pip:
@@ -7517,7 +7517,7 @@ python3-mypy:
   freebsd: [devel/py-mypy]
   gentoo: [dev-python/mypy]
   nixos: [python3Packages.mypy]
-  openembedded: [python3-mypy@meta-ros-common]
+  openembedded: [python3-mypy@meta-ros1]
   opensuse: [mypy]
   osx:
     pip:
@@ -7608,7 +7608,7 @@ python3-netifaces:
   fedora: [python3-netifaces]
   gentoo: [dev-python/netifaces]
   nixos: [python3Packages.netifaces]
-  openembedded: [python3-netifaces@meta-ros-common]
+  openembedded: [python3-netifaces@meta-ros1]
   opensuse: [python3-netifaces]
   rhel: ['python%{python3_pkgversion}-netifaces']
   ubuntu: [python3-netifaces]
@@ -7660,7 +7660,7 @@ python3-nose-parameterized:
   ubuntu: [python3-nose-parameterized]
 python3-nose-yanc:
   debian: [python3-nose-yanc]
-  openembedded: [python3-nose-yanc@meta-ros-common]
+  openembedded: [python3-nose-yanc@meta-ros1]
   ubuntu: [python3-nose-yanc]
 python3-ntplib:
   debian: [python3-ntplib]
@@ -8042,7 +8042,7 @@ python3-paramiko:
   fedora: [python3-paramiko]
   gentoo: [dev-python/paramiko]
   nixos: [python3Packages.paramiko]
-  openembedded: [python3-paramiko@meta-ros-common]
+  openembedded: [python3-paramiko@meta-ros1]
   opensuse: [python3-paramiko]
   rhel: ['python%{python3_pkgversion}-paramiko']
   ubuntu: [python3-paramiko]
@@ -8072,7 +8072,7 @@ python3-pep8:
     stretch: [python3-pep8]
   gentoo: [dev-python/pep8]
   nixos: [python3Packages.pep8]
-  openembedded: [python3-pep8@meta-ros-common]
+  openembedded: [python3-pep8@meta-ros1]
   osx:
     pip:
       packages: [pep8]
@@ -8385,7 +8385,7 @@ python3-pyassimp:
     '*': [python3-pyassimp]
     stretch: null
   fedora: [python3-assimp]
-  openembedded: [python3-pyassimp@meta-ros-common]
+  openembedded: [python3-pyassimp@meta-ros1]
   ubuntu:
     '*': [python3-pyassimp]
 python3-pyaudio:
@@ -8484,7 +8484,7 @@ python3-pydot:
   freebsd: [graphics/py-pydot]
   gentoo: [dev-python/pydot]
   nixos: [python3Packages.pydot]
-  openembedded: [python3-pydot@meta-ros-common]
+  openembedded: [python3-pydot@meta-ros1]
   opensuse: [python3-pydot]
   osx:
     pip:
@@ -8571,7 +8571,7 @@ python3-pygraphviz:
   freebsd: [graphics/py-pygraphviz]
   gentoo: [dev-python/pygraphviz]
   nixos: [python3Packages.pygraphviz]
-  openembedded: [python3-pygraphviz@meta-ros-common]
+  openembedded: [python3-pygraphviz@meta-ros1]
   opensuse: [python3-pygraphviz]
   osx:
     pip:
@@ -8759,7 +8759,7 @@ python3-pyproj:
   fedora: [python3-pyproj]
   gentoo: [dev-python/pyproj]
   nixos: [python3Packages.pyproj]
-  openembedded: [python3-pyproj@meta-ros-common]
+  openembedded: [python3-pyproj@meta-ros1]
   rhel:
     '*': ['python%{python3_pkgversion}-pyproj']
     '7': null
@@ -9142,7 +9142,7 @@ python3-pytest-cov:
   freebsd: [devel/py-pytest-cov]
   gentoo: [dev-python/pytest-cov]
   nixos: [python3Packages.pytestcov]
-  openembedded: [python3-pytest-cov@meta-ros-common]
+  openembedded: [python3-pytest-cov@meta-ros1]
   rhel: ['python%{python3_pkgversion}-pytest-cov']
   ubuntu: [python3-pytest-cov]
 python3-pytest-mock:
@@ -9153,7 +9153,7 @@ python3-pytest-mock:
   freebsd: [devel/py-pytest-mock]
   gentoo: [dev-python/pytest-mock]
   nixos: [python3Packages.pytest-mock]
-  openembedded: [python3-pytest-mock@meta-ros-common]
+  openembedded: [python3-pytest-mock@meta-ros1]
   opensuse: [python3-pytest-mock]
   osx:
     pip:
@@ -9563,7 +9563,7 @@ python3-rosdep-modules:
   fedora: [python3-rosdep]
   gentoo: [dev-util/rosdep]
   nixos: [python3Packages.rosdep]
-  openembedded: [python3-rosdep@meta-ros-common]
+  openembedded: [python3-rosdep@meta-ros1]
   rhel: ['python%{python3_pkgversion}-rosdep']
   ubuntu: [python3-rosdep-modules]
 python3-rosdistro-modules:
@@ -9575,7 +9575,7 @@ python3-rosdistro-modules:
   fedora: [python3-rosdistro]
   gentoo: [dev-python/rosdistro]
   nixos: [python3Packages.rosdistro]
-  openembedded: [python3-rosdistro@meta-ros-common]
+  openembedded: [python3-rosdistro@meta-ros1]
   rhel: ['python%{python3_pkgversion}-rosdistro']
   ubuntu: [python3-rosdistro-modules]
 python3-rosinstall-generator:
@@ -9591,7 +9591,7 @@ python3-rospkg:
       packages: [rospkg]
   gentoo: [dev-python/rospkg]
   nixos: [python3Packages.rospkg]
-  openembedded: [python3-rospkg@meta-ros-common]
+  openembedded: [python3-rospkg@meta-ros1]
   opensuse: [python3-rospkg]
   osx:
     pip:
@@ -9613,7 +9613,7 @@ python3-rospkg-modules:
       packages: [rospkg]
   gentoo: [dev-python/rospkg]
   nixos: [python3Packages.rospkg]
-  openembedded: [python3-rospkg@meta-ros-common]
+  openembedded: [python3-rospkg@meta-ros1]
   opensuse: [python3-rospkg]
   osx:
     pip:
@@ -10098,7 +10098,7 @@ python3-sphinx:
   fedora: [python3-sphinx]
   gentoo: [dev-python/sphinx]
   nixos: [python3Packages.sphinx]
-  openembedded: [python3-sphinx@meta-ros-common]
+  openembedded: [python3-sphinx@meta-ros1]
   opensuse: [python3-Sphinx]
   rhel: ['python%{python3_pkgversion}-sphinx']
   ubuntu: [python3-sphinx]
@@ -10799,7 +10799,7 @@ python3-vcstool:
     pip:
       packages: [vcstool]
   nixos: [vcstool]
-  openembedded: [python3-vcstool@meta-ros-common]
+  openembedded: [python3-vcstool@meta-ros1]
   osx:
     pip:
       packages: [vcstool]
@@ -10962,7 +10962,7 @@ python3-whichcraft:
   fedora: [python3-whichcraft]
   gentoo: [dev-python/whichcraft]
   nixos: [python3Packages.whichcraft]
-  openembedded: [python3-whichcraft@meta-ros-common]
+  openembedded: [python3-whichcraft@meta-ros1]
   rhel:
     '*': [python3-whichcraft]
     '7': null

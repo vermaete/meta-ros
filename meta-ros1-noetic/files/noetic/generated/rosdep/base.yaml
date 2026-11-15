@@ -416,7 +416,7 @@ bullet:
   gentoo: [sci-physics/bullet]
   macports: [bullet]
   nixos: [bullet]
-  openembedded: [bullet@meta-ros-common]
+  openembedded: [bullet@meta-ros1]
   opensuse: [libbullet-devel]
   rhel: [bullet-devel]
   ubuntu:
@@ -703,7 +703,7 @@ collada-dom:
   gentoo: [dev-libs/collada-dom]
   macports: [collada-dom]
   nixos: [collada-dom]
-  openembedded: [collada-dom@meta-ros-common]
+  openembedded: [collada-dom@meta-ros1]
   slackware: [collada-dom]
   ubuntu:
     '*': [libcollada-dom2.4-dp-dev]
@@ -749,7 +749,7 @@ cppcheck:
   freebsd: [cppcheck]
   gentoo: [dev-util/cppcheck]
   nixos: [cppcheck]
-  openembedded: [cppcheck@meta-ros-common]
+  openembedded: [cppcheck@meta-ros1]
   osx:
     homebrew:
       packages: [cppcheck]
@@ -1426,7 +1426,7 @@ geographiclib:
   fedora: [GeographicLib-devel]
   gentoo: [sci-geosciences/GeographicLib]
   nixos: [geographiclib]
-  openembedded: [geographiclib@meta-ros-common]
+  openembedded: [geographiclib@meta-ros1]
   rhel: [GeographicLib-devel]
   ubuntu:
     '*': [libgeographiclib-dev]
@@ -1437,7 +1437,7 @@ geographiclib-tools:
   fedora: [GeographicLib]
   gentoo: [sci-geosciences/GeographicLib]
   nixos: [geographiclib]
-  openembedded: [geographiclib@meta-ros-common]
+  openembedded: [geographiclib@meta-ros1]
   rhel: [GeographicLib]
   ubuntu: [geographiclib-tools]
 geos:
@@ -2509,7 +2509,7 @@ joystick:
   fedora: [linuxconsoletools]
   gentoo: [games-util/joystick]
   nixos: [linuxConsoleTools]
-  openembedded: [joystick@meta-ros-common]
+  openembedded: [joystick@meta-ros1]
   opensuse: [input-utils]
   rhel: [joystick]
   ubuntu: [joystick]
@@ -2748,7 +2748,7 @@ libb64-dev:
   ubuntu: [libb64-dev]
 libbackward-cpp-dev:
   debian: [libbackward-cpp-dev]
-  openembedded: [backward-cpp@meta-ros-common]
+  openembedded: [backward-cpp@meta-ros1]
   opensuse: [backward-cpp]
   ubuntu:
     '*': [libbackward-cpp-dev]
@@ -2771,7 +2771,7 @@ libblas-dev:
   fedora: [blas-devel]
   gentoo: [virtual/blas]
   nixos: [blas]
-  openembedded: [openblas@meta-ros-common]
+  openembedded: [openblas@meta-ros1]
   rhel: [blas-devel]
   ubuntu: [libblas-dev]
 libblosc-dev:
@@ -3295,7 +3295,7 @@ libccd-dev:
   fedora: [libccd]
   gentoo: [sci-libs/libccd]
   nixos: [libccd]
-  openembedded: [libccd@meta-ros-common]
+  openembedded: [libccd@meta-ros1]
   rhel: [libccd-devel]
   ubuntu: [libccd-dev]
 libccid:
@@ -3395,7 +3395,7 @@ libconsole-bridge-dev:
   freebsd: [ros-console_bridge]
   gentoo: [dev-libs/console_bridge]
   nixos: [console-bridge]
-  openembedded: [console-bridge@meta-ros-common]
+  openembedded: [console-bridge@meta-ros1]
   opensuse: [libconsole_bridge0]
   rhel: [console-bridge-devel]
   slackware: [console_bridge]
@@ -3725,7 +3725,7 @@ libfcl:
   fedora: [fcl]
   gentoo: [sci-libs/fcl]
   nixos: [fcl]
-  openembedded: [fcl@meta-ros-common]
+  openembedded: [fcl@meta-ros1]
   rhel: [fcl]
   ubuntu:
     '*': [libfcl0.7]
@@ -3735,7 +3735,7 @@ libfcl-dev:
   fedora: [fcl-devel]
   gentoo: [sci-libs/fcl]
   nixos: [fcl]
-  openembedded: [fcl@meta-ros-common]
+  openembedded: [fcl@meta-ros1]
   rhel:
     '*': [fcl-devel]
     '7': null
@@ -3771,7 +3771,7 @@ libflann:
   gentoo: [sci-libs/flann]
   macports: [flann]
   nixos: [flann]
-  openembedded: [libflann@meta-ros-common]
+  openembedded: [libflann@meta-ros1]
   rhel: [flann]
   ubuntu:
     '*': [libflann1.9]
@@ -3782,7 +3782,7 @@ libflann-dev:
   gentoo: [sci-libs/flann]
   macports: [flann]
   nixos: [flann]
-  openembedded: [libflann@meta-ros-common]
+  openembedded: [libflann@meta-ros1]
   rhel: [flann-devel]
   ubuntu: [libflann-dev]
 libflatbuffers-dev:
@@ -3849,7 +3849,7 @@ libfreenect-dev:
   debian: [libfreenect-dev]
   fedora: [libfreenect-devel]
   nixos: [freenect]
-  openembedded: [libfreenect@meta-ros-common]
+  openembedded: [libfreenect@meta-ros1]
   rhel:
     '*': [libfreenect-devel]
     '7': null
@@ -3990,7 +3990,7 @@ libgdal-dev:
   debian: [libgdal-dev]
   fedora: [gdal-devel]
   nixos: [gdal]
-  openembedded: [gdal@meta-ros-common]
+  openembedded: [gdal@meta-ros1]
   opensuse: [gdal-devel]
   rhel: [gdal-devel]
   ubuntu: [libgdal-dev]
@@ -4288,7 +4288,7 @@ libgts:
   fedora: [gts]
   gentoo: [sci-libs/gts]
   nixos: [gts]
-  openembedded: [gts@meta-ros-common]
+  openembedded: [gts@meta-ros1]
   ubuntu: [libgts-dev]
 libhal-dev:
   arch:
@@ -4964,7 +4964,7 @@ libogre:
   gentoo: [dev-games/ogre]
   macports: [ogre]
   nixos: [ogre1_9]
-  openembedded: [ogre@meta-ros-common]
+  openembedded: [ogre@meta-ros1]
   opensuse: [ogre-devel]
   slackware: [ogre]
   ubuntu: [libogre-1.9.0v5]
@@ -4985,7 +4985,7 @@ libogre-dev:
   gentoo: [dev-games/ogre]
   macports: [ogre]
   nixos: [ogre1_9]
-  openembedded: [ogre@meta-ros-common]
+  openembedded: [ogre@meta-ros1]
   opensuse: [libOgreMain-devel, libOgreOverlay-devel, libOgrePaging-devel, libOgreProperty-devel, libOgreRTShaderSystem-devel, libOgreTerrain-devel, libOgreVolume-devel]
   slackware: [ogre]
   ubuntu: [libogre-1.9-dev]
@@ -5040,7 +5040,7 @@ libopenblas-dev:
   fedora: [openblas-devel]
   gentoo: [sci-libs/openblas]
   nixos: [openblas]
-  openembedded: [openblas@meta-ros-common]
+  openembedded: [openblas@meta-ros1]
   rhel: [openblas-devel]
   ubuntu: [libopenblas-dev]
 libopencv-contrib-dev:
@@ -5077,7 +5077,7 @@ libopenexr-dev:
   fedora: [OpenEXR-devel]
   gentoo: [media-libs/openexr]
   nixos: [openexr]
-  openembedded: [openexr@meta-ros-common]
+  openembedded: [openexr@meta-ros1]
   rhel: [OpenEXR-devel]
   ubuntu: [libopenexr-dev]
 libopenni-dev:
@@ -5270,7 +5270,7 @@ libpcl-all:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   opensuse: [pcl]
   rhel: [pcl, pcl-tools]
   slackware: [pcl]
@@ -5286,7 +5286,7 @@ libpcl-all-dev:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   opensuse: [pcl]
   rhel: [pcl-devel]
   slackware: [pcl]
@@ -5301,7 +5301,7 @@ libpcl-apps:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5320,7 +5320,7 @@ libpcl-common:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5339,7 +5339,7 @@ libpcl-features:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5358,7 +5358,7 @@ libpcl-filters:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5377,7 +5377,7 @@ libpcl-io:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5395,7 +5395,7 @@ libpcl-kdtree:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5413,7 +5413,7 @@ libpcl-keypoints:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5431,7 +5431,7 @@ libpcl-ml:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5449,7 +5449,7 @@ libpcl-octree:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5467,7 +5467,7 @@ libpcl-outofcore:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5485,7 +5485,7 @@ libpcl-people:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5503,7 +5503,7 @@ libpcl-recognition:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5521,7 +5521,7 @@ libpcl-registration:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5539,7 +5539,7 @@ libpcl-sample-consensus:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5557,7 +5557,7 @@ libpcl-search:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5576,7 +5576,7 @@ libpcl-segmentation:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5594,7 +5594,7 @@ libpcl-stereo:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5613,7 +5613,7 @@ libpcl-surface:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5631,7 +5631,7 @@ libpcl-tracking:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5649,7 +5649,7 @@ libpcl-visualization:
   gentoo: [sci-libs/pcl]
   macports: [libpcl]
   nixos: [pcl]
-  openembedded: [pcl@meta-ros-common]
+  openembedded: [pcl@meta-ros1]
   rhel: [pcl]
   slackware: [pcl]
   ubuntu:
@@ -5857,7 +5857,7 @@ libqhull:
   gentoo: [media-libs/qhull]
   macports: [qhull]
   nixos: [qhull]
-  openembedded: [qhull@meta-ros-common]
+  openembedded: [qhull@meta-ros1]
   opensuse: [qhull-devel]
   rhel: [qhull-devel]
   slackware: [qhull]
@@ -7340,7 +7340,7 @@ log4cxx:
   gentoo: [dev-libs/log4cxx]
   macports: [ros-log4cxx]
   nixos: [log4cxx]
-  openembedded: [log4cxx@meta-ros-common]
+  openembedded: [log4cxx@meta-ros1]
   opensuse: [liblog4cxx-devel]
   rhel: [log4cxx-devel]
   slackware: [apache-log4cxx]
@@ -7867,7 +7867,7 @@ opende:
   fedora: [ode-devel]
   gentoo: [dev-games/ode]
   nixos: [ode]
-  openembedded: [ode@meta-ros-common]
+  openembedded: [ode@meta-ros1]
   rhel: [ode-devel]
   ubuntu: [libode-dev]
 opengl:
@@ -8808,7 +8808,7 @@ sdformat:
   fedora: [sdformat-devel]
   gentoo: [dev-libs/sdformat]
   nixos: [sdformat]
-  openembedded: [sdformat@meta-ros-common]
+  openembedded: [sdformat@meta-ros1]
   rhel:
     '7': [sdformat-devel]
   ubuntu:
@@ -9125,7 +9125,7 @@ suitesparse:
   gentoo: [sci-libs/suitesparse]
   macports: [SuiteSparse]
   nixos: [suitesparse]
-  openembedded: [suitesparse-cxsparse@meta-ros-common, suitesparse-cholmod@meta-ros-common]
+  openembedded: [suitesparse-cxsparse@meta-ros1, suitesparse-cholmod@meta-ros1]
   opensuse: [suitesparse-devel]
   rhel: [suitesparse-devel]
   ubuntu: [libsuitesparse-dev]
@@ -9481,7 +9481,7 @@ uncrustify:
   freebsd: [uncrustify]
   gentoo: [dev-util/uncrustify]
   nixos: [uncrustify]
-  openembedded: [uncrustify@meta-ros-common]
+  openembedded: [uncrustify@meta-ros1]
   osx:
     homebrew:
       packages: [uncrustify]
@@ -9705,7 +9705,7 @@ wx-common:
   fedora: [wxGTK-devel]
   gentoo: [x11-libs/wxGTK]
   nixos: [wxGTK32]
-  openembedded: [wxwidgets@meta-ros-common]
+  openembedded: [wxwidgets@meta-ros1]
   rhel:
     '*': [wxGTK-devel]
     '8': [wxGTK3-devel]
@@ -9721,7 +9721,7 @@ wxwidgets:
   gentoo: [x11-libs/wxGTK]
   macports: [wxWidgets-python]
   nixos: [wxGTK32]
-  openembedded: [wxwidgets@meta-ros-common]
+  openembedded: [wxwidgets@meta-ros1]
   opensuse: [wxGTK-devel]
   rhel:
     '*': [wxGTK-devel]
@@ -9893,7 +9893,7 @@ yaml-cpp:
   gentoo: [dev-cpp/yaml-cpp]
   macports: [yaml-cpp]
   nixos: [yaml-cpp]
-  openembedded: [yaml-cpp@meta-ros-common]
+  openembedded: [yaml-cpp@meta-ros1]
   opensuse: [yaml-cpp-devel]
   rhel: [yaml-cpp-devel]
   slackware: [yaml-cpp]
@@ -9999,7 +9999,7 @@ zziplib:
   gentoo: [dev-libs/zziplib]
   macports: [libzzip]
   nixos: [zziplib]
-  openembedded: [zziplib@meta-ros-common]
+  openembedded: [zziplib@meta-ros1]
   opensuse: [zziplib-devel]
   rhel: [zziplib-devel]
   ubuntu: [libzzip-dev]

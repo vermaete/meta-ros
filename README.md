@@ -74,9 +74,9 @@ releases and ROS Distributions. They follow the format `<BRANCH>/milestones/<N>`
 
 ## ROS Layers
 
-The `meta-ros-common` layer provides recipes that are common to all ROS 
-distributions.  This typically includes 3rd party libraries and tools needed by 
-ROS as well as ROS-specific image and package group recipes.
+The `meta-ros1` and `meta-ros2` layers contain the shared metadata, classes, and
+recipes used by their respective ROS releases. Recipes needed by both ROS 1 and
+ROS 2 are maintained in both layers so each ROS layer can be used independently.
 
 The ROS distros each have their own sub-directory containing a layer inside each
 branch.  This contains bitbake configuration files that describe the ROS distro
@@ -128,4 +128,3 @@ bi-weekly working group meeting:
 
 * [OpenEmbedded category on the ROS Discourse forum](https://discourse.ros.org/c/community-groups/openembedded/26)
 * ROS OpenEmbedded Working Group ([minutes](https://docs.google.com/document/d/1LqUjcu6vdlqVJO62SreCyjzddNDZhfO2n-7qYghY_cQ/edit#heading=h.3vrwbu9vio04), [meeting invites](https://groups.google.com/g/ros-openembedded-working-group-invites))
-
